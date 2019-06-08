@@ -7,6 +7,8 @@ All Digital Training - see [here](https://www.aws.training/LearningLibrary?filte
 
 From the exam prep path:
 
+ ![](ml-exam-prep.png)
+
 * [Machine Learning Exam Basics](https://www.aws.training/learningobject/curriculum?id=27271)
 * [Process Model - CRISP-DM on the AWS Stack](https://www.aws.training/learningobject/wbc?id=27200)
 * [The Elements of Data Science](https://www.aws.training/learningobject/wbc?id=26598)
