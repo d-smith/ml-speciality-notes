@@ -2,6 +2,8 @@
 
 ## The ML Stack
 
+### Overview
+
 application services
 
 * designed for app developers
@@ -22,7 +24,7 @@ frameworks and interfaces
 
 infrastructure
 
-## Adoption Benefits
+### Adoption Benefits
 
 Make the best use of data scientist's time
 
@@ -43,7 +45,7 @@ Embedding ML into the business fabric
 * 50% of predictive models don't get implemented
 * improve process, minimize manual intervention, and make better decisions using one-click deployment
 
-## Application Services 
+### Application Services 
 
 * Amazon polly - text to speech service
     * use cases: text readers for web pages or podcases, public announcements, game characters, e-learning videos, interactive voice responses, contact centers
@@ -81,7 +83,7 @@ Embedding ML into the business fabric
         * knowledge management/discovery
     * can use transcribe, translate, and comprehend together
     
-## Platform Services
+### Platform Services
 
 * Amazon SageMaker
     * Developed because ML is still too complicated for everyday developers
@@ -102,7 +104,7 @@ Embedding ML into the business fabric
     * tutorials, examples, demos, pre-built models
     * unbox to inference in < 10 minutes
 
-## Frameworks and Interfaces
+### Frameworks and Interfaces
 
 AWS Deep Learning AMIs
 
@@ -123,7 +125,7 @@ Gluon API
     * Developers can chhose the framework that best fits their needs
     * MXNet, PyTorch, Caffe2, Cognitive Toolkit (CNTK)
 
-## Infrastructure
+### Infrastructure
 
 EC2 P3 Instances
 
@@ -135,3 +137,8 @@ IoT Edge Devices
 
 * Greengrass - value from IoT devices at the edge, make them intelligent 
 * response quickly ro local events, operate offline, simplified device programming, reduce cost of iot apps, asws-grade security
+
+## ML for Business Challenges
+
+## ML For Business Leaders
+
