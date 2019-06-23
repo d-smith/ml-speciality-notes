@@ -140,5 +140,52 @@ IoT Edge Devices
 
 ## ML for Business Challenges
 
-## ML For Business Leaders
+### ML For Business Leaders
 
+When is machine learning an appropriate tool to solve my problem?
+
+What ML is not...
+
+* A one stop shot to solve every problem
+* Can't use to identify causaility
+* Needs a lot of data to build viable solutions
+
+What ML does...
+
+* Opens the door to innovation, harnesses the power of collaboration, and adds deep levels of intelligence to diverse applications.
+
+When is ML an option?
+
+* if the problem is persistent
+* if the problem challenges progress or growth
+* if the solution needs to scale
+* if the problem requires personalization
+
+What does a successful ML solution require?
+
+* People - ml scientists, data scientists, software engineers, etc
+* Time - collect data, clean it, build solution, test, etc
+* Cost
+
+Limitations
+
+* Models only as good as the data they are built on
+    * Data cleansing is essential, determines your success
+* Interpreting the results produced by the ML model
+* Uncertainty based on their statistic nature
+
+Leaders...
+
+* Can identity sources of data
+* Invest in data improvement strategies
+* Acknowedge the time and effort needed to introduce ml
+* Enable the team by asking the right questions
+    * what are the made assumptions?
+    * what is your learning target? (output variable/hypothesis)
+    * what type of ml problem is it? 
+    * why did you choose this algorithm?
+    * how will you evaluate the model performance?
+    * how confident are you that you can generalize the results?
+* Attact and retain talent
+    * Enable collab by allowing publishing papers, contributing open source software, etc.
+    * Enable access to literature, attendance of workshops and conferences, etc.
