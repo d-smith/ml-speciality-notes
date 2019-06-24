@@ -189,3 +189,74 @@ Leaders...
 * Attact and retain talent
     * Enable collab by allowing publishing papers, contributing open source software, etc.
     * Enable access to literature, attendance of workshops and conferences, etc.
+
+### Intro to Machine Learning
+
+ML - techniques to learn what output to produce based on input as opposed to a hard coded function. 
+
+Big data and improved economics at scale have enabled to advancement and adoption of ML.
+
+ML use at Amazon:
+
+* Recommendations
+* Robotics optimizations in fullfillment centers
+* forecasting
+* Search optimizations
+* Delivery routes
+* Alexa
+
+```console
+Flywheel: more data -> better predictions -> better recomendations
+    -> more satisfied customers -> more sales -> more data
+```
+
+ML
+
+* subfield of AI
+* prevelance of large data sets and massve computational resources have made it the dominant subfield of AI
+* enables computer programs to improve their performance without code changes
+
+AI
+
+* decribes machines capable of completing tasks that previously require humans
+
+Example:
+
+* Reviews - off topic review problem: is the review about the product, or about shipping problems, questions about the product, etc
+* Traditional approach - select a blacklist, maybe add some more wores, try it out
+    * context lost, interaction between words, etc
+* ML approach - feed reviews directly into machine learning alg and build a classifier
+    * Humans don't have to build domain word lists, optimize, etc
+    * No need to write custom code
+
+How to Define and Scope a Machine Learning Problem
+
+* What is the specific busines problem you are trying to solve?
+* What is the current state?
+* What are the current pain points?
+* What is causing the pain points?
+* What is the problem's impact?
+* How would the solution be used?
+* What is out of scope?
+* How do you define success?
+
+Input Gathering
+
+* Do we have sufficient data?
+* Are there labeled examples? If not how difficult would it be to create or obtain them?
+* What are our features?
+* What are going to be the most useful inputs?
+* Where is the data?
+* What is the data quality?
+
+Outputs
+
+* What business metric is defining success?
+* What are the trade offs?
+* Are there existing baselines?
+* If not, what is the simplist solution?
+* Is there any data validation needed to greenlight the project?
+* How important is runtime and performance?
+
+With inputs and outputs defined you can then formalize the problem as an ML problem.
+
