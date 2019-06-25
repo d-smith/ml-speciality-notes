@@ -260,3 +260,13 @@ Outputs
 
 With inputs and outputs defined you can then formalize the problem as an ML problem.
 
+When is machine learning a good solution?
+
+* Use ML when easier to learn behavior from data then it is to code the logic in software directly
+    * high level tasks people can do effortlessly, like understanding speech
+    * combine weak, link pieces of evidence
+    * fit ASIN into the appropriate categories
+* Use when behavior is adaptive and changes over time
+* When the manual approach does not scale 
+* Use when there is ample data to learn from
+* Use when the problem is formalizable as an ML problem (reduce to well known ML problem)
