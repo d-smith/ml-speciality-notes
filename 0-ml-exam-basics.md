@@ -270,3 +270,76 @@ When is machine learning a good solution?
 * When the manual approach does not scale 
 * Use when there is ample data to learn from
 * Use when the problem is formalizable as an ML problem (reduce to well known ML problem)
+
+When is machine learning not a good solution?
+
+* ML is not as simple as traditional software
+
+When is ML the wrong choice?
+
+* No data
+* No ground truth labels (can't use in supervised label)
+* Need to launch quickly (hard to predict how long it will take)
+* No tolerance for mistakes
+    * Consider humans in the loop in some circumstances
+
+Machine learning application
+
+Type of machine learning applications
+
+* Supervised learning
+* Unsupervised learning
+* Reinforcement learning
+
+Supervised Learning
+
+* Data set must have ground truth labels (e.g. label email - spam/not-spam)
+* classification
+    * examples: fraud detection - fraud/not fraud, face recognitions - face matches credential being used or not, e.g. amazon go stores)
+* multiclass classification - multiple choices of output
+* regression (continous valies)
+    * demand forecasting - for each item sold on amazon, what's the future demand 
+    * robot drive units 
+
+Unsupervised Learning
+
+* data does not have labels
+* used to detect patterns in data
+* clustering - how to partition a data set
+    * e.g. customers based on buying habits, use the classifications to better recommend produces
+    * topic modeling for e-books
+
+ML business problem: gift wrap eligibility
+
+* not fragile, max dim 24 inches
+* some will understate fragility, some items greater than 24 can be gift wrapped
+* associates can review rejected items and override the rule (dealing with false negatives)
+* false positives can be identified by examining how long it takes an associate to gift wrap an item
+* Build a classifie
+
+First - select the example features (the feature vector)
+
+* properties of the item that you feel are relevant to making an accurage prediction
+* binary features, categorical, numeric
+* need labels for each item
+
+Want: function when given a feature vector can output a target label
+
+Can we just code a function?
+
+How can we learn a classifier how can we learn a classifier?
+
+* decision tree?
+* linear classifier?
+
+When is machine learning a good solution?
+
+* Difficult to directly code a solution
+    * What is in the example we add manufacturer as a feature? It would be difficult to maintain as manufactureres are added over time...
+* Difficult to scale a code-based solution
+    * Too many items to consider in the gift wrap solution
+* Personalized output
+    * Different classifiers for different fullfillment centers
+* Functions that change over time
+    * Diminsions of the gift wrapping paper
+
