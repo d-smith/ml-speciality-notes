@@ -343,3 +343,56 @@ When is machine learning a good solution?
 * Functions that change over time
     * Diminsions of the gift wrapping paper
 
+Data, Data, Data
+
+* Neural networks with large numbers of hidden layers can perform better by capturing non-linearities. What makes this possible?
+    * Growing processing power
+    * Large amounts of data
+
+* Types of Data
+    * Design matrix: 2D table structure, columns are features, rows are feature vector, example
+    * Text - description, customer reviews, book text, etc. High-diminsonal (lots of words), sparse.
+    * Image and video data
+    * Sets - grouping of entities that occur together. For example items purchased/viewed together.
+    * Sequence data - clickstreams, order of viewing, etc
+    * Time series - time assocaited with each events, temporal component important part of model
+    * Graph data - for example social networks
+
+* ML Data Scope Questions
+    * How much data is sufficient for building sucessful ML models?
+    * Data quality - how to deal with data quality issues
+    * Data preparation prior to model building
+
+Image Classification: Vocabulary and Example
+
+* Example: identify useless (nearly blank, etc photos)
+    * To learn this function from data, we need a data set with labeled training instances
+    * Feature engineering - deciding on a set of measurements to make from each input image.
+        * Might compute the standard deviation of pixel values - pictures mostly the same color will have a low standard deviation
+        * Range of brightness across the image
+    * Select the learning algorithm
+    * Train the model
+    * Apply to each unlabaled image in the catalog
+
+* Which algoritm and what features
+    * Can try a variaty of algoritms and features to evaluate the performance of different approaches
+
+Reinforcement Learning: Robot Programming Example
+
+* Imagine a grid to move a robot on - we want to provide a function to help decide where to move on the grid.
+    * Some squares have nutricious plants that provide energy to the robot, some have poison that sap energy, some are empty but cost energy to move to.
+* Here we learn a mapping of the current state and a desired action, which is known as a policy.
+* Data is captured as the agent interacts with the environment, and provides feedback with respect to the action, referred to as a reward.
+* With reinforcement learning, the goal is to learn a policy that will maximize the accumulation of a reward in the future.
+    * State: encoding of the agent and current (observable) environment
+    * Action: {move up, move down, move left, move right, eat plant}
+    * Past Data: where the robot has been, what the robot has eaten so far, corresponding rewards received
+* Reinforcement learning differs from unsupervised learning in several ways:
+    * No presentation of input/output pairs
+    * Reward based
+    * Agent needs to gather useful experiences about the possible system states, actions, transitions, and rewards to act optimally
+    * Evaluation of the system is often concurrent with the learning.
+
+Machine Learning in Action: The Pollexy Project
+
+* The Pollexy Project is a Raspberry Pi and mobile-based special needs verbal assistant that lets caretakers schedule audio task prompts and messages both on a recurring schedule and/or on-demand.
