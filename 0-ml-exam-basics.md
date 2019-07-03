@@ -396,3 +396,14 @@ Reinforcement Learning: Robot Programming Example
 Machine Learning in Action: The Pollexy Project
 
 * The Pollexy Project is a Raspberry Pi and mobile-based special needs verbal assistant that lets caretakers schedule audio task prompts and messages both on a recurring schedule and/or on-demand.
+
+# Machine Learning Terminology and Process
+
+*Training* - how the machine uses data to build its prediction algorithms. The algorithms make up the *model*. The model is then used by the machine to take inputs and make a *prediction* (sometimes called the interence).
+
+In a typical training process, the historical data used to build the model is split into two datasets. Most of the data is used for the training data set, and the rest is used for the test dataset.
+
+## The Process
+
+### Step 1: The Business Problem
+
