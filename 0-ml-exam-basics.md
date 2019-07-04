@@ -407,3 +407,19 @@ In a typical training process, the historical data used to build the model is sp
 
 ### Step 1: The Business Problem
 
+Goal: prediction
+
+Form machine learning problem from the business problem
+
+Questions to ask:
+
+* Do we have all the data we need?
+* What algorithm should we use?
+
+3 common types of ML algorithms
+
+* Supervised - used where we have labeled historical data we used to train the machine to make predictions of future values
+    * Classification
+    * Regression
+* Unsupervised - answer not know ahead of time, let the algorithm quantify the data and give us the result
+* Reinforcement - algoritm is rewarded on the choices it makes while learning
