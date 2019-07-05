@@ -405,7 +405,11 @@ In a typical training process, the historical data used to build the model is sp
 
 ## The Process
 
-### Step 1: The Business Problem
+1. Business Problem
+2. ML Problem Framing
+3. Develop Your Dataset
+
+### Step 1 - Business Problem
 
 Goal: prediction
 
@@ -416,10 +420,27 @@ Questions to ask:
 * Do we have all the data we need?
 * What algorithm should we use?
 
+
+### Step 2 -  ML Problem Framing
+
 3 common types of ML algorithms
 
 * Supervised - used where we have labeled historical data we used to train the machine to make predictions of future values
-    * Classification
-    * Regression
+    * Classification - categorize objects into fixed categories (binary, multiclass)
+    * Regression - 
 * Unsupervised - answer not know ahead of time, let the algorithm quantify the data and give us the result
 * Reinforcement - algoritm is rewarded on the choices it makes while learning
+
+To frame our machine learning problem we need to formulate the output of the problem to evalue. Key elements: observations, lablels, features. Features can be numeric, features we derive, etc.
+
+### Step 3 - Develop Your Dataset
+
+Data Collection/Integration
+
+* Can be collected from multiple sources, multiple data sets integrated, etc.
+
+Three types of data:
+
+* Structured - organized and stored in databases in rows and columns. Querying and analysis easy.
+* Semistructured - organized in familiar formats but not stored in stables (CSV, JSON, etc)
+* Unstructured - data that does not have any structure - app logs, text, video, etc.
