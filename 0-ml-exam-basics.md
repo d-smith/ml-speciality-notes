@@ -444,3 +444,21 @@ Three types of data:
 * Structured - organized and stored in databases in rows and columns. Querying and analysis easy.
 * Semistructured - organized in familiar formats but not stored in stables (CSV, JSON, etc)
 * Unstructured - data that does not have any structure - app logs, text, video, etc.
+
+### Step 4 - Data Preparation
+
+Data found in the real world is very dirty and noisy - may have been improperly collected and formatted, may be incomplete, irrelevant, or misleading. 
+
+May need to be converted into a format appropriate for the mode.
+
+May need to add column headers, do type conversions, etc.
+
+Deal with missing features and outliers.
+
+Dealing with missing values
+
+* Add indicator column to note rows with missing values
+* Throw away rows with missing values
+* Use a technique called imputation to fill in the missing values (uses best guess) For example, for missing numerical values use the mean or median value.
+
+
