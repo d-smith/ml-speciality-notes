@@ -461,4 +461,17 @@ Dealing with missing values
 * Throw away rows with missing values
 * Use a technique called imputation to fill in the missing values (uses best guess) For example, for missing numerical values use the mean or median value.
 
+Shuffle Training Data
+
+* We don't want the model to 'learn' anything related to the order the data is presented.
+* Shuffling results in better model performance for certain algorithms
+* Minimized risk of cross validation data under-representing the model data and model data not learning from all types of data.
+
+Test-Validation-Train Split - 20% test, 10% validation, 70% train
+
+Cross Validation
+
+* 20/10/70 split
+* leave-one-out: use one data point as our test, run training with the rest
+* k-fold: randomly split the data into k folds, and for each fold train the model and record the error
 
