@@ -475,3 +475,25 @@ Cross Validation
 * leave-one-out: use one data point as our test, run training with the rest
 * k-fold: randomly split the data into k folds, and for each fold train the model and record the error
 
+### Step 5 - Data Visualization & Analysis
+
+* Feature - an attribute in your training dataset
+* Label - variable you are trying to predict, not a feature
+
+Types of Viz
+
+* Statistics
+* Scatter plots
+* Histograms - use to find outliers
+
+Skew, feature and class distribution
+
+Numerical - count, mean, max 
+Categorical - counts via histograms
+
+Feature-target correlation: scatter plots
+
+### Step 6 - Feature Engineering
+
+
+
