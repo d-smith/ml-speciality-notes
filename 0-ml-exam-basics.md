@@ -495,5 +495,17 @@ Feature-target correlation: scatter plots
 
 ### Step 6 - Feature Engineering
 
+* Process of manipulating raw or original data into new useful features is called feature engineering.
+* The most critical and time consuming part of model building
+* Requires trial and error, domain knowledge, and ingenuity.
+* Helps answer 'what am i using to make my decision;
+
+Converts raw data into a higher representation.
+
+* e.g. preprocess image data to identify edges, other shapes
+
+Numeric value binning - introduce non-linerarity into linear models but intelligently breaking up continuous values using binning.
+
+Think age vs salary - increases with age, stabilizes at some point, maybe declines later.
 
 
