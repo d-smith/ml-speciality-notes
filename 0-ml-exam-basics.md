@@ -498,14 +498,24 @@ Feature-target correlation: scatter plots
 * Process of manipulating raw or original data into new useful features is called feature engineering.
 * The most critical and time consuming part of model building
 * Requires trial and error, domain knowledge, and ingenuity.
-* Helps answer 'what am i using to make my decision;
+* Helps answer 'what am i using to make my decision'?
 
 Converts raw data into a higher representation.
 
 * e.g. preprocess image data to identify edges, other shapes
 
-Numeric value binning - introduce non-linerarity into linear models but intelligently breaking up continuous values using binning.
+*Numeric value binning* - introduce non-linerarity into linear models but intelligently breaking up continuous values using binning.
 
 Think age vs salary - increases with age, stabilizes at some point, maybe declines later.
+
+*quadratic features* - derive new non-linear features by combining feature pairs, e.g. combine education and occupation
+
+Other transformations like log, polynomical power, product/ration of feature values. Leaves of decision tree.
+
+*domain-specific features*
+
+Text features - stop-words removal/stemming, lowercasing, removing punctuation, cutting off very-high/low frequencies, term frequency inverse document frequency (tf-idf) normlization
+
+Web pages - multiple fields of text: url, in/out anchor, title, frames, body, presence of certains elements like tables or images, relative style (italics/bold, font-size) & position
 
 
