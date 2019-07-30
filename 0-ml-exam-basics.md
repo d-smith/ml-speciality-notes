@@ -519,3 +519,76 @@ Text features - stop-words removal/stemming, lowercasing, removing punctuation, 
 Web pages - multiple fields of text: url, in/out anchor, title, frames, body, presence of certains elements like tables or images, relative style (italics/bold, font-size) & position
 
 
+## Step 7 Model Training
+
+Train model multiple times using different parameters 
+
+### Parameter Tuning
+
+Loss Function - distance from ground truth
+
+* square: regression, classification
+* hinge: classification only, more robust to outliers
+* logistic: classification only, better for skewed class distributions
+
+Regularization
+
+* Prevent overfitting by constraining weights to be small
+
+Learning Parameters (decay rate)
+
+* Decaying too agressively - algoritm never reaches optimum
+* Decaying too slowly - algoritm bounces aroundm never converges
+
+## Step 8  Model Evaluation
+
+Overfitting and Underfitting 
+
+* Don't fit your training data to obtain max accuracy, want to generalize - look at evaluation accuracy
+* Overfitting - models that don't generalize well as they are too specific to the training data
+* Underfitting - models that don't generalize well, not using enough features
+
+Bias-Variance Trade Off
+
+Bias: difference between average model predictions and true target values
+Variance: variation in model predictions across different training data samples
+
+Evaluation Metrics:
+
+* Regression  
+    * Root mean square error (RMSE) - lower is better
+    * Mean absolute precent error (MAPE) - lower is better
+    * R2 - how much better is the model compared to just picking the best constant? R2 - 1 - (Model mean squared error / variance)
+
+* Classification
+    * Confusion matrix
+
+|              | Actual +1      | Actual -1       |
+|--------------|----------------|-----------------|
+| Predicted +1 | True positive  | False  positive |
+| Predicted -1 | False negative | True negative   |
+
+    * ROC curve
+    * Precision recall
+
+Precision = TP/(TP + FP) - how correct we are on the ones we predicted as positive
+Recall = TP/(TP + FN) - fraction of the negatives that were wrongly predicted
+
+## Business Goal Evaluation
+
+Business goal evaluations
+
+* Evaluate how the model is performing related to business goals
+* Make the final decision to deploy or not
+
+Evaluation depends on:
+
+* Accuracy
+* Model generalization on unseen/unknown data
+* Business success criteria
+
+Augmenting Your Data
+
+If we need more data or better data to prevent overfitting, we an add data augmentation or feature augmentation to our pipeline. These techniques increase the complexity of our data by adding information derived from internal and external data.
+
+Goal is to deploy a model into production. To work successfully, the production data needs to have the same distribution as the training data. Since data distributions can drift over time, the deployment processs is an ongoind process. Monitor production data, trigger retraining if drift found. Or... train the model periodically.
