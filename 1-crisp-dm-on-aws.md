@@ -39,7 +39,7 @@ Cyclical endeavor
     * evaluation methods
     * tools and techniques
 
-## Data Understanding
+## Phase 2 - Data Understanding
 
 * Data collection
     * detail various sources and steps to extract data 
@@ -80,3 +80,12 @@ Amazon QuickSIght
 * scale to hundreds of thousands of users
 * 1/10th the cost of traditional BI solutions
 * Secure sharing and collaboration (storyboard)
+
+## Phases 3 Data Preparation 
+
+Consists of two tasks
+
+* Final dataset selection
+* Preparing the data
+
+
