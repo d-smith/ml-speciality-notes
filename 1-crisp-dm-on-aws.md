@@ -86,6 +86,40 @@ Amazon QuickSIght
 Consists of two tasks
 
 * Final dataset selection
+    * Decide the consolidated, raw data to use for your project
+    * Understand your constraints - total size, included and excluded columns (using previous analysis of the important and less important attributes), record selection, data types
 * Preparing the data
+    * Cleaning
+    * Transforming
+    * Merging
+    * FOrmatted
 
+Cleaning
 
+* How is missing data handled?
+    * Drop rows with missing values
+    * Adding a default value or mean value for missing data
+    * Using statistical methods to calculate the value (e.g. regression)
+* Clean attributes with corrupt data or variable noise
+
+Transformation
+
+* Derive additional attributes from the original attributes
+    * use hours, months, years as separate attributes instead of data string, or provide an ordered array based on timestamp for sequential models
+    * One hot encoding to convert strings to numerical values (or vice versa)
+* Normalization
+* Attribute transformation
+
+Merging
+
+* May want to merge before cleaning/transforming
+* May want to revisit data understanding after merging
+
+Formatting
+
+* Format your dataset to accomodate your modeling tool needs
+    * Rearrange attributes
+    * Randomly shuffle data
+    * Remove constraints of the modeling tools, for example remove unicode characters
+
+## Phase 4 - Modeling
