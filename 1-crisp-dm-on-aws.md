@@ -81,7 +81,7 @@ Amazon QuickSIght
 * 1/10th the cost of traditional BI solutions
 * Secure sharing and collaboration (storyboard)
 
-## Phases 3 Data Preparation 
+## Phases 3 - Data Preparation 
 
 Consists of two tasks
 
@@ -123,3 +123,55 @@ Formatting
     * Remove constraints of the modeling tools, for example remove unicode characters
 
 ## Phase 4 - Modeling
+
+phase 3 and 4 must be balanced using an iterative approach,
+ think of these as a single phase
+
+Modeling phases 
+
+* Model selection and creation
+    
+* Model testing plan
+* Parameter tuning/testing
+
+Model Selection and Creation - Identify
+
+* Modeling technique
+    * regression for numeric values, random forests for multi-class classification, RNN to predict sequences
+    * Also depends on your framework
+* Constraints of modeling technique and tools
+* Ways in which constraints tie back to data preparation phase
+
+Generating a Model Testing Plan
+
+* Before training your model, define how to test your model's accuracy.
+* Split into training and test set
+* Determine split of model training set - 30% test/70% traing
+* Model evaluation training criterion
+    * regression - mean squared
+    * classification - compare the output class and true class, evaluate precision and recall
+
+Building the Model
+
+* Traing the model
+* Tweak the model for better performance
+* Build multiple models with different parameter settings - goal is to train faster and obtain better performance
+* Describe the trained model and report on findings
+
+### Tools for Prep and Modeling
+
+Amazon EMR + Spark
+
+* Managed hadoop
+* Use with spark mlib dataframe based API for machine learning
+* Use ipython notebooks, zeppelin notebooks, or r studio
+* scala, python, r, java, SQL supported
+* cost savings - leverage spot instances for task nodes
+
+Amazon EC2 + Deep Learning AMI
+
+* Deep learning AMI
+    * preinstalled gpu cuda support for training
+    * preinstalled deep learning frameworks lik MXNet, TendorFlow, Caffe2, Torch, Keras, Theano, etc
+    * Includes python anaconda data science platform
+* Can also [install R studio on aws](https://aws.amazon.com/blogs/big-data/running-r-on-aws/)
