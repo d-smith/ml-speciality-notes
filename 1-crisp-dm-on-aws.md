@@ -175,3 +175,44 @@ Amazon EC2 + Deep Learning AMI
     * preinstalled deep learning frameworks lik MXNet, TendorFlow, Caffe2, Torch, Keras, Theano, etc
     * Includes python anaconda data science platform
 * Can also [install R studio on aws](https://aws.amazon.com/blogs/big-data/running-r-on-aws/)
+
+## Phase 5: Evaluation
+
+* Evaluation how the model is performning related to business goals
+* Make final decision to deploy or not
+
+Evaluation - based on the model testing plan. Evaluation depends on:
+
+* Accuracy of the model
+* Model generalixation on unseen/unknown data
+* Evaluation of the model using the busness success criteria
+* Rank models based on succeess criteria
+
+Review the Project as a Whole
+
+* Assess the steps taken in each phase - was any important criteria overlookked?
+* Perform quality assurance checks
+    * Model performance using the determined data
+    * Is the data available for future training?
+
+Determine the Next Step
+
+* Launch to deploy, iterate to improve, start new project
+
+Using the same tools for evaluation
+
+* Amazon EMR + Spark
+* Amazon EC2 + Deep Learning AMI
+* Amazon S3 for parameter storage
+
+Example Jupyter Notebook
+
+* Launch ec2 gpu compute instance with deep learning ami
+* SSH to instance, include -L localhost:8888:localhost:8888
+* screen -rd
+* jupyter notebook --no-browser
+* Take local host string, paste into your browser
+* In notebook, aws_mlstack_tutorial, then crisp_dm
+* Handwriting recognition
+
+
