@@ -246,5 +246,12 @@ Project Review
     * Summarize the results and write thorough documentation. Capture common pitfalls and choosing the write ML solution
     * Generalize the whole process to make it useful fo the next iteration.
 
+Demo
 
+* Launch GPU compute ec2 instance
+* SSH 
+* virtualenv ~/mxnet
+* source ~/mxnet/bin/activate
+* pip install mxnet
+* create lambda function lambda_function.py
 
