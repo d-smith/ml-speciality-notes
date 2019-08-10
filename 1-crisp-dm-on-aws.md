@@ -215,4 +215,36 @@ Example Jupyter Notebook
 * In notebook, aws_mlstack_tutorial, then crisp_dm
 * Handwriting recognition
 
+## Phase 6 - Deployment
+
+Deployment consists of 4 steps:
+
+* Planning deployment
+* Maintenance and monitoring
+* Final report
+* Project review
+
+Plannning Deployment
+
+* Where will you run it? EC2, ECS, Lambda?
+* Application Deployment - CodeDeploy, OpsWorks, Elastic Beanstalk
+* Infrastructure Deployment - CloudFormation, OpsWorks, Elastic Beanstalk
+* Code Management - CodeCommit, CodePipeline, Elastic Beanstalk
+* Monitoring - CloudWatch, CloudTrail, ElasticBeanstalk
+
+Final Report
+
+* Highlight processes used in the project
+* Analyze if all the goals for the project were met
+* Detail the findings of the project
+* Identify and explain the model used and the reason behind using the model
+* Identify the customer groups to target using this model
+
+Project Review
+
+* Assess the outcomes of the project
+    * Summarize the results and write thorough documentation. Capture common pitfalls and choosing the write ML solution
+    * Generalize the whole process to make it useful fo the next iteration.
+
+
 
