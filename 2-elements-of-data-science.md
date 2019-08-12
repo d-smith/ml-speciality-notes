@@ -84,3 +84,23 @@ Important Concepts
 * Model selection
 
 
+### Types of Machine Learning
+
+Supervised Learning
+
+* Learning with feedback provided in the learning data
+* Each training example is provided with the correct label
+* Regression - target type is a continuous value
+* Classification - target type is catagorical
+
+Unsupervised Learning
+
+* No target column/outcode
+* Have a collection of features/attributes from each observation
+* Grouping/clustering for downstream analysis
+
+Reinforcement Learning
+
+* Algorithm is not told what action to take, but is given a reward or penalty for after each action in a sequence
+* Example - teach a machine how to play video games
+
