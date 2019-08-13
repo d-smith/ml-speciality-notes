@@ -104,3 +104,40 @@ Reinforcement Learning
 * Algorithm is not told what action to take, but is given a reward or penalty for after each action in a sequence
 * Example - teach a machine how to play video games
 
+### Key Issues in Machine Learning
+
+Data Quality
+
+* High quality data is the secret sauce
+* Quality
+    * Consistency of the data - consider the business problem; is the data we're using consistent with the problem we are trying to solve
+    * Accuracy of the data - labels, features (numerical and categorical)
+    * Noisy data - many input and output fluctuations
+    * Missing data - algoritms can't deal with missing data
+    * Outliers - errors, typos, correct but not relevant or out of scope
+    * Bias
+    * Variance
+
+
+Model Quality
+
+* Underfitting vs overfitting
+* Overfitting
+    * Failure to generalize - performs well on training data but poorly on test
+    * Can indicate model is too flexible
+    * Flexible - allows it to memorize the data including the noise
+    * Corresponds to high variance - small changes in the training data leads to big changes in the results
+* Underfitting
+    * failure to capture important patterns in the training data set
+    * Typically indicates model is too simple or there are too few explanitory variables
+    * Not flexible enough to model real patterns
+    * Corresponds to high bias - the results show systematic lack of fit in certain regions
+
+Computation Speed and Scalability
+
+* Use distributed computing systems like Sage Maker of EC2 instances for training in order to:
+    * Increase speed
+    * Solve prediction time complexity
+    * Solve space complexity
+* May need to address latency and scalability instances
+
