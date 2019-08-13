@@ -141,3 +141,23 @@ Computation Speed and Scalability
     * Solve space complexity
 * May need to address latency and scalability instances
 
+### Supervised Methods: Linear Regression
+
+#### Linear regression
+
+Linear methods
+
+* Parametric methods where function learned has form f(x) = &Phi;(w<sup>T</sup>x) where &Phi;() is some activation function.
+* Generally optimized by learning weights by applying (stochastic) gradient descent to minimize loss function e.g. &Sigma; |y<sup>&Hat;</sup><sub>i</sub> - y<sub>i</sub>|<sup>2</sup>
+* Simple; a good place to start for a new problem, at least as a baseline
+* Methods
+    * linear regression for numeric target outcome
+    * logistic regression for categorical target outcome
+
+Univariate linear regression
+
+* Model relation between a single feature (explanatory variable x) and a real-valued response (target variable y), for example area as price predictor for real estate price
+* Error is |y<sup>&Hat;</sup><sub>i</sub> - y<sub>i</sub>|, e.g. predicted price minus real price.
+* Given data (x,y) and a line defined by w<sub>0</sub> (intercept) and slope w<sub>1</sub> (slope), the vertical offset for each data point from the line is the error between the true label y and the prediction based on x
+* The best line minimizes the sum of squared errors (SSE)
+* We usually assume the error is Guassian distributed with mean zero and fixed variance
