@@ -161,3 +161,8 @@ Univariate linear regression
 * Given data (x,y) and a line defined by w<sub>0</sub> (intercept) and slope w<sub>1</sub> (slope), the vertical offset for each data point from the line is the error between the true label y and the prediction based on x
 * The best line minimizes the sum of squared errors (SSE)
 * We usually assume the error is Guassian distributed with mean zero and fixed variance
+
+Multivariate linear regression
+
+* Multiple linear regression includes N explanatory variables with N >= 2.
+* y = w<sub>0</sub>x<sub>0</sub> + w<sub>1</sub>x<sub>1</sub> + ... + w<sub>m</sub>x<sub>m</sub> = <sup>N</sup><sub>i=0</sub>&Sigma;
