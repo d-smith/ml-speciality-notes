@@ -67,4 +67,32 @@ Operations on Objects
 
 Listing Objects
 
+* Can enumerate the keys in a bucket, can filter by key prefix, can list keys by prefixes, can list common key prefixes
+
+Listing objects examples
+
+* `aws s3api list-objects-v2 --bucket mybucket --query "Contents[].{Key: Key}"`
+* `aws s3api list-objects-v2 --bucket mybucket --prefix 2017/ --query "Contents[].{Key: Key}"`
+*`aws s3api list-objects-v2 --bucket mybucket --prefix 2017/scores/ --delimiter /  --query "Contents[].{Key: Key}"`
+
+Presigned URLs: PUT
+
+* Grant upload permission for an object without giving the uploader AWS permissions
+* To create a presigned url you provide:
+    * Security credentials
+    * Bucket name
+    * Object key
+    * HTTP method
+    * Expiration
+* Can also provide presigned URLs to get an object
+
+Cross-Origin Resource Sharing
+
+* Allow client applications in one domain to work with resources in another domain
+* e.g. web font hosted in one domain loaded from another domain
+* In s3, can create a CORS config xml file in your bucket to grant access to other domains
+* See [here](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/cors.html) for more details
+
+
+
 
