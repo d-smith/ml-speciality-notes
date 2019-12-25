@@ -88,3 +88,14 @@ Example - you have a group named hrpayroll. Members of hr payroll should not be 
 ```
 
 The above provides the restriction, additional policy elements are needed to provide the grant.
+
+
+Cross-Account Access
+
+* It is possible with cross-account access to have a mismatch between bucket owner* and object over.
+* Scenario
+    * Bucket policy statement 1: allow cross account permission to Jane in account B and to IAM user John (account A) to get, list, and put objects in the images bucket
+    * Jane puts and object, object over is account B, bucket owner is John, John denied access to objects created by Jane.
+    * Can add a condition to the bucket policy to require bucket-owner-full-control when account B uploads objects
+
+More managing access scenarios [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html)
