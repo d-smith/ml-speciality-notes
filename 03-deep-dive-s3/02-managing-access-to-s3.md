@@ -129,3 +129,7 @@ Avoiding Accidental Deletes
 * Use bucket policies to restrict deletes
 * Enable MFA delete on versioning enabled buckets
     * Enable via cli or sdk, not avaliable in the console
+
+VPC Endpoints with Amazon S3
+
+* Facilitates secure communications with Amazon s3
