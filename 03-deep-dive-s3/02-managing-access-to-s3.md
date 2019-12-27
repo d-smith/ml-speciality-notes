@@ -99,3 +99,33 @@ Cross-Account Access
     * Can add a condition to the bucket policy to require bucket-owner-full-control when account B uploads objects
 
 More managing access scenarios [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html)
+
+Multiple Policy Evaluation
+
+* Can put all the permissions in a single policy or in multiple policies.
+* If a policy has multiple statements, a logical or is applied across those statements when evaluated
+* Users typically have multiple policies that apply to them, but aren't necessarily attached to them.
+* User might have policies associated with it, belong to a group that has policies assocaited with it, accessing a bucket that has a policy associated with it.
+* All applicable policies are evaluated, and a deny or allow is determined.
+
+Access Control Lists
+
+* Use bucket policies or iam policies for access control. ACLs are a legacy mechanism.
+* ACL - subresource attached to bucket and objects
+    * You can only grant permission to other AWS accounts or Amazon s3 predetermined groups
+        * Authenticated users group - represents all aws accounts. Allows any aws authenticated user in the world to access the resouce
+        * All users group - allows anyone in the world to access
+        * Log delivery group - write permission on a bucket enables this group to write server access logs
+
+Block Public Access
+
+* By default all amazon s3 resources are private
+* Can explicitly [configure public access control default and behavior](https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html)
+    * Allows admins and bucket owners to set up centralized controls to limit public access
+* Available via s3 management console, aws cli, and aws sdks
+
+Avoiding Accidental Deletes
+
+* Use bucket policies to restrict deletes
+* Enable MFA delete on versioning enabled buckets
+    * Enable via cli or sdk, not avaliable in the console
