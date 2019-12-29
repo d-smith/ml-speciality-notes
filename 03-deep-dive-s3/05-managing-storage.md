@@ -117,3 +117,40 @@ Benefits:
 ### Requestor Pays
 
 * The requestor pays the cost of the request and the data transfer
+
+## Object Lifecycle Management
+
+Lifecycle configuration
+
+* Enables you to specify the lifecycle management of objects in a bucket
+* Contains a set of one or more rules
+* Exach rule defines an action:
+    * Transition
+    * Expiration
+
+Automate Transitions
+
+* Automate the tiering process from one storage class to another
+* Considerations:
+    * No automatic transition of objects less than 128KB in size to to standard IA or one zone IA
+    * Data must remain on its current storage clas for at least 30 days before it can be automatically moved to S3 standard IA or One Zone IA
+    * Data can be moved from any storage class directly to Amazon Glacier
+
+Action Types
+
+* You can direct S3 to preform specific actions in an object's lifetime by specifying one or more of the following predefined action in a lifecycle rule. The effect of these action depends on the versioning state of your bucket.
+    1. Transition: moves objects to standard IA, onezone IA, or glacier based on the object age you specify
+    2. Expiration: deletes objects after the time you specify
+
+For versioning-enabled buckets there are additional action elements:
+
+* NoncurrentVersionTransition
+* NoncurrentVersionExpiration
+
+Transitioning Objects
+
+* From S3 standard, can transition to S3 IA, S3 one zone IA, Glacier.  Objects must be > 128KB, must be stored > 30 days
+* From S3 IA, can transition to  S3 one zone IA, Glacier. Objects must be stored for at least 30 days.
+* From S3 one zone IA, can transition to Glacier.
+* Cannot transition from Glacier.
+* Objects transitioned to Glacier are still s3 objects, and are restored and accessed via the S3 console and APIs.
