@@ -133,3 +133,8 @@ Avoiding Accidental Deletes
 VPC Endpoints with Amazon S3
 
 * Facilitates secure communications with Amazon s3
+
+Misc
+
+* Bucket owner for newly created buckets is the account
+* The bucket owner has access to a bucket by default
