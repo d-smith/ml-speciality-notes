@@ -154,3 +154,62 @@ Transitioning Objects
 * From S3 one zone IA, can transition to Glacier.
 * Cannot transition from Glacier.
 * Objects transitioned to Glacier are still s3 objects, and are restored and accessed via the S3 console and APIs.
+
+## Inventory
+
+Tool to help manage s3 storage.
+
+* Monitor encryption and replication status
+* Simplify and speed up workflows
+* Reports with object and metadata
+* Costs less than runnng the s3 list API
+* Report output can be encrypted
+
+Using Inventory
+
+* Report can live in source bucket or in another bucket
+* Identity source bucket to inventory, and the destination bucket (which must have the right policy, and in the same region)
+* Can set up notifications to alert when inventory reports are completed
+
+## Cross Region Replication
+
+* Automated, fast, and reliable asynchronous replication of data across AWS regions
+* Once enabled new put requests are replicated
+* Activate by adding a replication configuration to your source bucket
+* Can filter by prefixes or tags
+* Delete markers are not replicated
+* Life cycle actions are not replicated
+* Objects are protected during replication using TLS
+* Objects encrypted with SSE-S3 or SSE-KMS can replicated as well (need to specify KMS key to use in destintation region)
+
+More with CRR
+
+* You can overwrite ownership for cross-account replication
+* Can choose any S3 storage class as the target
+* Can choose objects to replicate by prefix, tag, or both
+* Independent licecycle policies in source and destination buckets
+
+Use cases
+
+* Compliance - you might need to store copies in more distant locations than just AZs
+* Latency - minimize latency for geographically dispersed data accessors
+* Operational - you might have compute clusters in different regions that analyze the same objects
+* Data protection - ensure you have multiple copies of your most important data geographically dispersed for business continuity reasons.
+
+Requirements
+
+* Source and destination buckets must have versioning enabled
+* Source and destination buckets must be in different AWS regions
+* IAM role that S3 can assume to replicate objects on your behalf
+
+How does it work?
+
+* Replicates put objects that match prefix and tag filters
+* Delete markers are not replicated
+* Destination storage class can be different
+* Protected in transit using TLS
+* Objects in bucket before replication enable are not replicated
+* Objects create with customer-provided keys are not replicated
+* Objects in the source bucket for which the bucket owner does not have permission for are not replicated
+* Actions on objects perfomed by lifecycle configurations
+* Objects in the source bucket that have already been replicated from another region
