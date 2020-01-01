@@ -33,3 +33,26 @@ Upload Buffer
 
 ## Storage Gateways: File
 
+![file gateway](./file-gateway.jpg)
+
+* One to one mapping from files to objects.
+    * Enables native access to S3 capabilities on the objects
+* Controls on how your data is accessed
+    * NFS/files options export - allowed clients, read-only/read-write exports, user squasing, default object ownship (uid/gid), default object permissions
+    * S3 options per buckets - IAM role for access, storage class, object encryption with KMS, guess mime type
+* Metadata and worload automation
+    * Cached metadata and object inventory maintained on the applicance
+    * RefreshCache API
+    * CloudWatch upload events from gateway
+* Reads
+    * Reads byte ranges, has hueristics to do read ahead, etc. 
+* Writes
+    * Optimizes uploads via multipart uploads and similar techniques, dedup of writes, etc
+    * Write opt example - appending data to a file: just appended data is uploaded to gateway service, gateway service uses the data in the cloud and the newly uploaded append data to create a new object
+* Refresh Cache API Use Cases
+    * Sync in cloud workloads to on premise view of files
+    * S3 cross region replication - allow active active, surface replicated data to on prem
+    * AWS snowball use
+
+## Storage Gateways: Volume
+
