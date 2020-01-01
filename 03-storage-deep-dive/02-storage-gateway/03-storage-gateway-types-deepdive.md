@@ -56,3 +56,58 @@ Upload Buffer
 
 ## Storage Gateways: Volume
 
+On-premises block storage backed by S3 with EBS snapshots
+
+* Create on-premises volumes from EBS snapshots
+* Up to 1 PB of total volume storage per gateway
+* iSCSI mount target
+* Block device is opaque to most users
+* Data compression over the wire, data stored in an s3 service bucket (rather than the customer's bucket)
+* Customer has access to the data as an EBS snapshot
+
+2 modes - stored and cached (see previous notes)
+
+### Stored Volume
+
+* Sensitive to latency, need all the data - stored volume (which is stored locally)
+* LUN - logical unit number, device addressed by the SCSI protocol
+    * Assume you have a LUN that has data on it, a file system, and is formatted. 
+    * You can present it to the storage gateway, and use the storage gateway to present that back directly to the application server. This means you can take existing data inside your data center and transfer it into AWS with no change to your application other than connecting to the gateway. No volume reformatting, no copying, etc.
+
+![stored vol](./stored-vol.jpg)
+
+### Cached Volume Mode
+
+![cached vol](./cached-vol.jpg)
+
+* Write
+    * Writes to virtual volume, data stored in the cache.
+    * Gateway compresses and encrypts the data as it gets moved into the upload buffer
+    * Cache is write-back: app gets the ack quickly as store to cache is acked, sync to cloud occurs later
+* Reads 
+    * In the cache, served back immediately
+    * Not in the cache, gateway must download from the gateway service, cache it, then serve it (i.e. read-through cache)
+
+* Volume recovery point - a point in time at which all the data in a volume is consistent
+    * Create a snapshot
+    * Clone the volume
+
+ ![snapshots](./snapshots.jpg)   
+
+ ## Snapshots
+
+ Volume gateway
+ 
+ * When a snapshot is initiated, a snapshot marker is written to the virtual volume
+ * The snapshot marker is used to reconcile the data already available in the cloud, the data in flight to the cloud, and the remaining data in the cache. When all of the data at the point of the snapshot has made it to the cloud the fully assembled EBS snapshot can be completed.
+
+ ## Tape Gateway
+
+ ![tape gateway](./tape.jpg)
+
+* Drop in replacement for physical tape libraries.
+* Use a tape backup product to work with the tape gateway
+* Remote region backup
+    * Keep backup many miles away (bicoastal backup)
+
+![bicoastal](./bicoastal.jpg)
