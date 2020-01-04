@@ -29,3 +29,9 @@ Resources
     * Cached volume, non-cached volume
     * iSCSI target
 * Resource owner - the AWS account that created the resource
+
+End to End Security
+
+* CHAP - secures iSCSI interface
+* Direct connect - can keep the traffic off the public internet
+* TLS protection of data transferred to AWS, SSE used to protect data at rest in AWS
