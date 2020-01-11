@@ -30,3 +30,21 @@ Snow Family Use Cases
 * Disaster recovery
 * Data center decommission
 * Content distribution
+
+Storage Gateway
+
+* Hybrid storage service that enables on premises applications to seamlessly use AWS storage through conventional interfaces like iSCSI and NFS
+
+Multipart Uploads
+
+* Uploads objects 5GB or larger, use when object size is 100 MB or larger
+* Part of the glacier API
+* Uploads parts in any order, retry, etc.
+* Initiate, upload parts, complete
+
+Media Archive Use Case
+
+* Move assests to AWS as part of offsite archive
+* Next, on site assests like LTO archives move to AWS
+* Then, direct connect to S3 and Glacier, and use lambdas to trigger workflows, AI services, etc.
+
