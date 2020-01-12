@@ -36,6 +36,7 @@ Data Model
     * Container for storing archives
     * Name + region 
     * https://<region specific endpoint> /<account id>/vaults/<vault name>   
+    * An unlimited number of archives can be stored in a vault
 
 Glacier Entry Points
 
