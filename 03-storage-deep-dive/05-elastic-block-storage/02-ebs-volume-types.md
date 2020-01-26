@@ -53,4 +53,4 @@ EBS Optimized Instance:
 
 * Non-optimized have a shared network pipe for traffic to amazon services, internet, etc.
 * EBS optimized instances has dedicated bandwidth for the attached EBS volumes
-
+* C5: EBS-optimized burst
