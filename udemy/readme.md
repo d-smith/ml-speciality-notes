@@ -14,3 +14,10 @@ Domain 4 - Dedicated section on integration
 15% general AWS knowledge, 50% - 60% on ML concepts, 25% - 35% on AWS machine learning
 
 Start with the sample questions to assess current level of knowledge.
+
+## Prep Strategies
+
+* Make sure you have an AWS background, e.g. at least cloud practitioner
+* Good foundation: white papers recommended for the cloud practitioner certification.
+* Will need to be familiar with scikit-learn.
+    * Book: scikit-lean - Introduction to Machine Learning with Python
