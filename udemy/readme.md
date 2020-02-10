@@ -21,3 +21,12 @@ Start with the sample questions to assess current level of knowledge.
 * Good foundation: white papers recommended for the cloud practitioner certification.
 * Will need to be familiar with scikit-learn.
     * Book: scikit-lean - Introduction to Machine Learning with Python
+
+## Six Advantages of Cloud Computing
+
+* Trade capital expense for variable expense
+* Benefit from Massive Economies of Scale
+* Stop guessing about capacity
+* Increase speed and agility
+* Stop spending money running and maintaining data centers
+* Go global in minutes
