@@ -1,0 +1,23 @@
+Get the endpoint name:
+
+aws sagemaker list-endpoints
+
+Delete it:
+
+aws sagemaker delete-endpoint --endpoint-name xgboost-bikerental-v1
+
+Delete the endpoint config:
+
+aws sagemaker delete-endpoint-config --endpoint-config-name xgboost-bikerental-v1
+
+List the models:
+
+ aws sagemaker list-models
+
+ Delete the model:
+
+ aws sagemaker delete-model --model-name mushroom-v1-2020-04-07-17-24-47-183
+
+ Stop the notebook instance:
+
+ aws sagemaker stop-notebook-instance --notebook-instance-name SageMakerCourse
