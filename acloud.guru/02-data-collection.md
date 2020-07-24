@@ -65,3 +65,62 @@ Data stores
     * Many different formats
     * Processing done on output (schema on read)
 
+## Machine Learning Terminology
+
+* Labeled data
+    * already know what the target attribute is
+    * Examples
+        * spam/not spam emails
+        * labeled handwritten digits
+        * housing prices
+        * tumor images/benign images
+        * customer churn data
+        * fraudulent/non-fraud credit card transactions
+        * tagged audio/video
+* Unlabeled
+    * data that has been collected with no target attribute
+    * examples
+        * customer info
+        * news articles
+        * log files
+        * surveillence videos
+        * tweets
+        * block posts
+        * web traffic access
+        * stock prices
+
+Features
+
+* Categorical
+    * assocaited with a group, qualitative, discrete
+* Continuous
+    * continuous features that are values expressed as a number
+    * quantitative
+    * infinite
+
+Text Data (Corpus Data)
+
+* Collected from text
+* Used with NLP, speech recognition, etc
+
+Ground Truth
+
+* Datasets that refer to factual data that have alerady been observed or measured. This data has  successfully been labeled and can be trusted as truth.
+
+Image Data 
+
+* Datasets with tagged images
+    * MNIST data handwritten characters
+    * Image Net
+    * Applications like facial recognition, action recognition, object detection, handwriting and character recognition
+
+Time Series Data
+
+* Captures changes over time 
+    * Stock market data
+    * Telemetry from IoT
+
+
+
+
+
