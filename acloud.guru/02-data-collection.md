@@ -24,4 +24,44 @@ Before you begin...
 | Good data | Bad data | Why it matters |
 |------|-----|----|
 | large datasets | small datasets | More data means better training |
-| precise attribute types, feature rich | missing values, nulls | need to train on relevant features |
+| precise attribute types, feature rich | useless attributes, not needed for solving problem at hand | need to train on relevant features |
+| Complete fields, no missing values. | Missing values, null fields. | Models can skew results when data points are missing |
+| Values are consistent | Inconsistent fields | Models like clean and consistent data |
+| Solid distribution of outcomes | Lots of positive outcomes, few negative outcomes | Models cannot learn with skewed distributions of outcomes |
+| Fair sampling | Biased sampling | Models will skew results with biased data |
+
+
+Rule of thumb: 10x the number of points as you have features
+
+Goal: build a data repository
+
+## General Data Terminology
+
+Terminology
+
+* Datasets - the data we use in machine learning, a collection of data
+    * input data, training/testing data
+* Columns/attributes/features
+* Rows/observations/samples/data points
+* Form of data
+    * Tables, json, comma separated, images, video, audio
+* Structured - defined schema w/attribute names and data types
+* Unstructured data - no defined schema or structural properties
+* Semi-structured - too unstructured for relational data but has some organizational structure
+
+Data stores
+
+* Relational databases
+    * Transactional
+    * Strict schea
+* Data warehouse
+    * Collect data from many different sources in many different formats
+    * Landing area and cleaning before it gets stored in the data warehouse (processing done on import)
+    * Data classified/stored with the user in ming
+    * Ready to use with BI tools - query and analysis
+* Data Lakes
+    * Store mass amounts of unstructured data, no processing before it goes in the data lake
+    * Historical data, data we don't know what to with yet
+    * Many different formats
+    * Processing done on output (schema on read)
+
