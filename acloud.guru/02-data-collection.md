@@ -122,5 +122,48 @@ Time Series Data
 
 
 
+## AWS Data Stores
+
+S3
+
+* Unlimited data storage that provides object based storage for any type of data.
+* Go to place for storing machine learning data.
+* Some s3 details
+    * 0 to 5 TB object size
+    * Stored in buckets
+    * Universal namespace for bucket names
+    * Endpoint styles
+        * s3-<region>-amazonaws.com/<bucketname> (path style, ends sept 2020)
+        * <bucketname>.s3.amazonaws.com (virtual hosted style)
+* How to get data into s3
+    * via console
+    * sdks, cli
+
+RDS
+
+* Relational database service
+* aurora, postgres sql, mysql, maria db, oracle, sql server engines
+
+DynamoDB
+
+* NoSQL, key-value pairs
+* Good for schemaless, unstructured/semi-structured data
+
+Redshift
+
+* Fully managed, clustered petabyte data warehouse solution
+* Use sql tools to query data in redshift
+* Columnar storage
+* Spectrum can query s3 data via redshift and quicksight as well
+
+Timestream
+
+* time series database system
+
+Document DB
+
+* Place to migrate mongo db data
+
+
 
 
