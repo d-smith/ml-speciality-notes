@@ -164,6 +164,41 @@ Document DB
 
 * Place to migrate mongo db data
 
+## AWS Migration Tools
+
+Data pipeline
+
+* process and move data between different aws compute and storage services
+* good for moving data from onprem to aws too
+* Built in activity objects
+    * copy, emr, hive, sql, etc
+* Run on schedule or on demand
+* Can also do transformation
+
+Database Migration Service
+
+* migrate data between different database platforms
+* can also output the results onto s3
+* homogenous and heterogenous migration (e.g. my sql to my sql, oracle to postgres)
+
+AWS Glue
+
+* Fully managed ETL service
+* Data catalog with databases and tables
+* Crawlers used to derive schema, data types, etc
+* Classifiers are used by the crawlers
+    * Several builtin, can use custom classifier
+
+
+Examples of getting data into s3
+
+* Postgress data to s3: data pipeline using sql activity
+* Unstructured log files in s3: AWS glue using custom classifier, output to s3
+* Clustered redshift data
+    * AWS data pipelime using unload comand to return query results into csv in s3
+    * AWS glue create catalog describing data and load it into s3
+* On premise mysql: DMS can load the data in csv onto s3
+
 
 
 
