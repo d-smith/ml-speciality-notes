@@ -15,10 +15,10 @@ Lather, rinse, repeat
 
 Before you begin...
 
-* What type of generalization are we seeking
+* What type of generalization are we seeking? What problem are we trying to solve?
 * Do we really need to use ML?
-* How will my ML generalization be used
-* What do we have to work with?
+* How will my ML generalization be used?
+* What data do we have to work with?
 * How can i tell if the generalization is working?
 
 | Good data | Bad data | Why it matters |
@@ -199,6 +199,19 @@ Examples of getting data into s3
     * AWS glue create catalog describing data and load it into s3
 * On premise mysql: DMS can load the data in csv onto s3
 
+## AWS Helper Tools
 
+Elastic Map Reduce
 
+* Fully managed hadoop cluster ecosystem that runs on AWS EC2 cluster
+* Use the open source tools that are part of the hadoop ecosystem (spark, presto, hive, hadoop fs, etc)
 
+Athena
+
+* Serverless platform that lets you use SQL queries on s3 data
+* Set up catalog with AWS glue
+* Query against glue tables
+
+## Data Collection Exam Tips
+
+* Read and watch the additional resource materials
