@@ -165,4 +165,19 @@ Kinesis family
 * For a given scenario know which streaming Kinesis service to use
 
 
+Lab Notes
 
+* https://randomuser.me
+
+
+Resources:
+
+* https://www.youtube.com/watch?v=jKPlGznbfZ0
+* https://www.youtube.com/watch?v=0AGNcZfYkzw
+* https://www.youtube.com/watch?v=EzxRtfSKlUA
+* https://aws.amazon.com/blogs/machine-learning/analyze-live-video-at-scale-in-real-time-using-amazon-kinesis-video-streams-and-amazon-sagemaker/
+* https://www.youtube.com/watch?v=dNp1emFFGbU
+* https://aws.amazon.com/blogs/big-data/create-real-time-clickstream-sessions-and-run-analytics-with-amazon-kinesis-data-analytics-aws-glue-and-amazon-athena/
+* https://aws.amazon.com/blogs/big-data/joining-and-enriching-streaming-data-on-amazon-kinesis/
+* https://d0.awsstatic.com/whitepapers/whitepaper-streaming-data-solutions-on-aws-with-amazon-kinesis.pdf
+* https://www.youtube.com/watch?v=M8jVTI0wHFM
