@@ -151,3 +151,65 @@ Feature Engineering Dates
     * Was the world cup taking place on this date?
 * Can include columns that include the extracted info, e.g. is_weekend, day_of_week, etc
 
+## Numeric Feature Engineering
+
+Numeric Feature Engineering
+
+* Transforming numeric values within our data so Machine Learning algorithms can better analyze them.
+
+Common Techniques
+
+* Feature Scaling - changes numeric values so all values are on the same scale
+    * Normalization
+    * Standardization
+* Binning - changes numeric values into groups or buckets of similar values
+    * Quantile binning aims to assign the same number of features to each bin
+
+Scaling Example
+
+* Home price
+    * Conceptually place the prices along the number line
+    * Assign largest value to 1, smallest to 0, the rest placed using x'    = x - min(x) / max(x) - min(x)
+    
+
+
+Standardization
+
+* Outliers can throw off normalization
+* Put the average at 0, and offset the rest of the values using the Z score
+    * Smooths out the standard deviation
+    * Calculate z score as:
+        * xbar = mean
+        * sigma - standard deviation
+        z = x - xbar / sigma
+
+Scaling Summary
+
+* Scaling features
+    * Required for many algorithms like linear/non-linear regression, clustering, neural networks, and more. 
+    * Scaling features depends on the algoritms you use
+* Normalization
+    * rescakes values from 0 to 1
+    * does not handle outliers
+* Standardization
+    * Rescales values by making the values of each feature in the data have zero mean and is less affected by outliers
+* You can always translate back to the original scale
+
+Binning
+
+* Takes numeric values and sets ranges to group values by
+* Use when the feature does not have a linear relationship with the target attribute / prediction
+* Can use the bins as categorical variables
+* Can end up with irregular bins if there's an uneven distribution
+
+Quantile Binning
+
+* Equal parts - group
+    * Create groups such that there are even distribution between the bis
+
+Binning Summary
+
+* Binning is used to group together values to reduce the effects of minor observation errors
+* Quantile binning is used to group together values to reduce the effects of minor observation errors
+* Optimum number of bins - depends on the characteristics of the variables and its relationshiop to the target. This is best determined through experimentation.
+
