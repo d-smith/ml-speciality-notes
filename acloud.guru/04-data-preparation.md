@@ -213,3 +213,38 @@ Binning Summary
 * Quantile binning is used to group together values to reduce the effects of minor observation errors
 * Optimum number of bins - depends on the characteristics of the variables and its relationshiop to the target. This is best determined through experimentation.
 
+## Other Feature Engineering
+
+Image Feature Engineering
+
+* Extracting useful information from images before using them in ML algorithms
+
+Problem: does an image of a handwritten represent a number
+
+* Features - break image into a grid, black in the grid: 1, otherwise 0
+* Compare them, NIST datset
+
+Audio Feature Engineering
+
+* Extrating useful information from sounds and audio before processing them with ML algorithms
+* Audio stream - amplitude and time, sample the audio stream to get amplitude at time
+
+Data Input - Built-In Algorithms
+
+* File
+    * Loads all of the data from s3 directly onto the training instance volumes
+    * CSV, JSON, Parquet, Image files
+* Pipe
+    * Datasets are streamed directly from Amazon S3
+        * faster start times
+        * better throughput
+    * recordIO-protobuf (creates tensor)
+
+
+Resource:
+
+* [Common dataset formats](https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html)
+
+Layering
+
+* Usually there are multiple layers of transformations done to properly prepare your data.
