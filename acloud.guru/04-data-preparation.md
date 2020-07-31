@@ -248,3 +248,128 @@ Resource:
 Layering
 
 * Usually there are multiple layers of transformations done to properly prepare your data.
+
+## Handling Missing Data
+
+Motivation: missing values in your dataset can interfere with analysis and model predictions.
+
+* Can be represented in many different ways - null, NaN, NA, None, etc
+* Handling missing values is an important data preparation step
+
+Why are the values missing in the first place?
+
+* Missing values correlated with another feature?
+* Missing at Random (MAR)
+    * Propensity for a data point to be missing is not related to the missing data, but is related to some of the observed data
+* Missing Completely at Random (MCAR)
+    * The fact that a certain value is missing has nothing to do with its hypothetical value and with the values of other variables
+* Missing not at Random (MNAR)
+    * Two possible reasons are that missing value depends on the hypothetical value or missing value is dependent on some other variable's value.
+
+Techniques to Handle Missing Values
+
+| Technique | Why this works | Ease of use |
+| -- | -- | -- |
+| Supervised learning | Predicts missing values based on the values of other features | Most difficult, can yield best results |
+| Mean | The average value | Quick and easy, results can vary |
+| Median | Orders values then chooses value in the middle | Quick and easy, results can vary |
+| Mode | Most common value | Quick and easy, results can vary |
+| Dropping rows | Remove rows missing values | Easiest but can dramatically change datasets |
+
+Replacing data in known as imputation.
+
+## Feature Selection
+
+Selecting the most relevant features from your data to prevent over-complicating the analysis, resolving potential inaccuracies, and removes irrelevant features or repeated information.
+
+* An intuitive step that humans take to reduce the number of features
+
+Principal Component Analysis
+
+* Unsupervised learning algorithm that reduces the number of features while still retaining as much information as possible
+* Reduces the number of features in a dataset
+
+Feature Selection Use Case
+
+| Problem | Technique | Why |
+| -- | -- | -- |
+|  Data is too large due to the large number of features | Principle component analysis (PCA) | Algorithm that reduces the total number of features |
+| Useless features that do not help solve ML problem | Remove features that do not help solve the problem |
+
+## AWS Data Preparation Helper Tools
+
+Data Preparation
+
+* AWS Glue
+* SageMaker
+* EMR
+* Athena
+* Data Pipeline
+
+Glue
+
+* Input Data Source
+    * S3, DynamoDB, RDS, Redshift, Database on EC2
+* Crawler to glean data typs, schema or structure of dataset
+* Data Catalog - metadata with data types and info about your data set
+* Set up jobs to run python or scala code to transform our data, do feature selection, etc
+* Can upload code directly or edit generated code in the console
+* Run on demand or on schedule or when another service is triggered
+* Output to Athena, EMR, S3, Redshift
+
+Data Catalog
+
+* Databases and Crawlers
+
+ETL
+
+* Jobs to transform the data
+    * Input from a table
+    * Good for reusable jobs you run over and over or on a schedule
+    * Jobs type
+        * Spark jobs - runs on managed cluster spun up in the background
+            * Pick python or scala
+                * Generate script for us
+                * Provide our own
+                * Start from scratch
+        * Python shell scripts
+            * More freedom to use traditional python libraries
+* Can do Apache Zeppelen and Jupyter notebook transformations too
+    * Ad hoc, not run as a job
+    * Hosted in SageMaker
+
+SageMaker
+
+* Can create Jupyter notebooks on a fully managed server
+* Use common python libraries or via package managers
+* More for ad hoc
+
+EMR
+
+* Managed hadoop, run standard hadoop ecosystem tools
+    * spark, presto, mahout, hive, jupyter, tensorflow, mxnet, etc.
+* Can run the entire ML process in EMR, but more cumbersome than SageMaker
+* Can integrate the SageMaker SDK for spark into the EMR environment, can use together
+    * Train models in EMR
+    * Host model endpoints in SageMaker
+
+Athena
+
+* Run SQL queries on your S3 data
+    * Uses data catalog
+
+Data Pipeline
+
+* Move data between data sources
+    * DB -> pipeline -> etl -> target data source
+
+
+Which Service To Use?
+
+| Datasource | Data preparation tool | Why |
+| -- | -- | -- |
+| S3, Redshift, RDS, DynamoDB, On premise DB | AWS Glue | Use Python or Scala to transform data and output data into s3 |
+| S3 | Athena | Query data and output results into s3, which can transform |
+| EMR | PySpark/Hive in EMR | Transform petabyyes of distributed data and output data into s3 |
+| RDS, EMR, DynamoDB, Redshift | Data pipeline | Setup ec2 instances to transform data and output data into s3, can use languages other than python and scala |
+
