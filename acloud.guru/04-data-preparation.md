@@ -329,6 +329,7 @@ ETL
     * Jobs type
         * Spark jobs - runs on managed cluster spun up in the background
             * Pick python or scala
+                * Python uses PySpark
                 * Generate script for us
                 * Provide our own
                 * Start from scratch
