@@ -4,7 +4,7 @@
 
 Machine Learning Cycle
 
-* We want to Clean and Prepare Out Data
+* We want to Clean and Prepare Our Data
 * First, we must understand our data
 
 Data prep
@@ -75,7 +75,7 @@ Summary
 
 Feature engineering
 
-* Transforming attributes within our data to make them more useful withing our model for the problen at hand. Feature engineering is often compared to an art.
+* Transforming attributes within our data to make them more useful within our model for the problen at hand. Feature engineering is often compared to an art.
 
 Text feature engineering: transforming text within our data so machine learning can better analyze it. Splitting text into bite size pieces.
 
@@ -112,11 +112,11 @@ OSB in action - OSB, size 4
 
 TF-IDF: Term frequency - invese document frequency
 
-* Represents how important a word or wors are to a given set of text by providing appropriate weights to erms that are common and less common in the text.
+* Represents how important a word or words are to a given set of text by providing appropriate weights to terms that are common and less common in the text.
 * Shows us the popularity of a word or words by making common words like "the" or "and" less important
 * Term frequency - how frequent does a word appear?
 * Document frequency - number of documents in which the which terms appear
-* Inverse - makes common works less meaningful
+* Inverse - makes common words less meaningful
 
 Vectorized tf-idf
 
@@ -189,7 +189,7 @@ Scaling Summary
     * Required for many algorithms like linear/non-linear regression, clustering, neural networks, and more. 
     * Scaling features depends on the algoritms you use
 * Normalization
-    * rescakes values from 0 to 1
+    * rescales values from 0 to 1
     * does not handle outliers
 * Standardization
     * Rescales values by making the values of each feature in the data have zero mean and is less affected by outliers
