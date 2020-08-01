@@ -373,3 +373,61 @@ Which Service To Use?
 | EMR | PySpark/Hive in EMR | Transform petabyyes of distributed data and output data into s3 |
 | RDS, EMR, DynamoDB, Redshift | Data pipeline | Setup ec2 instances to transform data and output data into s3, can use languages other than python and scala |
 
+## Exam Tips
+
+Data Prep
+
+* Know why it is important
+* Understand the different techniques
+
+Categorical Encoding
+
+* Know why CE is used for certain ML algorithms
+* Understand diff between ordinal and nominal categorical features
+* Understand categorical data is qualitative and continuous data in quantitative
+* Know what one-hot encoding is and when to use it
+
+Numeric Feature Engineering
+
+* Know what numeric feature engineering is any why it is important
+* Know different techniques used for feature engineering numeric data
+* Know the different types of feature scaling and when they should be used
+    * Normalization
+    * Standarization
+* Know what binning is and when it should be used (when small diffs in value are not important)
+
+Text Feature Engineering
+
+* Know what it is and why it is important
+* Know different techniques 
+    * N-gram
+    * Othogonal sparse bigram
+    * term frequency - invest document frequency (tf-idf)
+    * Removing punctuation
+    * lowercase transformatio
+    * Cartesian product
+* Understand why feature engineering dates is important
+* Know the questions we can answer when dates are transformed
+    * weekday, weekeng, etc
+
+Other Feature Engineering
+
+* audio, video, etc
+
+Handling Missing Values
+
+* Know why handling missing values is an important step in data prep
+* Know the different techniques used for handling missing values
+* Understand implications of dropping rows
+* Understand what data imputation is
+
+Feature Selection
+
+* Know what it is and why it is important
+* Understand diff between feature selection and PCA
+
+Data Preparation Tools
+
+* Know the service that allow you to transform data
+* Know what a data catalog, crawlers, and jobs are in AWS glue
+* Be abel to identify different AWS services and when to use one transformation tool over another.
