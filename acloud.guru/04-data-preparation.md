@@ -374,6 +374,17 @@ Which Service To Use?
 | EMR | PySpark/Hive in EMR | Transform petabyyes of distributed data and output data into s3 |
 | RDS, EMR, DynamoDB, Redshift | Data pipeline | Setup ec2 instances to transform data and output data into s3, can use languages other than python and scala |
 
+## Data Prep Lab
+
+* Data source - set of random data from [randomuser.me](https://randomuser.me/)
+* From this data file...
+    * Which percentage of users are male vs female?
+    * What are the ages of most users?
+    * Of the users, how many are in their 20s, 30s, 40s, etc?
+    * Convert the data to CSV and store it in s3
+    * Transform gender feature to a binary value - male 1, female 0.
+ 
+
 ## Exam Tips
 
 Data Prep
