@@ -54,3 +54,19 @@ Line sharts - use lines to show one or more variables changing over time
 
 * Example: plotting the value of bitcoin over the past 3 years.
 
+## Seeing Your Data Distribution
+
+Visualizing distributions in your data can show how your data is grouped or clustered over certain intervals.
+
+Techniques
+
+* Histograms
+    * These graphs put values into buckets or bins and determines a measurement (frequency, amount, duration, density, etc)
+    * Bins - number of groups to visualize
+* Box Plots
+    * These graphs show a wealth of distribution information. You can see things like lowest and highest values, outliers, and where most of the values fall.
+    * Top and bottom lines are max and min values, median line in the box, extreme values and outliers. Box shows where the majority of the values fall. Top quartile, middle quartile, bottom quartile.
+* Scatter Plots
+    * These graphs plot points along the x and y axis for two values.
+    * Date along the x axis
+
