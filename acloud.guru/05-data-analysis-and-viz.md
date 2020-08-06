@@ -70,7 +70,7 @@ Techniques
     * These graphs plot points along the x and y axis for two values.
     * Date along the x axis
 
-## Compositions
+## Composition
 
 Visualizing composition of your data show the various elements and what your data is made of.
 
@@ -107,3 +107,6 @@ Data Analysis and Visualization
 * Be able to recognize different types of viz and what each represents
     * relationships, comparisons, distribution, composition
 * Know what heatmaps are and what they can represent
+
+## Data Analysis and Visualization Lab
+
