@@ -80,7 +80,83 @@ Example: is email spam?
 
 Set the evaluation approach to error on the side of caution to ensure legitimate emails are not blocked. Watch *precision* of the model closely.
 
+## Data Preparation
 
+Bloom's taxonomy 
 
+* Professional level certification objective - evaluate (justify a stand or decision), analyze (draw connections among ideas), apply (use info in new situations).
+* Model analog - we want our models to generalize, not memorize.
 
+Use most data to train, but reserve some data to see if the model has really learned to generalize and not just repeating what we've already shown it.
 
+* 70 - 80% training data
+* 20 - 30% testing data
+* Want the same distribution between training and test data.
+    * Randomize the data so it has the same distribution
+    * Split
+    * Train
+    * test
+
+Time series data
+
+* Need to be representative - random points or segments not useful
+* Slice off the last few time segments (for example the last two months)
+
+Movie Review Example
+
+* Sequential split - what is it was presorted by genere
+
+K-Fold Cross-Validation Method
+
+1. Randomize
+2. Split
+3. Fold
+4. Train
+5. Test
+6. Repeat
+
+* Look the error rates for the different rounds - if error rates differ significantly across rounds then the data was not as random as you may have thought
+
+## SageMaker Modeling
+
+Mechanical Turk
+
+* Human labeling - emdedded in ground truth
+* Many mechanical turk tasks are now performed by AI services
+
+SageMaker
+
+* Ground truth
+* Notebook
+* Training 
+* Inference
+
+Submitting jobs to SageMaker
+
+* Console
+* SageMaker SDK
+* Jupyter 
+* Spark
+
+In general training and test datasets go in s3, sage maker reads it from there.
+
+* Randomize/shuffle to get similar distributions in training and test sets
+* Move label into first column, drop column titles
+* Upload dataset to s3 using appropriate format - CSV with test/csv content type on upload
+    * For unsupervised learning algorithms, include spec of absense of label in Content-Type, e.g. test/csv;label_size=0
+
+For optimal performance, the optimized protobug recordIO format is recommended.
+
+* Using this format, we can take advantage of Pipe mode
+* With recordIO and Pipe mode, data can be stremed from s3 to the learning instance requiring less EBS space and faster start-up
+
+CreateTrainingJob API
+
+* A couple options...
+    * High level python library provided by Amazon SageMaker
+    * Also in the SDK for python
+* Specify the training algorithm
+* Supply algorithm-specific training parameters
+* Specify the input and output configuration
+
+## SageMaker Training
