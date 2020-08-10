@@ -160,3 +160,78 @@ CreateTrainingJob API
 * Specify the input and output configuration
 
 ## SageMaker Training
+
+Why GPUs?
+
+Performance
+
+* Most performance - ASIC
+* GPU, FPFA - middle
+* CPU 0 least performance
+
+Flexibility
+
+* ASIC least flexible
+* FPGA - middling
+* GPU, CPU most flexible
+
+Cost
+
+* FPGA, ASIC most expensive
+* GPU
+* CPU - least
+
+Machine Learning
+
+* Use GPU amd CPU to do model training and development
+* Could conceivably create a ASIC with the model burned in (months or years) or program it into a FPGA device (hours or days).
+
+Training
+
+* ECR has training and inference images
+    * CreateTrainingJob API call uses training images
+    * CreateModel API call uses inference images
+* Training is often compute intensive, inference may need less
+* Image names
+    * channel helps keep straight training vs inference
+    * See [Algoritms Provided by Amazon SageMaker: Common Paramters](https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html)
+* Can create your own container images as well, upload in ECR and reference it
+* Deployment
+    * Selects container, can get data from S3 or front it with API gateway
+
+
+CloudWatch
+
+* Logs arguments provided, errors during training, algorithm accuracy stats, time to compolete a cycle
+* Common errors - errors specifying hyperparametes, invalid value for hyperparameter, incorrect protobuf file format
+
+Training with Spark
+
+* Use SageMaker Spark SDK
+* SDK can convert spark data frame format to protobuf
+* From there inputs from s3, training job output to s3
+
+## Exam Tips
+
+Model Design
+
+* Select a model that is a good fit for the objective
+* Choose the proper ML approach for your objective (regression, binary ckassification, etc)
+* Choose appropriate evaluation strategies for your model
+* Steps for training a model
+
+Data Prep
+
+* Understand concepts of training data and testing data
+* Identify potential biases introduced in an insufficient splut strategy
+* Know when to use sequential splits (time series) vs randomized splits, know what additional measures could be used to increase training data value.
+
+Model Training
+
+* Know the different options for model training
+    * SageMaker console, apache spark, custom code via SDK, Jupyter Notebook.
+* Be familiar with default data types SageMaker algorithms support and the recommended format for best performance
+* Know the difference between a Hyperparameter and Parameter
+* Understand the repository and container image concept for SageMaker training
+* Understand the process if you wish to provide your own algorithm
+* Understand the process for using apache spark to interact with SageMaker
