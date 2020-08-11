@@ -235,3 +235,20 @@ Model Training
 * Understand the repository and container image concept for SageMaker training
 * Understand the process if you wish to provide your own algorithm
 * Understand the process for using apache spark to interact with SageMaker
+
+## Modeling Lab
+
+The problem: deploy a network of 10 sensors across the globe, in the most likely places to sight UFOs.
+
+* What type of generalization are we trying to make?
+* Do we have enough data? What does our data look like?
+* What algorithm can help us solve this problem?
+* Where should we launch the sensors?
+
+Data Set [here](https://github.com/ACloudGuru-Resources/Course_AWS_Certified_Machine_Learning/blob/master/Chapter6/ufo_fullset.csv)
+
+Use K-Means
+
+* Set K to 10 - we want 10 locations
+* Get latitude and longitude, map using quicksight
+
