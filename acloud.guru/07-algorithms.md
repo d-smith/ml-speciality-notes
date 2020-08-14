@@ -81,3 +81,25 @@ Things to know about factorization machines
 Example: Movie recommendations
 
 * Think of a 1/0 per movie title - lots of movie titles means sparse populaton of review per user
+
+SageMaker Linear Learner - [this](https://docs.aws.amazon.com/sagemaker/latest/dg/linear-learner.html)
+
+* Input: labeled examples (x,y) - x is a high-dimensional vector, y is the label
+    * For binary classification, y is 0 or 1
+    * For multiclass classification, y is 0 to num-classes - 1
+    * For regression, y is a real number
+
+* The best models optimizes either of the following:
+    * Continuous objectives, such as mean square error, cross entropy loss, absolute error
+    * Discrete objectives suited for classification, such as F1 measure, precision, recall, or accuracy
+
+Linear Learner I/O Interface
+
+* Supports 3 channels: train, validation (opt), test (opt)
+* If validation data supplied, S3DataDistribution should be FullyReplicated
+* Training - recordIO-wrapped protobuf and CSV formats supported
+* Inference - application/json, application/x-recordio-protobuf, and text/csv formats
+    * Format of interence response depends on the model
+        * Regression is the prediction
+        * Binary classification - oredicted label and score indicating how strongly the algorithm believes the label should be 1
+        * Multiclass = predicted classs as number from 0 -- num-classes -1 plus score is an array of floating point numbers one per class.
