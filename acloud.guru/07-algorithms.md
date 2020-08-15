@@ -103,3 +103,25 @@ Linear Learner I/O Interface
         * Regression is the prediction
         * Binary classification - oredicted label and score indicating how strongly the algorithm believes the label should be 1
         * Multiclass = predicted classs as number from 0 -- num-classes -1 plus score is an array of floating point numbers one per class.
+
+EC2 Instance Recommendations
+
+* Can use single or multi machine CPU and GPU instances
+* No evidence multi-GPU computers are faster than single GPU computers
+
+How it Works
+
+* Step 1: preprocess
+    * Shuffle data before training
+    * Normalization (feature scaling) is important
+        * Option available to let linear learner do it for you: normalize_data and normalize_label hyperparameters
+* Step 2: Train
+    * Uses distributed stochastic gradient descent (SGD) implementation
+    * Can choose your optimization algorithm - Adam, AdaGrad, SGD, or others
+    * Hyperparameters include momentum, learning rate, learning rate schedule
+    * During training, simultaneously optimize multiple models, each with slightly different objectives - vary L1 and L2 regularization, etc.
+* Step 3: Validate and set the threshold
+    * Models evaluated against validation set to select most optimal model
+        * For regression, pick model that achieves best loss
+        * For classification, sample of the validation set is used to calibrate classification threshold. Select model with best perf based on selected evaluation criteria - F1 measure, accuracy, cross-entropy loss
+* Step 4: Deploy trainined linear model
