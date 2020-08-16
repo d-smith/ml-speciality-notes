@@ -82,7 +82,9 @@ Example: Movie recommendations
 
 * Think of a 1/0 per movie title - lots of movie titles means sparse populaton of review per user
 
-SageMaker Linear Learner - [this](https://docs.aws.amazon.com/sagemaker/latest/dg/linear-learner.html)
+### Notes from SageMaker Linear Learner
+
+Docs are [here](https://docs.aws.amazon.com/sagemaker/latest/dg/linear-learner.html)
 
 * Input: labeled examples (x,y) - x is a high-dimensional vector, y is the label
     * For binary classification, y is 0 or 1
@@ -125,3 +127,33 @@ How it Works
         * For regression, pick model that achieves best loss
         * For classification, sample of the validation set is used to calibrate classification threshold. Select model with best perf based on selected evaluation criteria - F1 measure, accuracy, cross-entropy loss
 * Step 4: Deploy trainined linear model
+
+### Notes from SageMaker Factorization Machines Algorithm
+
+Docs are [here](https://docs.aws.amazon.com/sagemaker/latest/dg/fact-machines.html)
+
+* General purpose supervised learning algorithm for classification and regression that's an extension of a linear model designed to capture interactions between features within high diminsional sparse data sets.
+    * Example usage: click prediction and item recommendation
+
+I/O Interface
+
+* Can be run in either binary classiciation mode or regression mode
+* Can use train and test channels
+* Scoring
+    * Regression - root mean squared error (RMSE)
+    * Classification - scored using Binary Cross Entropy (log loss), Accuracy (at theshold = 0.5), F1 score (at threshold = 0.5)
+* Training - recordIO-protobuf format with Float32 tensors
+* Inference - application/json and x-recordio-protobug formats
+    * Output
+        * binary classification - score and label (0 or 1). Score is a number that indicates how strongly the algorithm believes the label is 1. Score computed first, if >= 0.5 then label set to 1.
+        * regression - just the score is returned - it is the predicted value
+
+EC2 recommendations
+
+* In general run training and inference using CPUs
+* May be some benefits to one or more GPUs training on dense datasets
+
+How it Works
+
+* See [here](https://docs.aws.amazon.com/sagemaker/latest/dg/fact-machines-howitworks.html)
+* Three terms in the equation are a global bias term, the linear terms model, and the factorization terms that model the pairwise interactions between the variables
