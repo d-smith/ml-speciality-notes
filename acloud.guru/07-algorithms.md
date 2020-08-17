@@ -157,3 +157,53 @@ How it Works
 
 * See [here](https://docs.aws.amazon.com/sagemaker/latest/dg/fact-machines-howitworks.html)
 * Three terms in the equation are a global bias term, the linear terms model, and the factorization terms that model the pairwise interactions between the variables
+
+## Clustering
+
+Group objects based on similarities.
+
+* Unsupervized algorithms that aim to group things such that they are with other things more similar than different.
+
+K-Means
+
+* Unsupervised algorithm that attempts to find discrete groupings within data, where members of a group are as similar to one another and as different as possible from members of other groups. The Euclidean distance between these points represents the similarity of the corresponding observations.
+
+* K-Means will take in a list of things with attributes. You specify which attributes indicate similarity and the algorithm will attempt to group them together such that they are with other similar things. Similarity is calculated based on the distance between identifying attributes.
+
+SageMaker K-Means
+
+* Expects tabular data. Rows represent the observations tha you want to cluster and the columns represent attributes of the observations
+* You must know enough about the data set to propose attributes that will define similarity. If you have no idea, there are ways around this too.
+* SageMaker uses a modified k-means algorithm. AWS uses a modified version of the web-scale K-menas algorithm, which it claims to be more accurate.
+* CPU instances recommended. GPU instances can be used but SageMaker's K-means can only use one GPU.
+* Training is still a thing. You want to make sure you model is still accurate and using the best identifying attributes. Your data just doesn't have labels.
+* You define number of features and clusters. You must define the number of features for the algorithm to analyze and the number of clusters you want.
+
+Examples:
+
+* PCM
+* Handwritten digit recognition (MNIST data set)
+
+## Classification
+
+K-Nearest Nieghbor
+
+* An index-based, non-parametric method for classification or regression. For classification, the algorithm queries the k points that are closest to the sample point and returns the most frequently used label as the predicted label. For regression, the algoriym queries the k closest points to the sample point and returns the average of the feature values as predicted value.
+* Predicts the value or classification based on that which you decide are closest. It can be used to classify or predict a value (average value of nearest neighbors)
+
+Some details
+
+* You choose the number of neighbors. You include a value for k, or in other words, the number of closest neighbors to use for classifying.
+* KNN is lazy. Does not use training data points to generalize but rather use them to figure out who's nearby.
+* The training data stays in memory. KNN doesn't learn but rather use the training dataset to decide on similar samples.
+
+Use cases:
+
+* Credit ratings - group people together for credit rick based on attributes they share with others of known credit usage
+* Product recommendation - based on what someone likes, recommend similar items they might also like.
+
+Beware
+
+* Prone to biasing
+    * Redlining - the practive of literally drawing lines around neighborhoods and classifying those as best, still desireable, definitely declining, hazardour. Public and private entities would then use those redline maps to deny home loans, insurance, and other services for those less desirable areas, regardless of the qualifications of the applicant.
+    
