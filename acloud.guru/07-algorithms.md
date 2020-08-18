@@ -184,6 +184,44 @@ Examples:
 * PCM
 * Handwritten digit recognition (MNIST data set)
 
+### K-Means: SageMaker Documentation
+
+* Expects tabular data
+    * rows represent observations to cluster
+    * The n attributes in each row represents a point in n-diminsional space
+        * Euclidian distance between the points represents the similarity of the coressponding observations
+* I/O interface
+    * data provided in the train channel (recommended S3DataDistributionType=SHaredByS3Key), with optional test channel (S3DataDistributionType=FullyReplicated)
+    * recordIO-wrapped-protobuf and CSV supported for training
+    * Can use File mode or Pipe mode to train models on data that is formatted as recordIO-wrapped-protobuf or CSV
+    * For inference, text/csv, application/json, and application/x-recordio-protobuf are supported. k-means returns a closest_cluster label and the distance_to_cluster for each observation.
+* EC2 recommendation
+    * training - CPU instances
+    * Can train on GPU but limit use to p*.xlarge instances because only a single GPU per instance is used
+
+How it works
+
+* In SageMakers implementation you specify k (number of clusters) as well as a number of extra cluster centers (K=k*x), with the algorithm ultimately reducing to k clusters.
+    * Step 1: determine the initial cluster centers choosen from the observations in a small, randomly sampled batch. Choose one of the following strategies:
+        * random approach: randomly choose K observations in the input as cluster centers
+        * k-means++ : pick observation at random, and choose the point in space assocaited with the observation as center 1. For center 2, pick an observetion at randon that is far awat from cluster center 1 by determining the distance to center 1 assigning a propability that is proportional to the square of the distance. Continue this method for the remaining center selection until you have K clusters.
+    * Step 2: Iterate over the training data set and calculate cluster centers.
+    * Step 3: reduce from K to k
+
+Metrics
+
+* test:msd - mean squared distances between each record in the test set and the closest center of the model
+* test:ssd - sum of squared distances between each record in the test set and the closest center of the model
+
+Tunable K-Means Hyperparameters
+
+* epochs
+* extra_center_factpr
+* init_method (kmeans++, random)
+* mini_batch_size
+
+
+
 ## Classification
 
 K-Nearest Nieghbor
@@ -206,4 +244,3 @@ Beware
 
 * Prone to biasing
     * Redlining - the practive of literally drawing lines around neighborhoods and classifying those as best, still desireable, definitely declining, hazardour. Public and private entities would then use those redline maps to deny home loans, insurance, and other services for those less desirable areas, regardless of the qualifications of the applicant.
-    
