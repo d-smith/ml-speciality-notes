@@ -244,3 +244,42 @@ Beware
 
 * Prone to biasing
     * Redlining - the practive of literally drawing lines around neighborhoods and classifying those as best, still desireable, definitely declining, hazardour. Public and private entities would then use those redline maps to deny home loans, insurance, and other services for those less desirable areas, regardless of the qualifications of the applicant.
+
+### K-Means Nearest Neighbor - SageMaker Notes
+
+SageMaker k-NN algorithm
+
+* For classification, queries the k points closest to the sample and returns the most frequently used label.
+* For regression, queries the k closest points to the sample point and returns the average of their feature values as the predicted values.
+
+Training
+
+* 3 steps: sampling, dimension reduction, and index building.
+    * Sampling: reduces the size of the dataset to fit in memory
+    * Diminsion reduction: reduce the feature diminsions of the data to reduce footprint of k-NN model in memory and inference latency
+        * random projection
+        * fast Johnson-Lindenstrauss transform
+    * Index building: enable efficient lookups of distances between points who values/class is to be determined and the k nearest points used for inference
+
+I/O Interface
+
+* Use train channel for data to sample and construct into k-NN index
+* Use a test channel to emit scores in log files
+    * Scores listed as one line per mini-batch: accuracy for classifier, mean-squared error for refressor for score
+* Training inputs: test/csv and application/x-recordio-protobuf data formats. For input text/csv, first label_size columns are interpreted as the label vector. Use either File node or Pipe mode for training.
+* Inference inputs: application/json, application/x-recordio-protobuf, test/csv. Text/csv format accepts a label_size and encoding parameter, defaults are 0 and UTF-8
+* Inference outputs: application/json and application/x-recordio-protobuf
+    * For batch transform supoprts application/jsonlines for input and output
+
+EC2 recommendations
+
+* Can train on CPU or GPU
+* Inference requests for CPUs generally have lower latency (avoids task on CPU-to-GPU communications). GPUs generally have higher throughput for batches.
+
+Training metrics
+
+* test:accuracy for classifier, test:mse for regressor
+
+TUnable k-NN hyperparameters
+
+* k, sample_size
