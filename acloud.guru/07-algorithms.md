@@ -283,3 +283,28 @@ Training metrics
 TUnable k-NN hyperparameters
 
 * k, sample_size
+
+## Image Analysis
+
+* Can return a label (classiciation) and a confidence measure
+* Can select a confidence threshold
+
+Amazon Rekognition - amazon's image service
+
+Image Analysis Algoritms
+
+* Image classification - determine the classification of an image. It uses a convolutional neural network (ResNet) that can be trained from scratch or make use of transfer learning. Supervised learning.
+    * Can use ImageNet as a resource when training
+* Object detection - detects specific objects in an image and assigns a classification with a confidence score
+* Semantic Segmentation - low level analysis of individual pixels and identifies shapes within an image (think edge detection)
+    * Accepts PNG file input
+    * Only supports GPU instances for training
+    * Can deploy on either CPU or GPU instances. After training is done, model artifacts are output to S3. The model can be deployed as an endpoint with either CPU or GPU instances.
+    * Can do transfer learning for example using the cityscapes data set for self driving models
+
+* Image Analysis Use Cases
+    * Image Metadata Extraction - extract scene metadata from an image provided and store it in a machine-readable format.
+    * Computer Vision Systems - recognize orientation of a part on an assembly line and, if required, issue a command to a robotic arn to re-orient the part
+
+    
+
