@@ -306,5 +306,44 @@ Image Analysis Algoritms
     * Image Metadata Extraction - extract scene metadata from an image provided and store it in a machine-readable format.
     * Computer Vision Systems - recognize orientation of a part on an assembly line and, if required, issue a command to a robotic arn to re-orient the part
 
-    
+## Anomaly Detection
 
+  What's different? What's the same?
+
+### Algorithm: Random Cut Forest
+
+ * Detects anomalous data points within a set, like spikes in time series data, breaks in periodicity or unclassifiable points. Useful way to find outliers when it's not feasible to plot graphically. RCF is designed to wok with n-dimensional input.
+ * Find occurences in the data that are significantly beyond normal (usually more than 3 standard deviations) that could mess up your model training.   
+
+Random Cut Forest
+
+* Gives an Anomaly Score to Data Points. Low scores indicate that a data point is considered normal while high scores indicate the presence of an anomaly.
+* Scales well. RCF scales very well with respect to number of features, data set size, and number of instances.
+* Does not benefit from GPU. AWS recommends using normal compute instances.
+
+Use Cases:
+
+* Quality control
+    * Example: analyze an audio test pattern played by a high-end speaker system for any unusual frequencies.
+* Fraud Detection
+    * Example: if a financial transaction occurs for an unusual amount, unusual time or from an unusual place, flag the transaction for a closer look.
+
+### Algorithm: IP Insights
+
+IP Insights
+
+* Learns usage patterns for IPv4 addresses by capturing associations between IPv4 addresses and various entities such as user IDs or account numbers.
+* Can potentially flag odd online behaviour that might require closer review.
+
+* Ingests Entity/IP address pairs. Histic data can be used to learn baseline patterns.
+* Returns inferences via a score. When queried, the model will return a score that indidates how anomalous the entity/IP combination is, based on the baseline.
+* Uses a neural network. Uses a NN to learn latent vector representation for entities and IP addresses.
+* GPUs recommended for training. Generally GPUs are recommended but if the dataset is large, distributed CPU instances might be more cost effective.
+* CPUs recommended for inference. Does not require costly GPU instances.
+
+Use Cases
+
+* Tiered Authentication Models.
+    * Example: if a user tries to log into a website from an anomalous IP address, you might dynamically trigger an additional two-factor authentication routine.
+* Fraud Detection:
+    * Example: on a banking website, only permit certain activities in the IP address is unusual for a given user login.
