@@ -347,3 +347,91 @@ Use Cases
     * Example: if a user tries to log into a website from an anomalous IP address, you might dynamically trigger an additional two-factor authentication routine.
 * Fraud Detection:
     * Example: on a banking website, only permit certain activities in the IP address is unusual for a given user login.
+
+
+## Text Analysis
+
+### Latent Dirichlet Allocation (LDA)
+
+LDA
+
+* LDA algorithm is an  unsupervised learning algorithm that attempts to describe a set of observations as a mixture of distinct categories. LDA is most commonly used to disover a user-specified number of topics shared by documents within a text corpus. Here each observation is a document, the features are the presence (or occurrence count) of each word, and the categories are the topics.
+* Used to figure out how similar documents are based on the frequency of similar words.
+
+Use Cases
+
+* Article Recommendation
+    * Example: recommended articles on similar topics which you might have read or rated in the past
+* Musical Influence Modeling
+    * Example: Explore which musical artists over time were truely innovative and those who were influenced by those innovators
+
+### Neural Topic Model (NTM)
+
+Nueral Topic Model
+
+* Unsupervised learning algorithm that is used to organize a corpus of documents into topics that contain word groupings based on their statistical distribution. Topic modeling can be used to classify or summarize documents based on teh tioucs detected or to retrieve information or recommend content based on topic similarities.
+* Similar uses and function to LDA in that both NTM and LDA can perform topic modeling. However, NTW uses a difference algorithm which might yield different results than LDA.
+
+### Sequence to Sequence
+
+seq2seq
+
+* Supervised learning algorithm where the input is a sequence of tokens (for example text, audio) and the output generated is another sequence of tokens.
+* Think a language translation engine that can take in some text and predict what that text might be in another language. We must supply training data and vocabulary.
+
+1. Steps consist of embedding, encoding, and decoding. Using a nueral network nodel (RNN and CNN), the algorithm uses layers for embedding, encoding, and decoding into targets.
+2. Commonly initialize with pre-trained work libraries. A standard practive is initializing the embedding layer with a pre-trained word vector like FastText or Glove or to initialize it randomly and learn the parameters during training.
+3. Only GPU instances are supported. SageMaker seq2seq is only supported on GPU instance types and is only set up to train on a single machine. But it does offer support for multiple GPUs on an instance.
+
+Use cases:
+
+* Language translations
+    * Example: using a vocabulary, predict the translation of a sentence into another langauge.
+* Speech to text
+    * Given an audio vocabulary, predict the textual representation of spoken words
+
+### BlazingText
+
+BlazingText
+
+* Highly optimized implementation of the Word2Vec and text classiciation algorithms. The Word2Vec algorithm is useful for many downstream natural language processing (NLP) tasks, such as sentiment analysis, named entity recognition, machine translation, etc.
+* Really optimized way to determine contextual semantic relationships between words in a body text.
+
+
+Can run in multiple modes
+
+| Mode | Word2Vec (Unsupervised) | Text Classification (Supervised) |
+| -- | -- | -- |
+| Single CPU Instance | continuous bag of words, skip-gram, batch skip-gram | supervised |
+| Single GPU instance (1 or more GPUs) | Continous bag of words, skip-gram | supervised with 1 GPU |
+| Multiple CPU instances | batch skip-gram | None |
+
+1. Expects single pre-processed text file. Each line in the file should contain a single sentence. If you need to traing on multipe text files, concatenate them into one file and upload the file in the appropriate channel.
+2. Highly scalable. Improves on traditional Word2Vec algirithm by supporting scale-out for multiple CPU instances. FastText text classifier can leverage GPU accelaration.
+3. Around 20x faster than FastText. Supports pre-trained FastText model but can also perform training about 20x faster than FastText.
+
+Use cases:
+
+* Sentiment Analysis
+    * Example: evaluate customer comments in social media posts to evaluate whether they have a positive or negative sentiment
+* Document classification
+    * Example: review a large collection of documents and detect whether the document should be classified as containing sensitive data like personal information or trade secrets
+
+
+## Object2Vec
+
+Object2Vec
+
+* General purposed neural embedding algorithm that can learn low-dimensional dense embeddings of high-dimensional objects while preserving the semantics of the relationship between the pairs in the original embedding space.
+* A way to map out things in a d-dimensional space to figure out how similar they might be to one another.
+
+1. Expects things in pairs. Looking for pairs of item and whether they are positive or negative from a relationship standpoint. Accepts categorical label or rating/score-based labels.
+2. Feature engineering. Embedding can be used for downstream supervised tasks like classification or regression.
+3. Traiing data is required. Officially, Object2Vec requires labeled data for training, but there are ways to generate the relationship labels from natural clustering.
+
+Use cases:
+
+* Movie rating prediction
+    * Example: predict the rating a person is likely to give a movie based on similarity to other's movie ratings.
+* Document classification
+    * ExampleL determine which genre a book is based on its similarity to known genres (history, thriller, biography)
