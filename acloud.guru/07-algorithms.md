@@ -435,3 +435,67 @@ Use cases:
     * Example: predict the rating a person is likely to give a movie based on similarity to other's movie ratings.
 * Document classification
     * ExampleL determine which genre a book is based on its similarity to known genres (history, thriller, biography)
+
+## Reinforcement Learning
+
+The carrot and the stick
+
+* Positive - provide a positive reward thereby motivating the subject to repeat the behavior, presumably for another positive reward.
+* Negative - provide a displeasurable experience or response thereby motivating the subject to not repeat the undesired behavior.
+
+Reinforcement Learning
+
+* RL is a machine learning technique that attempts to learn a stategy, called a policy, that optimizes for an agent acting in an environment. Well suited for solving problems where an agent can make autonomous decisions.
+* Find the pat to the greatest reward.
+
+Markov Decision Process (MDP)
+
+* Agent - thing doing the activity. wants to max reward with the fewest steps
+* Environment - real world or simulation
+* Reward
+* State - information about the environment and relevant history of past steps
+* Action - action that can be performed
+* Observation - info available to the agent at each state/step
+* Episodes - iterations from start to finsh while agent is accumulating reward
+* Policy- decision making part the agent learns to maximize reward
+
+USe Cases
+
+* Autonomous Vehicles
+    * Example: a self-driving car model can learn to stay on the road through itertions of trial and error in a sumulation. Once the model is good enough, it can be tested in a real vehicle on a test track.
+* Intelligent HVAC Control
+    * Example: an RL model can learn patterns and routines of building occupants, impact of sunlight as it transitions across the sky and equipment efficiency to optimize the temperature control for lowest energy consumption.
+
+## Forecasting
+
+DeepAR
+
+* Forecasting algorithm for scalar time series using recurrent neural networks (RNN). DeepAR outperforms standard autoregressive integrated moving averages (ARIMA) and exponential smoothing (ETS) by training a single model over multiple time series as opposed to individual time series.
+* Can predict both point in time values and estimated values over a timeframe by using multiple sets of historic data.
+
+Cold Start Problem
+
+* Little or history to use for building a forecasting model.
+* Might want to combine datasets that includes charateristics of the thing with no history.
+
+| Forecast type | Example |
+| -- | -- |
+| Point forecast | number of sneakers sold in a week is X |
+| Probabilistic forecast | Number of sneakers sold in a week is between X and Y with Z% probability |
+
+DeepAR characteristics
+
+* Suport for various time series. Time series can be numbers, counts, or values in an interval (such as temperature readings between 0 and 100)
+* More time series is better. Recommended training a model on as may time series as are available. DeepAR really shines with hundreds of related time series.
+* Must supply at least 300 observations. DeepAR requires a minimum number of observations across all time series.
+* You must supply some hyperparameters. Context length (number of time point model gets to see before making predictions), epochs (number of passed over the training data), prediction length (how many time steps to forecast), and time frequency are all required (granularity of time series).
+* Automatic Evaluation of the model. Uses a backtest after training to evaluate the accuracy of the model automatically.
+
+Use Cases
+
+* Forecasting new product performance.
+    * Example: incorporate historical data from other products to create a model that can predict performance of a newly released product.
+* Predict labor needs for special events.
+    * Example: use labor utilization rates at other distribution centers to predict the required leve lof staffing for a brand new distribution center.
+
+    
