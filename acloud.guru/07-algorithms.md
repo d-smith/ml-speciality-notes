@@ -498,4 +498,106 @@ Use Cases
 * Predict labor needs for special events.
     * Example: use labor utilization rates at other distribution centers to predict the required leve lof staffing for a brand new distribution center.
 
-    
+## Ensemble Learning
+
+Ensemble learning - using multiple algorithms and models collectively to hopefully improve the model accuracy.
+
+XGBoost - Extreme gradient boosting
+
+* Open source implementation of the gradient boosted trees algorithm that attempts to accurately predict a target variable that attempts to accurately predict a target variable by combining the estimates of a set of simpler, weaker models.
+* A virtual swiss army knife for all sorts of regression, classification and ranking problems, with 2 required and 35 optional hyperparmeters to tune.
+
+SageMaker implementation
+
+* Accepts CSV and libsvm for training and inference. Uses tabluar data with rows representing observations, one column representing the target variable or label and the remaining columns representing features.
+* Only trains on CPU and memory bound. Currently only trains on CPU instances and is memory bound as opposed to compute bound.
+* AWS recommends lots of memory. AWS recommends using an instance with enough memory to hold the entire training data for optimal performance.
+* Spark integration. Using the SageMaker Spark SDK you can call XGBoost direct from within the Spark environment.
+
+Example: what price to see my house for 
+
+* Overly simplistic: linear relationship based on size
+* Want to consider other factors too - location, age, size, number of bedrooms, number of bathrooms, condition, walk-up or lift access, economic climate, lending cliate
+* We can create a set of Classification and Regression Trees (CART)
+* Different trees with different modifiers based on attributes that are built using
+* Hierarchy of trees, sum the impact of all the trees
+
+Use multiple trees to create a more realistic estimation model than any one tree could have provided.
+
+Use cases
+
+* Ranking
+    * Example: On an e-commerce website, you can leverage data about search results, clicks,
+    and successful purchases, and then use XGBoost to train a model that can return
+    relevance scores for searched products.
+* Fraud Detection
+    * Example: When XGBoost is given a dataset of past transactions and whether or not they
+    were fraudulent, it can learn a function that maps input transaction data to the probability that transaction was fraudulent.
+
+## Exam Tips
+
+Concepts
+
+* Difference between an algorithm and a heuristic.
+* Be aware of how bias can foul our models.
+* Understand the difference between a discrete model and a continuous model.
+* Understand the difference and characteristics of supervised learning, unsupervised learning and reinforcement learning.
+* Know the options SageMaker provides for algorithms (built-in, buy from marketplace and bring-your-own)
+
+Regression
+
+* Understand the types of problems best suited for regression
+* Linear Learner algorithm seeks to minimize error via Stochastic Gradient Descent (SGD) with regression problems.
+* Linear Learner can also be used with classification problems too.
+* Know that Factorization Machines are best suited for sparse datasets and don’t perform well on dense data at all.
+
+Clustering
+
+* Know that clustering algorithms are usually unsupervised.
+* Understand that K-Means can perform clustering similar items based on identifying attributes.
+* We must define the identifying attributes, number of features and number of clusters.
+
+Classification
+
+* Understand the difference between Classification and Clustering
+* K-NN can be used for classification or regression problems based on the nearest K data points.
+* K-NN considered lazy algorithm because it does not seek to generalize... rather looks for who’s nearest.
+
+Image Analysis
+
+* Know that image analysis services are usually classifier models which require training.
+* Understand the difference between the SageMaker algorithms of Image Classification, Object Detection and Semantic Segmentation.
+* Be familiar with the higher-level Amazon Rekogniton service.
+
+Anomoly Detection
+
+* Understand that Random Cut Forest is best used to detect unusual and out-of-the-ordinary events.
+* Know that IP Insights is used to detect anomalies between IPv4 addresses and various entities such as user IDs or account numbers.
+
+Text Analysis
+
+* Latent Dirichlet Allocation (LDA) most commonly used to figure out similarity of documents but that it also has uses in other clustering problems.
+* Know that a Neural Topic Model (NTM) and LDA can both perform topic modeling but use different algorithms.
+* Sequence to Sequence (seq2seq) is often used in language translation and speech to text by using an embedding, encoding and decoding process.
+* Understand BlazingText is highly optimized and can be used to cluster as well as classify text
+
+Reinforcement Learning
+
+* Know that RL seeks to find the policy that optimizes an agent acting in an environment.
+* Understand the components of the Markov Decision Process (MDP)
+* RL is best suited for situations where the agent can or must make autonomous decisions.
+
+Forecasting
+* Know why DeepAR is considered to outperform other regression methods of forecasting.
+* Understand the Cold Start Problem and how DeepAR can help.
+* Understand the difference between Point Forecasts and Probabilistic Forecasts
+
+Ensemble Learning
+
+* Understand Ensemble Learning from a conceptual standpoint.
+* XGBoost can be used for regression, classification and ranking problems.
+* Know how XGBoost uses decision trees to create an improvement over linear regression.
+* XGBoost is “memory-bound” versus “compute-bound”
+
+Know this stuff: [Use SageMaker built in algorithms](https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html)
+
