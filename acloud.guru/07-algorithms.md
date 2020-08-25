@@ -505,7 +505,8 @@ Ensemble learning - using multiple algorithms and models collectively to hopeful
 XGBoost - Extreme gradient boosting
 
 * Open source implementation of the gradient boosted trees algorithm that attempts to accurately predict a target variable that attempts to accurately predict a target variable by combining the estimates of a set of simpler, weaker models.
-* A virtual swiss army knife for all sorts of regression, classification and ranking problems, with 2 required and 35 optional hyperparmeters to tune.
+* A virtual swiss army knife for all sorts of regression, classification (binary and multiclass) and ranking problems, with 2 required and 35 optional hyperparmeters to tune.
+* Supervised learning technique
 
 SageMaker implementation
 
@@ -600,4 +601,14 @@ Ensemble Learning
 * XGBoost is “memory-bound” versus “compute-bound”
 
 Know this stuff: [Use SageMaker built in algorithms](https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html)
+
+
+
+## Lab Notes
+
+* Create a model artifact, store on s3
+* Model validation metrics and error rates
+* Some options...
+    * XGBoost as a multi-classification problem with researchOutcome as the target attribute. Goal is to minimize the training and validation error.
+    Linear Learner as a multi-classification problem with researchOutcome as the attribute. Goal is to maximize the training accuracy (and other metrics)
 
