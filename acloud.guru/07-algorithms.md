@@ -82,6 +82,10 @@ Example: Movie recommendations
 
 * Think of a 1/0 per movie title - lots of movie titles means sparse populaton of review per user
 
+Linear Regression vs Logistic Regression
+
+* Linear regression is used to predict the continuous dependent variable using a given set of independent variables. Logistic Regression is used to predict the categorical dependent variable using a given set of independent variables. ... In logistic Regression, we predict the values of categorical variables
+
 ### Notes from SageMaker Linear Learner
 
 Docs are [here](https://docs.aws.amazon.com/sagemaker/latest/dg/linear-learner.html)
@@ -305,6 +309,39 @@ Image Analysis Algoritms
 * Image Analysis Use Cases
     * Image Metadata Extraction - extract scene metadata from an image provided and store it in a machine-readable format.
     * Computer Vision Systems - recognize orientation of a part on an assembly line and, if required, issue a command to a robotic arn to re-orient the part
+
+### Sage Maker Notes - Image Analysis
+
+Details [here](https://docs.aws.amazon.com/sagemaker/latest/dg/image-classification.html)
+
+I/O Interface
+
+* File mode training: recordIO, image
+* Pipe mode training: recordIO
+* Inference: image/png, image/jpeg, application/x-image
+
+Training
+
+* Train with recordIO - specify recordIO for both train and validation channels, with one file for train and one for validation.
+* Train with image format - specify train, validation, train_lst, and validate_lst channels 
+    * Training and validation images must be separated, e.g. stored in different folders
+    * lst files - tab separated filewith three columns that contains a list of image file. First column is image index, second is class label index for the image, third is the relative path of the index file
+* Train with augmented manifest image format - can train in pipe mode using image files without creating recordIO files
+* Incremental training - seed the training of a new model with artifacts from a model you trained previously.
+* Two training modes - full training and transfer learning. Full training is initialized with random weights, transfer is initialized with pre-trained weights and just the top fully connected layer is initialized with random weights.
+
+Inference
+
+* SageMaker resizes image automatically
+* Output is the probability values for all classes encoded in JSON format
+
+EC2 Recommendations
+
+* GPU for training. Use instances with more memory for training with large batch sizes.
+* Can use multi-GPU and multi-machines for distributed training
+* Both CPU and GPU instances can be used for inference
+
+
 
 ## Anomaly Detection
 
