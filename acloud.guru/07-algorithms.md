@@ -343,11 +343,7 @@ EC2 Recommendations
 
 
 
-## Anomaly Detection
-
-  What's different? What's the same?
-
-### Algorithm: Random Cut Forest
+## Algorithm: Random Cut Forest
 
  * Detects anomalous data points within a set, like spikes in time series data, breaks in periodicity or unclassifiable points. Useful way to find outliers when it's not feasible to plot graphically. RCF is designed to wok with n-dimensional input.
  * Find occurences in the data that are significantly beyond normal (usually more than 3 standard deviations) that could mess up your model training.   
@@ -365,7 +361,35 @@ Use Cases:
 * Fraud Detection
     * Example: if a financial transaction occurs for an unusual amount, unusual time or from an unusual place, flag the transaction for a closer look.
 
-### Algorithm: IP Insights
+### SageMaker Random Cut Forest
+
+From [here]()
+
+> Amazon SageMaker Random Cut Forest (RCF) is an unsupervised algorithm for detecting anomalous data points within a data set. These are observations which diverge from otherwise well-structured or .patterned data. Anomalies can manifest as unexpected spikes in time series data, breaks in periodicity, or unclassifiable data points. They are easy to describe in that, when viewed in a plot, they are often easily distinguishable from the "regular" data. Including these anomalies in a data set can drastically increase the complexity of a machine learning task since the "regular" data can often be described with a simple model.
+>
+> With each data point, RCF associates an anomaly score. Low score values indicate that the data point is considered "normal." High values indicate the presence of an anomaly in the data. The definitions of "low" and "high" depend on the application but common practice suggests that scores beyond three standard deviations from the mean score are considered anomalous.
+>
+> While there are many applications of anomaly detection algorithms to one-dimensional time series data such as traffic volume analysis or sound volume spike detection, RCF is designed to work with arbitrary-dimensional input. Amazon SageMaker RCF scales well with respect to number of features, data set size, and number of instances.
+
+I/O
+
+* Supports train and test channels
+* Test channel (optional) computes accuracy, precision, recall, and F1-score metrics on labeled data
+* Formats
+    * recordIO or CSV for train and test data
+    * For CSV, text/csv;label_size=1 where the first column of each row represents the anomaly label: "1" for an anomalous data point and "0" for a normal data point
+    * Inference: application/x-recordio-protobuf, text/csv, application/json input. Output is recordio-protobuf or json
+
+EC2 Recommendations
+
+* CPU instance types - algorithm implementation does not use GPUs
+
+Tunable Hyperparameters
+
+* num_samples_per_tree, num_trees
+
+
+## Algorithm: IP Insights
 
 IP Insights
 
