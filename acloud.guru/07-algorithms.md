@@ -341,9 +341,9 @@ EC2 Recommendations
 * Can use multi-GPU and multi-machines for distributed training
 * Both CPU and GPU instances can be used for inference
 
+## Anomaly Detection
 
-
-## Algorithm: Random Cut Forest
+### Algorithm: Random Cut Forest
 
  * Detects anomalous data points within a set, like spikes in time series data, breaks in periodicity or unclassifiable points. Useful way to find outliers when it's not feasible to plot graphically. RCF is designed to wok with n-dimensional input.
  * Find occurences in the data that are significantly beyond normal (usually more than 3 standard deviations) that could mess up your model training.   
@@ -361,9 +361,9 @@ Use Cases:
 * Fraud Detection
     * Example: if a financial transaction occurs for an unusual amount, unusual time or from an unusual place, flag the transaction for a closer look.
 
-### SageMaker Random Cut Forest
+#### SageMaker Random Cut Forest
 
-From [here]()
+From [here](https://docs.aws.amazon.com/sagemaker/latest/dg/randomcutforest.html)
 
 > Amazon SageMaker Random Cut Forest (RCF) is an unsupervised algorithm for detecting anomalous data points within a data set. These are observations which diverge from otherwise well-structured or .patterned data. Anomalies can manifest as unexpected spikes in time series data, breaks in periodicity, or unclassifiable data points. They are easy to describe in that, when viewed in a plot, they are often easily distinguishable from the "regular" data. Including these anomalies in a data set can drastically increase the complexity of a machine learning task since the "regular" data can often be described with a simple model.
 >
@@ -389,7 +389,7 @@ Tunable Hyperparameters
 * num_samples_per_tree, num_trees
 
 
-## Algorithm: IP Insights
+### Algorithm: IP Insights
 
 IP Insights
 
@@ -409,6 +409,32 @@ Use Cases
 * Fraud Detection:
     * Example: on a banking website, only permit certain activities in the IP address is unusual for a given user login.
 
+#### SageMaker Notes 
+
+From [here](https://docs.aws.amazon.com/sagemaker/latest/dg/ip-insights.html)
+
+> Amazon SageMaker IP Insights is an unsupervised learning algorithm that learns the usage patterns for IPv4 addresses. It is designed to capture associations between IPv4 addresses and various entities, such as user IDs or account numbers. You can use it to identify a user attempting to log into a web service from an anomalous IP address, for example. Or you can use it to identify an account that is attempting to create computing resources from an unusual IP address. Trained IP Insight models can be hosted at an endpoint for making real-time predictions or used for processing batch transforms.
+>
+> Amazon SageMaker IP insights ingests historical data as (entity, IPv4 Address) pairs and learns the IP usage patterns of each entity. When queried with an (entity, IPv4 Address) event, an Amazon SageMaker IP Insights model returns a score that infers how anomalous the pattern of the event is. For example, when a user attempts to log in from an IP address, if the IP Insights score is high enough, a web login server might decide to trigger a multi-factor authentication system. In more advanced solutions, you can feed the IP Insights score into another machine learning model. For example, you can combine the IP Insight score with other features to rank the findings of another security system, such as those from Amazon GuardDuty.
+>
+> The Amazon SageMaker IP Insights algorithm can also learn vector representations of IP addresses, known as embeddings. You can use vector-encoded embeddings as features in downstream machine learning tasks that use the information observed in the IP addresses. For example, you can use them in tasks such as measuring similarities between IP addresses in clustering and visualization tasks.
+
+I/O
+
+* The Amazon SageMaker IP Insights algorithm supports training and validation data channels. It uses the optional validation channel to compute an area-under-curve (AUC) score on a predefined negative sampling strategy. The AUC metric validates how well the model discriminates between positive and negative samples.
+* Training and validation data content types need to be in text/csv format.
+* The first column of the CSV data is an opaque string that provides a unique identifier for the entity. The second column is an IPv4 address in decimal-dot notation. IP Insights currently supports only File mode. 
+* For inference, IP Insights supports text/csv, application/json, and application/jsonlines data content types.
+* IP Insights inference returns output formatted as either application/json or application/jsonlines. Each record in the output data contains the corresponding dot_product (or compatibility score) for each input data point.
+
+EC2 Instance Recommendations
+
+* Can train on both GPU and CPU instances. In general GPU recommended for training - in some cases with large datasets distribute training with CPUs might reduce training costs
+* CPU recommended for inference
+
+How it Works
+
+> Amazon SageMaker IP Insights is an unsupervised algorithm that consumes observed data in the form of (entity, IPv4 address) pairs that associates entities with IP addresses. IP Insights determines how likely it is that an entity would use a particular IP address by learning latent vector representations for both entities and IP addresses. The distance between these two representations can then serve as the proxy for how likely this association is.
 
 ## Text Analysis
 
