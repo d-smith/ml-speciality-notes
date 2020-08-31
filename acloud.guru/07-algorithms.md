@@ -295,7 +295,7 @@ TUnable k-NN hyperparameters
 
 Amazon Rekognition - amazon's image service
 
-Image Analysis Algoritms
+## Image Analysis Algoritms
 
 * Image classification - determine the classification of an image. It uses a convolutional neural network (ResNet) that can be trained from scratch or make use of transfer learning. Supervised learning.
     * Can use ImageNet as a resource when training
@@ -310,7 +310,7 @@ Image Analysis Algoritms
     * Image Metadata Extraction - extract scene metadata from an image provided and store it in a machine-readable format.
     * Computer Vision Systems - recognize orientation of a part on an assembly line and, if required, issue a command to a robotic arn to re-orient the part
 
-### Sage Maker Notes - Image Analysis
+### Sage Maker Notes - Image Classification
 
 Details [here](https://docs.aws.amazon.com/sagemaker/latest/dg/image-classification.html)
 
@@ -340,6 +340,19 @@ EC2 Recommendations
 * GPU for training. Use instances with more memory for training with large batch sizes.
 * Can use multi-GPU and multi-machines for distributed training
 * Both CPU and GPU instances can be used for inference
+
+
+### Object Detection Algorithm
+
+The Amazon SageMaker Object Detection algorithm detects and classifies objects in images using a single deep neural network. It is a supervised learning algorithm that takes images as input and identifies all instances of objects within the image scene. The object is categorized into one of the classes in a specified collection with a confidence score that it belongs to the class. Its location and scale in the image are indicated by a rectangular bounding box. It uses the Single Shot multibox Detector (SSD) framework and supports two base networks: VGG and ResNet. The network can be trained from scratch, or trained with models that have been pre-trained on the ImageNet dataset.
+
+### Semantic Segmentation
+
+> The Amazon SageMaker semantic segmentation algorithm provides a fine-grained, pixel-level approach to developing computer vision applications. It tags every pixel in an image with a class label from a predefined set of classes. Tagging is fundamental for understanding scenes, which is critical to an increasing number of computer vision applications, such as self-driving vehicles, medical imaging diagnostics, and robot sensing.
+> 
+> For comparison, the Amazon SageMaker Image Classification Algorithm is a supervised learning algorithm that analyzes only whole images, classifying them into one of multiple output categories. The Object Detection Algorithm is a supervised learning algorithm that detects and classifies all instances of an object in an image. It indicates the location and scale of each object in the image with a rectangular bounding box.
+> 
+> Because the semantic segmentation algorithm classifies every pixel in an image, it also provides information about the shapes of the objects contained in the image. The segmentation output is represented as an RGB or grayscale image, called a segmentation mask. A segmentation mask is an RGB (or grayscale) image with the same shape as the input image.
 
 ## Anomaly Detection
 
@@ -445,6 +458,14 @@ LDA
 * LDA algorithm is an  unsupervised learning algorithm that attempts to describe a set of observations as a mixture of distinct categories. LDA is most commonly used to disover a user-specified number of topics shared by documents within a text corpus. Here each observation is a document, the features are the presence (or occurrence count) of each word, and the categories are the topics.
 * Used to figure out how similar documents are based on the frequency of similar words.
 
+From the SageMaker docs:
+
+> Amazon SageMaker LDA is an unsupervised learning algorithm that attempts to describe a set of observations as a mixture of different categories. These categories are themselves a probability distribution over the features. LDA is a generative probability model, which means it attempts to provide a model for the distribution of outputs and inputs based on latent variables. This is opposed to discriminative models, which attempt to learn how inputs map to outputs.
+> 
+> You can use LDA for a variety of tasks, from clustering customers based on product purchases to automatic harmonic analysis in music. However, it is most commonly associated with topic modeling in text corpuses. Observations are referred to as documents. The feature set is referred to as vocabulary. A feature is referred to as a word. And the resulting categories are referred to as topics.
+
+
+
 Use Cases
 
 * Article Recommendation
@@ -456,8 +477,8 @@ Use Cases
 
 Nueral Topic Model
 
-* Unsupervised learning algorithm that is used to organize a corpus of documents into topics that contain word groupings based on their statistical distribution. Topic modeling can be used to classify or summarize documents based on teh tioucs detected or to retrieve information or recommend content based on topic similarities.
-* Similar uses and function to LDA in that both NTM and LDA can perform topic modeling. However, NTW uses a difference algorithm which might yield different results than LDA.
+* Unsupervised learning algorithm that is used to organize a corpus of documents into topics that contain word groupings based on their statistical distribution. Topic modeling can be used to classify or summarize documents based on the topics detected or to retrieve information or recommend content based on topic similarities.
+* Similar uses and function to LDA in that both NTM and LDA can perform topic modeling. However, NTM uses a difference algorithm which might yield different results than LDA.
 
 ### Sequence to Sequence
 
@@ -509,12 +530,12 @@ Use cases:
 
 Object2Vec
 
-* General purposed neural embedding algorithm that can learn low-dimensional dense embeddings of high-dimensional objects while preserving the semantics of the relationship between the pairs in the original embedding space.
+* The Amazon SageMaker Object2Vec algorithm is a general-purpose neural embedding algorithm that is highly customizable. It can learn low-dimensional dense embeddings of high-dimensional objects. The embeddings are learned in a way that preserves the semantics of the relationship between pairs of objects in the original space in the embedding space. You can use the learned embeddings to efficiently compute nearest neighbors of objects and to visualize natural clusters of related objects in low-dimensional space, for example. You can also use the embeddings as features of the corresponding objects in downstream supervised tasks, such as classification or regression.
 * A way to map out things in a d-dimensional space to figure out how similar they might be to one another.
 
 1. Expects things in pairs. Looking for pairs of item and whether they are positive or negative from a relationship standpoint. Accepts categorical label or rating/score-based labels.
 2. Feature engineering. Embedding can be used for downstream supervised tasks like classification or regression.
-3. Traiing data is required. Officially, Object2Vec requires labeled data for training, but there are ways to generate the relationship labels from natural clustering.
+3. Training data is required. Officially, Object2Vec requires labeled data for training, but there are ways to generate the relationship labels from natural clustering.
 
 Use cases:
 
@@ -555,7 +576,7 @@ USe Cases
 
 ## Forecasting
 
-DeepAR
+### DeepAR
 
 * Forecasting algorithm for scalar time series using recurrent neural networks (RNN). DeepAR outperforms standard autoregressive integrated moving averages (ARIMA) and exponential smoothing (ETS) by training a single model over multiple time series as opposed to individual time series.
 * Can predict both point in time values and estimated values over a timeframe by using multiple sets of historic data.
@@ -589,7 +610,7 @@ Use Cases
 
 Ensemble learning - using multiple algorithms and models collectively to hopefully improve the model accuracy.
 
-XGBoost - Extreme gradient boosting
+### XGBoost - Extreme gradient boosting
 
 * Open source implementation of the gradient boosted trees algorithm that attempts to accurately predict a target variable that attempts to accurately predict a target variable by combining the estimates of a set of simpler, weaker models.
 * A virtual swiss army knife for all sorts of regression, classification (binary and multiclass) and ranking problems, with 2 required and 35 optional hyperparmeters to tune.
@@ -621,6 +642,22 @@ Use cases
 * Fraud Detection
     * Example: When XGBoost is given a dataset of past transactions and whether or not they
     were fraudulent, it can learn a function that maps input transaction data to the probability that transaction was fraudulent.
+
+
+## Principal Component Analysis (PCA)
+
+> PCA is an unsupervised machine learning algorithm that attempts to reduce the dimensionality (number of features) within a dataset while still retaining as much information as possible. This is done by finding a new set of features called components, which are composites of the original features that are uncorrelated with one another. They are also constrained so that the first component accounts for the largest possible variability in the data, the second component the second most variability, and so on.
+> 
+> In Amazon SageMaker, PCA operates in two modes, depending on the scenario:
+> 
+> regular: For datasets with sparse data and a moderate number of observations and features.
+> 
+> randomized: For datasets with both a large number of observations and features. This mode uses an approximation algorithm.
+>
+> PCA uses tabular data.
+>
+> The rows represent observations you want to embed in a lower dimensional space. The columns represent features that you want to find a reduced approximation for. The algorithm calculates the covariance matrix (or an approximation thereof in a distributed manner), and then performs the singular value decomposition on this summary to produce the principal components.
+
 
 ## Exam Tips
 
