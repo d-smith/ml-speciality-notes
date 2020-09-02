@@ -122,8 +122,63 @@ Confusion matrix
 
 ## Improving Model Accuracy
 
-* Collect datat. Increase the number of training example available to the model. More (good) data usually means a more accurate model.
+* Collect more data. Increase the number of training example available to the model. More (good) data usually means a more accurate model.
 * Feature processing. Provide additional quality variables or refine the existing variables so they are more representative.
 * Model Parameter Tuning. Adjust the hyperparameters used by your training algorithm.
 * Beware of bias and over-fitting.
+
+
+## Model Tuning
+
+Making small adjustments to hyperparameters to improve the performance of the model.
+
+* Hyperparameters for each model documented in SageMaker user guide.
+
+Automatic Model Tuning
+
+* Also known as hyper parameter tuning, finds the best version of a model by running many jobs that test a range of hyperparameters on your dataset.
+
+1. Choose a tunable hyperparameter. Decide what hyperparameters you want to adjust. Not all hyperparameters can be auto-tuned.
+2. Choose a range of value. Specify a range of values to use for tuning the hyperparameter, paying attention to the allowable max/min.
+3. Choose the objective metric. Specify the objective metric that the auto-tuning job will seek to optimize.
+
+Bayesian Reasoning
+
+* Pay attention to what's happended in the past and use it to predict what will happen in the future.
+* Optimization technique to optimize the search for optimal hyperparameters.
+
+## Evaluation and Optimization Exam Tips
+
+Concepts
+
+* We want our model to generalize, not memorize.
+* Understand the difference between Offline validation and Online validation.
+* Know conceptually about Canary deployment.
+
+Monitoring and Analyzing Training Jobs
+
+* Know the difference between training metrics and validation metrics.
+* Know that cloudwatch integrates well with SageMaker for both logging and metric charting and dashboarding.
+* Understand how to define custom metrics for custom algorithms.
+
+Evaluating Model Accuracy
+
+* Understand underfitting and overfitting as well as potential causes and counter measures.
+* Know that regression accuracy is measured ny RMSE.
+* Be able to explain what it means if a histogram of residuals is skewed negatively or positively.
+* For binary classification, know what the AUC metric indicates
+* Understand trade-offs and how different scenarios might call for different optimizations
+* Understand how to read a confusion matrix and know what an F1 score and Macro Average F1 Score metric can tell you.
+* Know some ways to improve model accuracy.
+
+Model Tuning
+
+* Recall hyperparameters and how they can be adjusted to control your learning process.
+* Know the three components you must define for automatic tuning.
+* Understand that the best metrics to optimize varies by algorithm and sometimes is specific to how you use the algorithm.
+* Conceptually understand Bayesian Optimization
+* Automatic tuning is not the perfect solution and sometimes may result in weaker models.
+
+Resources:
+* [Hyperparameter Tuning with Amazon SageMaker's Automatic Model Tuning - AWS Online Tech Talks](https://www.youtube.com/watch?v=ynYnZywayC4)
 
