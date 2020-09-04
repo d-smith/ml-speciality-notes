@@ -52,6 +52,7 @@ Overfitting
 
 * Our model is too dependent on the data used to train the model. If it sees new data, accuracy will be poor unless it is identical to the training data.
 * We have trained our algorithm to memorize rather than generalize.
+* For linear learner, tune the model against a validation metric instead of a training metric.
 
 
 Robust model
