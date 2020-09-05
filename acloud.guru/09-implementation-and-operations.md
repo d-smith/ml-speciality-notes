@@ -41,3 +41,31 @@ CI, CD, and More
 * Continuous Integration - merge code changes back to main branch as frequently as possible with automated testing as you go.
 * Continuous Delivery - you have automated your release process to the point you can deploy at the click of a button.
 * Continuous Deployment - each code change that passes all stages of the release process is released into production with no human intervention required.
+
+## AI Developer Services
+
+AWS AI Stack
+
+* AI Services - for app developers, no ML experience required
+    * Amazon Comprehend
+    * Amazon Lex
+    * Amazon Polly
+    * Amazon Rekognition
+    * Amazon Transcribe
+    * Amazon Translate
+    * Amazon Personalize
+* ML Services - ML developers and data scientists
+    * SageMaker
+        * Ground Truth
+        * Training
+        * Notebooks
+        * Hosting
+        * Algorithms
+        * Marketplace
+* ML Frameworks and Infrstructure - ML researchers and academics
+    * Frameworks - mxnet, tensortflow
+    * Interfaces - gluon, keras
+    * Amazon Greengrass
+    * Amazon EC2
+    * AWS Deep Learning AMIs
+
