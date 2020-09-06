@@ -227,6 +227,31 @@ full GPU instance.
 * Must be configured when you create a deployable model and
 EI is not available for all algorithms yet.
 
+Autoscaling SageMaker Models
 
+* Similar to EC2 autoscaling
+* Dynamically add and remove instances to a production variant
+based on changes in workload.
+* You define and apply a scaling policy that uses a CloudWatch
+metric and target value such as InvocationsPerInstance.
+* Specify min and max instances, target metric, cooldown for scale in and scale out.
 
-* 
+## Other Model Deployment Options
+
+* Amazon Elastic Container Service
+* Amazon EC2
+* Amazon Elastic Map Reduce
+* On-Premises
+
+The basic approach
+
+* Start with the typical model creation process which produces the model artifacts
+* With ECS, use the interence container for the algorithm along with the model artifacts in s3
+* With EC2, use the s3 artifacts along with the deep learning AMI. Spin up an instance type appropriate for the algorithm.
+* EMR - deploy using spark
+    * Use existing spark pipelines for preprocessing data
+    * Potentially more cost effective for non-gpu workloads
+    * Leverage existing hadoop landscape and tools
+* Deploy locally
+    * Use mxnet or tensorflow and the standard model building process, writing model artifacts to s3
+    * Download the model artifacts to on-premise storage, run a tensorflow or mxnet application on premises.
