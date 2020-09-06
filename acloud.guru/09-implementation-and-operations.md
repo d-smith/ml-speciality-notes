@@ -155,3 +155,78 @@ Amazon Kendra
 Amazon Fraud Detector
 
 * Amazon Fraud Detector is a fully managed service that uses machine learning (ML) and more than 20 years of fraud detection expertise from Amazon, to identify potentially fraudulent activity so customers can catch more online fraud faster.
+
+## SageMaker Deployments
+
+Types of Deployments
+
+* Batch - SageMaker offline
+* Online - SageMaker hosting services
+
+SageMaker Hosting Services
+
+1. Create a model. This is the inference engine that will provide predictions for your endpoint.
+2. Create an endpoint configuration. Defines the model to use, inference instance type, instance count, variant name and weight. Also called a production variant.
+3. Create an endpoint. Publishes the model via the endpoint to be called by the SageMaker API InvokeEndpoint method.
+
+Training
+
+* Artifacts for the model are written to s3
+
+![Training](./smtraining.png)
+
+Inference
+
+* Reference the model artifacts and the container image to use (for the algorithm)
+
+![Inference](./smhosting.png)
+
+Retraining
+
+* Retrain model using additional data aquired while in production
+* Can have multiple models
+
+Endpoint Configuration
+
+* Can have different variations for multiple model versions deployed simultaneously
+* Traffic weights are assigned to each variant/model version, assigned using the initial_weight parameter.
+* Initial Weights controls the amount of traffic going to a particular production variant.
+* Percent of traffic = variant weight / sum of all weights (like route 53 weighted traffic)
+
+Batch Transforms
+
+![Batch transform](./batchtransform.png)
+
+Inference Pipelines
+
+* Sometimes we need to chain together algorithms and feature engineering steps.
+* For example, for the problem "What is the estimated basked size of shoppers who respond to our email promotion?"
+    * Remove outliers -> Identify relevant attributes -> Cluster into groups -> Predict basket size
+    * Random cut forest -> PCA -> K-means -> Linear learner
+* SageMaker Infererence Pipelines
+    * A SageMaker model composed of a sequence of two to five containers which can process data as a flow. These can be built-in algorithms or your own custom algorthms in Docker containers.
+    * Can be used for both real-time inference and batch transform
+    * All containers deployed to the same EC2 instance for local speed
+
+SageMaker Neo
+
+* Enables a simplified way to optimize machine learning models
+for a variety of computing architectures such as ARM, Intel and
+nVidia processors.
+    * Avoid having to do low level optimizations for different target architectures for deployment
+* Consists of a compiler to convert the machine learning model
+into an optimized binary and a runtime to execute the model on
+the target architecture. 
+
+Elastic Inference
+
+* Speeds up throughput and decreases latency of real-time
+inferences deployed on SageMaker Hosted Services using
+only CPU-based instances but much more cost-effective than a
+full GPU instance.
+* Must be configured when you create a deployable model and
+EI is not available for all algorithms yet.
+
+
+
+* 
