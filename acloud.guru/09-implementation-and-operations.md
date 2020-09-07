@@ -235,6 +235,7 @@ based on changes in workload.
 * You define and apply a scaling policy that uses a CloudWatch
 metric and target value such as InvocationsPerInstance.
 * Specify min and max instances, target metric, cooldown for scale in and scale out.
+* In cases where traffic is very heavy then non-existent, you may have to force a scale-in because CloudWatch does not emit zero records. The absence of such records will not trigger a scale-in event.
 
 ## Other Model Deployment Options
 
@@ -255,3 +256,177 @@ The basic approach
 * Deploy locally
     * Use mxnet or tensorflow and the standard model building process, writing model artifacts to s3
     * Download the model artifacts to on-premise storage, run a tensorflow or mxnet application on premises.
+
+
+## Security
+
+Aspects
+
+* Visibility
+    * VPC endpoints, NACLs, security groups
+* Authentication
+    * IAM
+* Access Control
+    * IAM (roles, policies, groups)
+* Encryption
+    * KMS
+
+AWS ( VPC ( NACL ( Security group ( EC2
+
+VPC Endpoint
+
+* A way to access other AWS services using the AWS network without
+having to send traffic over the public internet
+* VPC Endpoints increase security and allow AWS services to
+communicate privately and reliability.
+* Two types: Interface and Gateway
+    * Gateway Endpoints are only available for S3 and
+DynamoDB and differ because they use a route table entry versus a
+private DNS entry that the Interface Endpoints use. In the end, they
+both fulfill the same function
+* Private link - service behind interface vpc endpoints
+
+Notebook Instances
+
+* Internet-enabled by default. By default, SageMaker notebook
+instances are internet-enabled. This
+allows for download and access to
+popular packages and libraries.
+* Can Disable Internet Access. Internet access may represent a
+security concern to some, so you can
+disable direct Internet access.
+However, for training and hosting
+models, you will need a NAT gateway,
+routes and security groups that permit
+Internet access.
+* Designed for Single User. Notebook instances provide the
+user with root access for installing
+packages. Best practice is one
+user per notebook instance. We
+can restrict access to users or roles
+via IAM policy.
+
+
+IAM Policies
+
+| | Identity-based Policy | Resource-based Policy |
+| -- | -- | -- |
+| What | A permissions policy attached to IAM identities | A permissions policy attached to a resource |
+| Why | Allow or denty access to a role or a user | Allow or denty access to a resource |
+| When | Only allow user mary access to the notebook instance Marys_Notebook | Restrict R/W access to an S3 bucket by specific AWS accounts |
+
+Encryption
+
+* At rest - KMS
+* In transit - certs, TLS
+
+Endpoint Service from the Outside
+
+* API gateway with a custom domain
+* Invokes a lambda 
+* Lambda invokes the inference endpoint
+
+## Monitor and Evaluate
+
+Cloudwatch with Amazon SageMaker
+
+* Wide Variety of Metrics.
+Endpoint Invocation, Endpoint
+Instance, Training, Transform and
+Ground Truth metrics available in
+addition to algorithm-specific metrics.
+* Near Real-Time
+Most SageMaker-specific metrics are
+available at a 1-minute frequency for
+quick reactions
+* Metrics Available for 15 Months
+Statistics are kept 15 months to
+provide plenty of historical information 
+* Metrics are collected and sent every
+five minutes for training and prediction
+jobs.
+
+Logs
+
+* Notebooks integrated with cloudwatch (stderr, stdout)
+
+Re-Training
+
+* Overtime accuracy can decline
+* May want to monitor the metric, file and alarm to retrain, etc.
+
+CloudTrail
+
+* Log API Access
+Captures any API calls made by or on
+behalf of SageMaker within your
+account
+* Last 90 Day’s Events
+By default, the last 90 days of events
+are visible in CloudTrail Event History.
+* Can Be Kept Indefinitely
+You can setup a CloudTrail to store
+logs on S3 to reference for as long as
+you’d like, as well as practice lifecycle
+processes like archive to Glacier.
+* Query with Amazon Athena
+For advanced queries, you can use
+Amazon Athena to query and analyze
+data directly from S3.
+
+## Implementation and Operations Exam Tips
+
+Concepts
+
+* Understand the difference between offline and online usage for models
+and when you might use each.
+* Have a high-level understanding of the types of deployments and
+respective pros and cons.
+* Understand A/B Testing and how it might be used to introduce a newly
+updated model.
+* Understand the concepts behind continuous integration, continuous
+delivery and continuous deployment.
+
+AI Developer Services
+
+* The AI developer services provided by AWS are scalable,
+fault-tolerant and ready to use.
+* Know each service, its purpose and in what use-cases they might be
+used.
+* Experiment with each service via the Console or CLI to get a feel for
+what it does and how it works.
+
+Amazon SageMaker Deployments
+
+* Know the three main steps in creating a deployment using SageMaker
+Hosting Services.
+* Understand ProductionVariants and how they can be used to introduce
+new evolutions of your models.
+* Know how to calculate the percentage of traffic given weights for each
+production variant.
+* Understand the purpose and limitations of Interface Pipelines,
+SageMaker Neo, Elastic Inference, Auto-Scaling and Cool Down
+* Recall best practice suggestions for high availability with SageMaker.
+
+Other ML Deployment Options
+
+* Know the four other options for ML deployment aside from SageMaker
+Hosting Services and when you might chose them instead of
+SageMaker.
+
+Security
+
+* Be familiar with using VPCs, NACLs, SGs, IAM and KMS to secure
+Amazon ML and SageMaker resources.
+* Understand a VPC Endpoint and why it increases security.
+* Know that Notebook Instances are Internet-enabled by default but this
+can be disabled given certain conditions and introducing limitations.
+
+Monitor and Evaluate
+
+* Understand the difference between CloudWatch and CloudTrail.
+* Know that CloudWatch has a limited storage while CloudTrail can have
+unlimited storage if you log to an S3 bucket.
+* Understand how you might use metrics to trigger events like
+re-training.
+
