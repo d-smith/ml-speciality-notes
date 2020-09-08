@@ -430,3 +430,6 @@ unlimited storage if you log to an S3 bucket.
 * Understand how you might use metrics to trigger events like
 re-training.
 
+## Implementation and Operations Lab
+
+Put the UFO linear learner into production
