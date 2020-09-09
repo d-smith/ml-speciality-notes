@@ -23,8 +23,8 @@ Before you begin...
 
 | Good data | Bad data | Why it matters |
 |------|-----|----|
-| large datasets | small datasets | More data means better training |
-| precise attribute types, feature rich | useless attributes, not needed for solving problem at hand | need to train on relevant features |
+| Large datasets | Small datasets | More data means better training |
+| Precise attribute types, feature rich | Useless attributes, not needed for solving problem at hand | Need to train on relevant features |
 | Complete fields, no missing values. | Missing values, null fields. | Models can skew results when data points are missing |
 | Values are consistent | Inconsistent fields | Models like clean and consistent data |
 | Solid distribution of outcomes | Lots of positive outcomes, few negative outcomes | Models cannot learn with skewed distributions of outcomes |
