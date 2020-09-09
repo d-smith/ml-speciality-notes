@@ -46,8 +46,11 @@ Terminology
 * Form of data
     * Tables, json, comma separated, images, video, audio
 * Structured - defined schema w/attribute names and data types
+    * Relational databases, data in tables - rows and columns
 * Unstructured data - no defined schema or structural properties
+    * PDFs, images, video, audio, social media streams
 * Semi-structured - too unstructured for relational data but has some organizational structure
+    * NoSQL data, CSV, JSON, XML
 
 Data stores
 
@@ -57,7 +60,7 @@ Data stores
 * Data warehouse
     * Collect data from many different sources in many different formats
     * Landing area and cleaning before it gets stored in the data warehouse (processing done on import)
-    * Data classified/stored with the user in ming
+    * Data classified/stored with the user in mind
     * Ready to use with BI tools - query and analysis
 * Data Lakes
     * Store mass amounts of unstructured data, no processing before it goes in the data lake
