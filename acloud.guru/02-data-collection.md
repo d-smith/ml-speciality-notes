@@ -56,7 +56,7 @@ Data stores
 
 * Relational databases
     * Transactional
-    * Strict schea
+    * Strict schema
 * Data warehouse
     * Collect data from many different sources in many different formats
     * Landing area and cleaning before it gets stored in the data warehouse (processing done on import)
@@ -95,7 +95,10 @@ Data stores
 Features
 
 * Categorical
-    * assocaited with a group, qualitative, discrete
+    * aka nominal
+    * associated with a group, qualitative, discrete, unordered
+* Ordinal
+    * Like categorical except ordered
 * Continuous
     * continuous features that are values expressed as a number
     * quantitative
@@ -136,8 +139,8 @@ S3
     * Stored in buckets
     * Universal namespace for bucket names
     * Endpoint styles
-        * s3-<region>-amazonaws.com/<bucketname> (path style, ends sept 2020)
-        * <bucketname>.s3.amazonaws.com (virtual hosted style)
+        * `s3-<region>-amazonaws.com/<bucketname>` (path style, ends sept 2020)
+        * `<bucketname>.s3.amazonaws.com `(virtual hosted style)
 * How to get data into s3
     * via console
     * sdks, cli
