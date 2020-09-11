@@ -2,12 +2,7 @@
 
 ## Machine Learning Cycle
 
-* Generate Example Data
-    * Fetch -> Clean -> Prepare
-* Train the Model
-    * Train model -> Evaluate
-* Deploy the model
-    * Deploy to prod -> Monitor and Evaluate
+![Machine Learning Cycle](./mlcycle.png)
 
 Lather, rinse, repeat
 

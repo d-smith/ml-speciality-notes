@@ -43,7 +43,7 @@ Shards
 
 * Partition keys used to map data to shards
 * Sequence numbers used to order the data in each shard
-* Consists of a sequence of data records, ingested at 1000 records per seconds
+* Consists of a sequence of data records, ingested at 1000 records per second
 * Default limit of 500
 * Data record: seq no, partition key, data blob up to 1 MB
 * Transient data store - retained from 24 hours up to 7 days
@@ -132,8 +132,8 @@ Continously read and process streaming data in real time
 When to use?
 
 * When you want to run sql queries on streaming data
-* Construct applications that provide insighe on your data (using Apache flink for example)
-* Create metrics. dashboards, monitoring, notifications, and alarms
+* Construct applications that provide insights on your data (using Apache flink for example)
+* Create metrics, dashboards, monitoring, notifications, and alarms
 * Output query results into s3 (other AWS datasources)
 
 Use cases
@@ -141,12 +141,12 @@ Use cases
 * Responsive real-time analytics
 * Stream ETL jobs - clean, enrich, organize, transform before it lands into data warehouse or data lake
 
-| Task at hand | which kinesis services to use? | why? |
+| Task at hand | Which kinesis service to use? | Why? |
 | ---- | ---- | ---- |
 | Need to stream apache log files directly from ec2 instances and store them in Redshift | Firehose | Allows direct storage route to FIrehose  |
 | Stream live video coverage of a sporting event to distribute to customers in near real-time | Kinesis Video Streams | Video Streams used to process real-time video streaming data |
 | Need to transform real-time streaming data and immediately feed into a custom ML application | Kinesis Streams | Built to allow streaming huge amounts of data to be processed then stored or fed into custom applications or other AWS services |
-| Need to query real time data, create metric graphs, and store output into s3 | Kinesis data analytics | built in support for sql queries on streaming data, then store or feed output into other AWS services |
+| Need to query real time data, create metric graphs, and store output into s3 | Kinesis data analytics | Built in support for sql queries on streaming data, then store or feed output into other AWS services |
 
 Shards and data retention - only a concern for Kinesis Streams
 
