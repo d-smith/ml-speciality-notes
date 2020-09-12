@@ -9,8 +9,8 @@ Machine Learning Cycle
 
 Data prep
 
-* the process of transforming a dataset using different techniques to prepare it for model training and testing
-* changing our dataset so it is ready for machine learning
+* The process of transforming a dataset using different techniques to prepare it for model training and testing
+* Changing our dataset so it is ready for machine learning
 
 Typical Activities
 
@@ -67,8 +67,8 @@ Summary
 
 * Encoding needs are ML algorithm specific
 * Text into numbers
-* No single rule that universally applies for transformatopm
-* Many differnt approach, each of which can impact on the outcode of your analysis
+* No single rule that universally applies for transformation
+* Many different approaches, each of which can impact on the outcode of your analysis
 
 
 ## Text Feature Engineering
@@ -80,8 +80,8 @@ Feature engineering
 Text feature engineering: transforming text within our data so machine learning can better analyze it. Splitting text into bite size pieces.
 
 * Uses include natural language processing, speech recognition, text-to-speech
-* data like words and phrases, spoken languages, dialogue between two people
-* sources like magazines, newspapers, academic papers
+* Data like words and phrases, spoken languages, dialogue between two people
+* Sources like magazines, newspapers, academic papers
 
 Bag of Words
 
