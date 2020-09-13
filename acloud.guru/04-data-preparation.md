@@ -181,6 +181,7 @@ Standardization
     * Calculate z score as:
         * xbar = mean
         * sigma - standard deviation
+        * x is the observation
         z = x - xbar / sigma
 
 Scaling Summary
@@ -310,7 +311,7 @@ Glue
 
 * Input Data Source
     * S3, DynamoDB, RDS, Redshift, Database on EC2
-* Crawler to glean data typs, schema or structure of dataset
+* Crawler to glean data types, schema or structure of dataset
 * Data Catalog - metadata with data types and info about your data set
 * Set up jobs to run python or scala code to transform our data, do feature selection, etc
 * Can upload code directly or edit generated code in the console
@@ -335,7 +336,7 @@ ETL
                 * Start from scratch
         * Python shell scripts
             * More freedom to use traditional python libraries
-* Can do Apache Zeppelen and Jupyter notebook transformations too
+* Can do Apache Zeppelin and Jupyter notebook transformations too
     * Ad hoc, not run as a job
     * Hosted in SageMaker
 
@@ -414,13 +415,13 @@ Text Feature Engineering
 * Know different techniques 
     * N-gram
     * Othogonal sparse bigram
-    * term frequency - invest document frequency (tf-idf)
+    * Term frequency - invest document frequency (tf-idf)
     * Removing punctuation
-    * lowercase transformatio
+    * Lowercase transformatio
     * Cartesian product
 * Understand why feature engineering dates is important
 * Know the questions we can answer when dates are transformed
-    * weekday, weekeng, etc
+    * weekday, weekend, etc
 
 Other Feature Engineering
 
