@@ -9,7 +9,7 @@ Exam might ask for best graph or visualization for a specific problem.
 Seeing Your Data
 
 * Relationships
-    * Do we want to find importand relationships in our data?
+    * Do we want to find important relationships in our data?
     * Are there any trends or outliers?
 * Comparisons
     * Are we comparing different values within out data?
@@ -50,7 +50,7 @@ Bar charts - good to lookup and compare different values
 
 * Exampe: comparing the number of star ratings for a mobile application in the app store
 
-Line sharts - use lines to show one or more variables changing over time
+Line charts - use lines to show one or more variables changing over time
 
 * Example: plotting the value of bitcoin over the past 3 years.
 
