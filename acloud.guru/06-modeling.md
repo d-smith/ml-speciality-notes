@@ -3,17 +3,17 @@
 From the machine learning cycle...
 
 * We've fetched, cleaned, and prepared our data
-* Now it is time to traing and evaluate models
+* Now it is time to train and evaluate models
 
 ## Modeling Concepts
 
-Taking a problem or challenge as described by lots of data, adding a machine learning algorithm and through computation, tying to figure out a mathematical forumula that can accurately generatlize about that problem.
+Taking a problem or challenge as described by lots of data, adding a machine learning algorithm and through computation, tying to figure out a mathematical forumula that can accurately generalize about that problem.
 
 Components
 
 * Model - want to produce generalization, e.g. based on my training here's what I think the outcome is given this new situation
 * Data
-* Algorithm - right algoritm
+* Algorithm - right algorithm
 * Computational Power
 * Feedback loop - for model, for suitability of data
 
@@ -22,9 +22,9 @@ Developing a Good Model
 * What type of generalization are we seeking?
     * Forecasting a number? Deciding if customer more likely to choose option A or option B? Detect a quality defect in a machined part?
 * Do we really need machine learning?
-    * Can a simple heuristic work? IF THEN logic? REgression forumla or lokup function?
+    * Can a simple heuristic work? IF THEN logic? Regression forumla or lookup function?
 * How will my ML generalizations be consumed?
-    * Do I need to return real-time results or can I process the inferences in batches? Weill consumers be applications via API calls or other systems which will perform additional processing on the data?
+    * Do I need to return real-time results or can I process the inferences in batches? Will consumers be applications via API calls or other systems which will perform additional processing on the data?
 * What do we have to work with?
     * What sort of data accurately and fully captures the inputs and outputs of the target generalizations? Do we have enough data?
 * How can I tell if the generalization is working?
@@ -32,10 +32,10 @@ Developing a Good Model
 
 Types of Models
 
-|  | Supervised Learning | Unsupervised Learning | Reinfocement Learning |
+|  | Supervised Learning | Unsupervised Learning | Reinforcement Learning |
 | -- | -- | -- | -- |
 | Discrete | Classification | Clustering | Simulation-based optimization |
-| Continuous | Regression | Reduction of Dimentionality | Autonomous |
+| Continuous | Regression | Reduction of Dimensionality | Autonomous |
 
 Choosing the Rght Approach
 
@@ -69,7 +69,7 @@ Problem: Is a financial transaction fradulant?
 | **Predicted Fraud** | Happy bank. Happy Customer. No money lost.| Happy bank. Angry customer. No money lost.|
 | **Predited Not Fraud** | Angry bank. Angry customer. **Money lost.**| Happy bank. Happy customer.  No money lost. |
 
-Here is you are a bank you want to avoid where you predicted no fraud but there is fraude. Bank is ok with more false positive than false negatives as that reduces their exposure to fraud. We'll look closely at *recall*.
+Here is you are a bank you want to avoid where you predicted no fraud but there is fraud. Bank is ok with more false positive than false negatives as that reduces their exposure to fraud. We'll look closely at *recall*.
 
 Example: is email spam?
 
@@ -95,7 +95,7 @@ Use most data to train, but reserve some data to see if the model has really lea
     * Randomize the data so it has the same distribution
     * Split
     * Train
-    * test
+    * Test
 
 Time series data
 
@@ -194,7 +194,7 @@ Training
 * Training is often compute intensive, inference may need less
 * Image names
     * channel helps keep straight training vs inference
-    * See [Algoritms Provided by Amazon SageMaker: Common Paramters](https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html)
+    * See [Algorithms Provided by Amazon SageMaker: Common Paramters](https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html)
 * Can create your own container images as well, upload in ECR and reference it
 * Deployment
     * Selects container, can get data from S3 or front it with API gateway
