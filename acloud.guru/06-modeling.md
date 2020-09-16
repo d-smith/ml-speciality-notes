@@ -119,6 +119,8 @@ K-Fold Cross-Validation Method
 
 ## SageMaker Modeling
 
+![SageMaker](./sagemaker.png)
+
 Mechanical Turk
 
 * Human labeling - emdedded in ground truth
