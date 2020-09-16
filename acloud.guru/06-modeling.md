@@ -147,10 +147,10 @@ In general training and test datasets go in s3, sage maker reads it from there.
 * Upload dataset to s3 using appropriate format - CSV with test/csv content type on upload
     * For unsupervised learning algorithms, include spec of absense of label in Content-Type, e.g. test/csv;label_size=0
 
-For optimal performance, the optimized protobug recordIO format is recommended.
+For optimal performance, the optimized protobuf recordIO format is recommended.
 
 * Using this format, we can take advantage of Pipe mode
-* With recordIO and Pipe mode, data can be stremed from s3 to the learning instance requiring less EBS space and faster start-up
+* With recordIO and Pipe mode, data can be streamed from s3 to the learning instance requiring less EBS space and faster start-up
 
 CreateTrainingJob API
 
@@ -218,7 +218,7 @@ Training with Spark
 Model Design
 
 * Select a model that is a good fit for the objective
-* Choose the proper ML approach for your objective (regression, binary ckassification, etc)
+* Choose the proper ML approach for your objective (regression, binary classification, etc)
 * Choose appropriate evaluation strategies for your model
 * Steps for training a model
 
