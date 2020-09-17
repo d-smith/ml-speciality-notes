@@ -185,7 +185,7 @@ Cost
 
 Machine Learning
 
-* Use GPU amd CPU to do model training and development
+* Use GPU and CPU to do model training and development
 * Could conceivably create a ASIC with the model burned in (months or years) or program it into a FPGA device (hours or days).
 
 Training
@@ -204,12 +204,13 @@ Training
 
 CloudWatch
 
-* Logs arguments provided, errors during training, algorithm accuracy stats, time to compolete a cycle
+* Logs arguments provided, errors during training, algorithm accuracy stats, time to complete a cycle
 * Common errors - errors specifying hyperparametes, invalid value for hyperparameter, incorrect protobuf file format
 
 Training with Spark
 
 * Use SageMaker Spark SDK
+    * Use spark to preprocess, dataset available as a spark data frame
 * SDK can convert spark data frame format to protobuf
 * From there inputs from s3, training job output to s3
 
