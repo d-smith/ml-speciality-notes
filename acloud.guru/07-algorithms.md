@@ -25,7 +25,7 @@ SageMaker
 
 Linear Learner Algorithm
 
-* Linear models are supervised learning algorithms for regression, binary classification or multiclass classification problems. You give the model labels (x,y) with x being a high dimensional vector and y as a numeric label. The algoritm learns a linear function, or, for classification problems, a linear threshold function, and maps a cector x to an approximation of  label y.
+* Linear models are supervised learning algorithms for regression, binary classification or multiclass classification problems. You give the model labels (x,y) with x being a high dimensional vector and y as a numeric label. The algoritm learns a linear function, or, for classification problems, a linear threshold function, and maps a vector x to an approximation of  label y.
 * To use this algorithm you need a number or list of numbers which yields some other number - the answer you are after. You can use it to predict a specific value or a threshold for grouping purposes.
 
 Adjust to Minimize Error
@@ -52,7 +52,7 @@ Usage
 * Discrete binary classification problem
     * Example: based on past customer response, should I email this particular customer? Yes or no..
 * Discrete multiclass classification problems
-    * Example: based on past customer response, how shouldI reac hthis customer? Email, direct mail, phone call?
+    * Example: based on past customer response, how should I reach this customer? Email, direct mail, phone call?
 
 Sparse Data
 
