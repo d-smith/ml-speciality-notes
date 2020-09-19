@@ -84,7 +84,7 @@ Example: Movie recommendations
 
 Linear Regression vs Logistic Regression
 
-* Linear regression is used to predict the continuous dependent variable using a given set of independent variables. Logistic Regression is used to predict the categorical dependent variable using a given set of independent variables. ... In logistic Regression, we predict the values of categorical variables
+* Linear regression is used to predict the continuous dependent variable using a given set of independent variables. Logistic regression is used to predict the categorical dependent variable using a given set of independent variables. ... In logistic regression, we predict the values of categorical variables.
 
 ### Notes from SageMaker Linear Learner
 
@@ -187,6 +187,13 @@ Examples:
 
 * PCM
 * Handwritten digit recognition (MNIST data set)
+
+Other Use Cases:
+
+* Customer grouping
+* Document classification (group based on tags, topics, content, term frequency, etc)
+* Crime localities
+*  Call record detail analysis
 
 ### K-Means: SageMaker Documentation
 
