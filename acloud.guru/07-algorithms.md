@@ -391,6 +391,15 @@ From [here](https://docs.aws.amazon.com/sagemaker/latest/dg/randomcutforest.html
 >
 > While there are many applications of anomaly detection algorithms to one-dimensional time series data such as traffic volume analysis or sound volume spike detection, RCF is designed to work with arbitrary-dimensional input. Amazon SageMaker RCF scales well with respect to number of features, data set size, and number of instances.
 
+How it Works
+
+* See [here](https://www.linkedin.com/pulse/robust-random-cut-forest-rrcf-math-explanation-logan-wilt/)
+    * Start with a pool of data points
+    * Create a forest of trees, each tree constructed by sampling some points from the data pool and creating a tree presentation of the points
+    * To see if a new point is a anomoly, add the point to each tree in the forest and observe the change in complexity, e.g. change to the depth of the tree, change to the width
+    * Average the change in complexity across all the trees in the forest - large changes means anomalies
+
+
 I/O
 
 * Supports train and test channels
@@ -416,7 +425,7 @@ IP Insights
 * Learns usage patterns for IPv4 addresses by capturing associations between IPv4 addresses and various entities such as user IDs or account numbers.
 * Can potentially flag odd online behaviour that might require closer review.
 
-* Ingests Entity/IP address pairs. Histic data can be used to learn baseline patterns.
+* Ingests Entity/IP address pairs. Historic data can be used to learn baseline patterns.
 * Returns inferences via a score. When queried, the model will return a score that indidates how anomalous the entity/IP combination is, based on the baseline.
 * Uses a neural network. Uses a NN to learn latent vector representation for entities and IP addresses.
 * GPUs recommended for training. Generally GPUs are recommended but if the dataset is large, distributed CPU instances might be more cost effective.
