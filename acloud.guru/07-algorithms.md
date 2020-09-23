@@ -471,7 +471,8 @@ How it Works
 
 LDA
 
-* LDA algorithm is an  unsupervised learning algorithm that attempts to describe a set of observations as a mixture of distinct categories. LDA is most commonly used to disover a user-specified number of topics shared by documents within a text corpus. Here each observation is a document, the features are the presence (or occurrence count) of each word, and the categories are the topics.
+* LDA algorithm is an unsupervised learning algorithm that attempts to describe a set of observations as a mixture of distinct categories. LDA is most commonly used to discover a user-specified number of topics shared by documents within a text corpus. Here each observation is a document, the features are the presence (or occurrence count) of each word, and the categories are the topics.
+* Corpus - language resource consisting of a large and unstructured set of texts
 * Used to figure out how similar documents are based on the frequency of similar words.
 
 From the SageMaker docs:
@@ -518,7 +519,7 @@ Use cases:
 
 BlazingText
 
-* Highly optimized implementation of the Word2Vec and text classiciation algorithms. The Word2Vec algorithm is useful for many downstream natural language processing (NLP) tasks, such as sentiment analysis, named entity recognition, machine translation, etc.
+* Highly optimized implementation of the Word2Vec and text classification algorithms. The Word2Vec algorithm is useful for many downstream natural language processing (NLP) tasks, such as sentiment analysis, named entity recognition, machine translation, etc.
 * Really optimized way to determine contextual semantic relationships between words in a body text.
 
 
@@ -558,7 +559,7 @@ Use cases:
 * Movie rating prediction
     * Example: predict the rating a person is likely to give a movie based on similarity to other's movie ratings.
 * Document classification
-    * ExampleL determine which genre a book is based on its similarity to known genres (history, thriller, biography)
+    * Example: determine which genre a book is based on its similarity to known genres (history, thriller, biography)
 
 ## Reinforcement Learning
 
@@ -570,7 +571,7 @@ The carrot and the stick
 Reinforcement Learning
 
 * RL is a machine learning technique that attempts to learn a stategy, called a policy, that optimizes for an agent acting in an environment. Well suited for solving problems where an agent can make autonomous decisions.
-* Find the pat to the greatest reward.
+* Find the path to the greatest reward.
 
 Markov Decision Process (MDP)
 
@@ -583,7 +584,7 @@ Markov Decision Process (MDP)
 * Episodes - iterations from start to finsh while agent is accumulating reward
 * Policy- decision making part the agent learns to maximize reward
 
-USe Cases
+Use Cases
 
 * Autonomous Vehicles
     * Example: a self-driving car model can learn to stay on the road through itertions of trial and error in a sumulation. Once the model is good enough, it can be tested in a real vehicle on a test track.

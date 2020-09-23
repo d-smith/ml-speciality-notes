@@ -12,7 +12,7 @@ Evaluation:
 
 1. Define evaluation. Decide what metric or metrics we should use to decide if the algorithm is good enough.
 2. Evaluate. Review the metrics during or after the training process. This might be manual or automatic, depending on the algorithm.
-3. Tune. Adjust hyperparameters, data, the evaluation strategy or even the entire algoritm to bring us closer to the desired results.
+3. Tune. Adjust hyperparameters, data, the evaluation strategy or even the entire algorithm to bring us closer to the desired results.
 
 Two Types:
 
@@ -74,7 +74,7 @@ Preventing Overfitting
 * Early stopping. Terminate the training process before it has a chance to overtrain. Many algorithms include this option as a hyperparameter.
 * Sprinkle in some noise. Your training data could be too clean and you might need to introduce some noise to generalize the model.
 * Regularize. Regularization forces your model to be more general by creating constraints around weights or smoothing the input data.
-* Ensembles. COmbine different models together to either amplify individual weaker models (boosting) or smoothing out stronger models (bagging)
+* Ensembles. Combine different models together to either amplify individual weaker models (boosting) or smoothing out stronger models (bagging)
 * Ditch some features (i.e. feature selection). Too many irrelevant features can infuence the model in a negative way by drowning out the signal with noise.
 
 ### Regression Accuracy
