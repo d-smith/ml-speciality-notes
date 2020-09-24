@@ -10,7 +10,7 @@ Machine learning cycle - covers deploy to production, monitor and evaluate post 
 | -- | -- | -- |
 | What | Makes inferences on datasets in batch and returns results as a set | Makes inferences on demand as the model is called and returns results immediately |
 | Why | Entire dataset is needed for inferences; pre-process data before using as an input for another model | Need instant response when endpoint is called via app or service |
-| When | - Predictive models with large historic dataset inputs<br> -Feature engineering for a follow on model | - Real-time fraude detection<br>- Autonomous machines |
+| When | - Predictive models with large historic dataset inputs<br> -Feature engineering for a follow on model | - Real-time fraud detection<br>- Autonomous machines |
 
 Types of Deployments
 
