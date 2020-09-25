@@ -85,6 +85,11 @@ AWS Developer Services
 Amazon Comprehend
 
 * Natural language processing (NLP) service that finds insights and relationships within text
+    * Identify language of text
+    * Extract key phrases, places, people, brands or events
+    * Text sentiment
+    * Analyzes text using tokenization and parts of speech
+    * Organize a collection of text files by topic
 * Use case example: sentiment analysis of social media
 
 Amazon Forcast
