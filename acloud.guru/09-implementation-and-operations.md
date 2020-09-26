@@ -92,9 +92,11 @@ Amazon Comprehend
     * Organize a collection of text files by topic
 * Use case example: sentiment analysis of social media
 
-Amazon Forcast
+Amazon Forecast
 
 * Combines time-series data with other variables to delivery highly accurate forecasts
+    * Provide historical data and other data that may impact the forecast
+    * Amazon Forecast will automatically examine the data, identify what is meaningful, and produce a forecasting model
 * Example usage: forecast seasonal demand for a specific color of shirt
 
 Amazon Lex
