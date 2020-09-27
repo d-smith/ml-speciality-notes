@@ -101,12 +101,13 @@ Amazon Forecast
 
 Amazon Lex
 
-* Build conversational interfaces that can understand the intent and context for natural speech
+* Amazon Lex is a service for building conversational interfaces into any application using voice and text.
 * Example use: create a customer service chatbot to automatically handle routine requests
 
 
 Amazon Personalize
 
+* Amazon Personalize enables developers to build applications with the same machine learning (ML) technology used by Amazon.com for real-time personalized recommendations
 * Recommendation engine as a service based on demographic and behavioral data.
 * Example use: Provide potential upsell products at checkout during a web transaction.
 
@@ -130,6 +131,7 @@ as they scan an access badge.
 
 Amazon Textract
 
+* Amazon Textract is a fully managed machine learning service that automatically extracts text and data from scanned documents that goes beyond simple optical character recognition (OCR) to identify, understand, and extract data from forms and tables.
 * Extract text, context and metadata
 from scanned documents
 * Example use: Automatically digitize and process
