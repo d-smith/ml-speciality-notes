@@ -109,8 +109,10 @@ RMSE - root mean square error (lower is better)
 
 * Recall = true positives / true positives + false negatives
     * Spam gets through
+    * aka sensitivity
 * Precision = true positives / true positives + false positives 
     * Legitimate email gets blocked
+    * aka positive predictive value
 * Tradeoff - as one goes up the other goes down
 * F1 score
     * 2 * (Precision * Recall) / (Precision + Recall)
