@@ -114,6 +114,8 @@ RMSE - root mean square error (lower is better)
     * Legitimate email gets blocked
     * aka positive predictive value
 * Tradeoff - as one goes up the other goes down
+* Accuracy
+    * (TP + TN)/(P + N)
 * F1 score
     * 2 * (Precision * Recall) / (Precision + Recall)
     * The balance between Precision and Recall
