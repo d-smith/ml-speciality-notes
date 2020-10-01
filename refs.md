@@ -14,6 +14,33 @@
 
 ## Reference Notes
 
+### TF-IDF
+
+See the tf-idf.ipynb notebook in this directory for details on how to count unigrams, bigrams, etc.
+
+### Batches and Training
+
+Gradient Descent
+
+* Gradient - slope or slant of a surface
+* Gradient descent - descending a slope to find its lowest point
+    * GD is an iterative algorithm that starts on a random point on a function and travels down its slope in steps until it finds the lowest point of that function.
+* In GD, learning rate is the step size for adjusting parameters values as we move down the gradient.
+    * Learning rate heavily influences the convergence of the algorithm. Too big can jump across a minimum.
+* Can be computationally expensive 
+    * Sum of squared residuals consists of as many terms as there are data points
+    * Need to compute the derivative for each of the features which the number of data points times the number of features
+
+Stochastic Gradient Descent
+
+* Stochastic - means random. 
+* Reduces computation by selecting one point at random in each step to use to compute the derivatices.
+
+Mini-Batch
+
+* Seeks to balance precision of GD vs speed of SGD by sampling a small number of data points at each step.
+
+
 ### SMOTE
 
 * Imbalanced datasets - a dataset is imbalanced if the classication categories are not approximately equally represented.
@@ -25,3 +52,4 @@
 Referenced on the sample quiz...
 
 * Bootstrapping is any test or metric that uses random sampling with replacement, and falls under the broader class of resampling methods.
+
