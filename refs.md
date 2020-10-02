@@ -39,6 +39,23 @@ Stochastic Gradient Descent
 Mini-Batch
 
 * Seeks to balance precision of GD vs speed of SGD by sampling a small number of data points at each step.
+* Large batch methods can fail to generalize as well as small batch. 
+    * Large batch methods tend to converge to sharp mimimizers of the training function.
+    * Small batch methods tend to converge to flat minimizers.
+
+### Binary Model Insights
+
+* Output of many binary classification algorithms is a prediction score. The score indicates the certainty that an observation belongs to the positive class.
+    * Output is a score that goes from 0 to 1.
+    * Consumer of the score must decide the threshold that indicates the cut-off between 0 and 1. The default cut off is 0.5.
+* Accuracy metric for binary classification: Area Under the (Receiver Operating Characteristic) Curve (AUC)
+
+### Adjusting Class Probability to Increase Sensitivity
+
+> The decision threshold adjustment was developed to estimate the optimal decision threshold for specified misclassification costs and/or prior probabilities of the prevalence [10, 11, 13]. When the class sizes are unequal, a shift in a decision threshold to favor the minority class can increase minority class prediction.
+> ...
+> In summary, the effect of class imbalance depends on the imbalance ratio, total sample size in the training phase, distributions of the data in each class and selection of the relevant variables as well as the classification algorithm and correction strategy.
+
 
 
 ### SMOTE
