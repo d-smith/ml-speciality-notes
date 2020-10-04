@@ -83,3 +83,87 @@ Topics:
 * AWS Glue
 
 
+## Domain 2: Exploratory Data Analysis
+
+### Domain 2.1 Sanatize and prepare data for modeling
+
+* Use descriptive statistics to better understand your data 
+    * Overall stats (number of features, number of on=bservations)
+    * Multivariate statistics (corellations and relationships between your attributes)
+    * Attribute statistics (for numeric attributes no the mean, standard deviation, variance, min and max values)
+
+* More on multivariate
+    * Correlated features can affect model performance
+    * Use scatter plots to visualize relationships between numerical variables
+    * Correlation matrices help you quantify the linear relationships between variables
+
+* Sanitize data
+    * Standardize lamguage and grammar
+    * Make sure the data is on the same scale
+    * Make sure a column does not include multiple features
+
+* Deal with outliers
+* Deal with missing data
+    * Remove rows or columns with missing data
+    * Impute the missing value
+
+Related Topics:
+
+* Dataset generation
+    * Amazon SageMaker Ground Truth
+    * Amazon Mechanical Turk 
+    * Amazon Kinesis Data Analytics
+    * Amazon Kinesis Video Streams
+
+* Data augmentation
+* Descriptive statistics
+* Informative statistics
+* Handling missing values and outliers
+
+
+### Domain 2.2 Perform Feature Engineering
+
+Feature engineering
+
+* Dimensionality reduction
+* Transformation of numerical features (multinomial or polynomial transformation)
+* Handle categorical data
+    * Binary - transform to 1 or 0
+    * Ordinal categoricals (e.g. garden size) - provide a mapping function, use business insight to determine scale to map to
+    * One hot encode nominal ordinals
+* Handle numerical data
+    * Scale numeric features to prevent specific features to have an outsized influence based on scale alone
+
+Topics
+
+* Scaling
+* Normalizing
+* Dimensionality reduction
+* Date formatting
+* One-hot encoding
+
+### Domain 2.3 Analyze and Visualize Data for ML
+
+Visualization - answers questions like...
+
+* What's the range of the data?
+* What's the peak of the data?
+* Are there any outliers?
+* Are there any interesting patterns in the data?
+
+Techniques
+
+* Scatter plot - visualize the relationship between two features (plot feature 1 vs feature 2)
+* Histogram - distribution of values for a single feature
+
+
+Topics:
+
+* Scatter plots
+* Box plots
+* Histograms
+* Scatter matrix
+* Correlation matrix
+* Heatmaps
+* Confusion matrix
+
