@@ -70,3 +70,8 @@ Referenced on the sample quiz...
 
 * Bootstrapping is any test or metric that uses random sampling with replacement, and falls under the broader class of resampling methods.
 
+### Instance Segmentation
+
+> Many of the companies rely on image segmentation techniques powered by Convolutional Neural Networks (CNNs), which form the basis of deep learning for computer vision. Image segmentation involves drawing the boundaries of the objects within an input image at the pixel level. This can help achieve object detection tasks in real-world scenarios and differentiate between multiple similar objects in the same image.
+
+> Semantic segmentation can detect objects within the input image, isolate them from the background and group them based on their class. Instance segmentation takes this process a step further and can detect each individual object within a cluster of similar objects, drawing the boundaries for each of them.

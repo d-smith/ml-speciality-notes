@@ -167,3 +167,120 @@ Topics:
 * Heatmaps
 * Confusion matrix
 
+## Domain 3: Modeling
+
+### Domain 3.1: Frame Business Problems as ML Problems
+
+Is ML an appropriate solution?
+
+* Is there a large amount of data you need to analyze for patterns you can use for making predictions?
+* Are you looking for a solution where you cannot code the rules?
+* Is there a problem that you cannot scale a manual solution?
+
+ML Algorithm Types - supervised, unsupervised, reinforcement learning
+
+Supervised
+
+* Binary classification
+* Multiclass classification
+* Regression
+
+Related Topics
+
+* Supervised learning
+* Regression and classification
+* Unsupervised learning
+* Clustering
+* Anomaly detection
+* Deep learning
+* Perceptron
+* Components of an artificial neuron
+
+
+### Domain 3.2: Select the appropriate model(s) for an ML Problem
+
+Options for algs
+
+* SageMaker built in
+* Apache Spark with SageMaker
+* Custom alg via Docker
+* Subscribe to algs from Marketplace
+
+Related Topics
+
+* Linear learner
+* XGBoost
+* K-means
+* Decision trees
+* Random forest
+* Image classification
+* Object detection
+* Semantic segmentation
+
+Domain 3.3: Train ML Models
+
+* Split data to ensure proper division between training and evaluation
+    * Holdout - 80/10/10 or 70/15/15
+    * Cross validation - compare the performance of multiple models 
+    * K folds cross validation
+
+> For instance, performing a 5-fold cross-validation generates four models, four datasets to train the models, four datasets to evaluate the models, and four evaluations, one for each model. In a 5-fold cross-validation for a binary classification problem, each of the evaluations reports an area under curve (AUC) metric. You can get the overall performance measure by computing the average of the four AUC metrics.
+
+* Other cross-validation methods
+    * Leave on out cross validation for small data sets
+    * Stratified k-fold cross validation when you have inbalanced data.
+
+Related Topics
+
+* Amazon SageMaker workflow for training jobs
+* Running a training job using containers
+* Build your own containers
+* P3 instances
+* Components of an ML training job for deep learning
+
+Domain 3.4: Perform hyperparameter optimization
+
+* Model hyperparameters - attributes of the model itself, like NN filter size, pooling, stride padding
+* Optimizer hyperparameters - related to how the model learns the patterns based on data and are used for a NN model. Optimizers like GD and SGD, optimizers using momentum like Adam or initializing the parameter weights like Xavier or He initialization.
+
+Tuning hyperparameters can be very labor intensive.
+
+* A better was is to use search methods to tune hyperparameters
+    * Grid search, random search
+* Automated Hyperparameter tuning 
+
+Topics
+
+* Amazon SageMaker hyperparameter tuning jobs
+* Common hyperparameters to tune:
+    * Momentum
+    * Optimizers
+    * Activation functions
+    * Dropout
+    * Learning rate
+* Regularization:
+    * Dropout
+    * L1/L2
+
+### Domain 5: Evaluate ML Models
+
+Binary classification - start with confusion matrix
+
+Classification problems - metrics
+
+* Accuracy - ratio of correct predictions to total number of predictions
+    * (TP + TN) / (TP + FP + TN + FN)
+* Precision - proportion of positive predictions that are acutally correct
+    * TP / (TP + FP)
+    * Good when cost of false positives are high
+* Recall - proportion of correct sets that are identified as positive
+    * TP / (TP + FN)
+    * Good when cost of false negatives are high
+
+
+Topics
+
+* Metrics for regression: sum of squared errors, RMSE
+* Sensitivity
+* Specificity
+* Neural network functions like Softmax for the last layer
