@@ -217,7 +217,7 @@ Related Topics
 * Object detection
 * Semantic segmentation
 
-Domain 3.3: Train ML Models
+### Domain 3.3: Train ML Models
 
 * Split data to ensure proper division between training and evaluation
     * Holdout - 80/10/10 or 70/15/15
@@ -238,7 +238,7 @@ Related Topics
 * P3 instances
 * Components of an ML training job for deep learning
 
-Domain 3.4: Perform hyperparameter optimization
+### Domain 3.4: Perform hyperparameter optimization
 
 * Model hyperparameters - attributes of the model itself, like NN filter size, pooling, stride padding
 * Optimizer hyperparameters - related to how the model learns the patterns based on data and are used for a NN model. Optimizers like GD and SGD, optimizers using momentum like Adam or initializing the parameter weights like Xavier or He initialization.
@@ -262,7 +262,7 @@ Topics
     * Dropout
     * L1/L2
 
-### Domain 5: Evaluate ML Models
+### Domain 3.5: Evaluate ML Models
 
 Binary classification - start with confusion matrix
 
@@ -284,3 +284,76 @@ Topics
 * Sensitivity
 * Specificity
 * Neural network functions like Softmax for the last layer
+
+## Domain 4: ML Implementation and Operations
+
+### Domain 4.1 Build ML solutions for performance, availability, scalability, resiliency, and fault tolerance
+
+* Loose coupling for HA
+* CloudWAtch for monitoring
+* CloudTrail for capturing API calls and related events
+
+Recommendations:
+
+* Decouple ETL from ML pipeline
+* Use mutliple AZs for sagemaker endpoints
+* Can containerize ML models for training and inference, allowing loosely coupled dsitribute services that can be place on any number of platforms or close to the data.
+* Use auto scaling
+
+
+Topics
+
+* Amazon Deep Learning containers
+* AWS Deep Learning AMI (Amazon Machine Image)
+* AWS Auto Scaling
+* AWS GPU (P2 and P3) and CPU instances
+* Amazon CloudWatch
+* AWS CloudTrail
+
+### Domain 4.2: Recommend and implement the appropriate ML services and features for a given problem
+
+![ML stack](./mlstack.png)
+
+
+Topics:
+
+* Amazon SageMaker Spark containers
+* Amazon SageMaker build your own containers
+* Amazon AI services 
+    * Amazon Translate
+    * Amazon Lex
+    * Amazon Polly
+    * Amazon Transcribe
+    * Amazon Rekognition
+    * Amazon Comprehend
+
+### Domain 4.3: Apply Basic AWS security practices to ML solutions
+
+Topics:
+
+* Security on Amazon SageMaker
+* Infrastructure security on Amazon SageMaker
+* What is a:
+    * VPC
+    * Security group
+    * NAT gateway
+    * Internet gateway
+* AWS Key Management Service (AWS KMS)
+* AWS Identity and Access Management (IAM)
+
+### Domain 4.4: Deploy and operationalize ML solutions
+
+Model deployment
+
+* Create a model in SageMaker
+* Create an endpoint configuration
+* Create an endpoint
+
+Topics
+
+* A/B testing with Amazon SageMaker
+* Amazon SageMaker endpoints
+    * Production variants
+    * Endpoint configuration
+* Using Lambda with Amazon SageMaker
+

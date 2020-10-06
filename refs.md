@@ -75,3 +75,26 @@ Referenced on the sample quiz...
 > Many of the companies rely on image segmentation techniques powered by Convolutional Neural Networks (CNNs), which form the basis of deep learning for computer vision. Image segmentation involves drawing the boundaries of the objects within an input image at the pixel level. This can help achieve object detection tasks in real-world scenarios and differentiate between multiple similar objects in the same image.
 
 > Semantic segmentation can detect objects within the input image, isolate them from the background and group them based on their class. Instance segmentation takes this process a step further and can detect each individual object within a cluster of similar objects, drawing the boundaries for each of them.
+
+### SageMaker API
+
+### Kinesis Streaming Analytics ML Integration
+
+### SageMaker Deployment and Lifecycle
+
+* Inlcude canary weight ratios
+
+### AWS Batch - Overview
+
+T-SNE
+
+SCG Optimization Techniques
+
+Factors the lead to the wide adoption of neural networks
+
+* mag of data, algortirhms, checper gpus
+
+Correlation strength
+
+* positive is stronger, direction important not just magnitude
+
