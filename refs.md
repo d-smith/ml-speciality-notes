@@ -135,6 +135,19 @@ for i in range(nb_epochs):
     params = params - learning_rate * params_grad
 ```
 
+Challenges
+
+* Choosing the learning rate. 
+    * Too small - slow convergence
+    * Too large - hinders convergence, may fluctuate around the minimum or event diverge
+* Learning rate schedules try to adjust the learning rate during training by annealing, adjust the learning rate according to a predefined schedule or when the change in objective between epochs falls below a threshold
+* Same learning rate for all parameter updates - might want larger updates for rarely occurring features
+* Can get trapped in local minima/saddle points
+
+Optimization Algorithms
+
+
+
 ### Factors the lead to the wide adoption of neural networks
 
 * mag of data, algortirhms, checper gpus
