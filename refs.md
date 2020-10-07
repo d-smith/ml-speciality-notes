@@ -86,11 +86,56 @@ Referenced on the sample quiz...
 
 ### AWS Batch - Overview
 
-T-SNE
+### T-SNE
 
-SCG Optimization Techniques
+* t-Distributed Stochastic Neighbor Embedding
+* Unsupervised, non-linear technique primarily used for data exploration and visualizing high-dimensional data
+* PCA is a linear dimension reduction technique that seeks to maximize variance and preserves large pairwise distances
+* t-SNE differs from PCA by preserving only small pairwise distances or local similarities whereas PCA is concerned with preserving large pairwise distances to maximize variance.
 
-Factors the lead to the wide adoption of neural networks
+### SGD Optimization Techniques
+
+Summary of excellent write up available [here](https://ruder.io/optimizing-gradient-descent/)
+
+Gradient descent
+
+* Technique to minimize an objective function by updating the parameters in the opposite direction of the gradient of the objective function.
+* The learning rate determines the size of the steps we take to reach a (local) minimum
+
+Variants (also see earlier in these notes)
+
+* Batch, aka vanilla gradient descent
+    * Computes the gradient of the cost function wrt the parameters of the entire training set
+
+```
+for i in range(nb_epochs):
+  params_grad = evaluate_gradient(loss_function, data, params)
+  params = params - learning_rate * params_grad
+```
+
+* Stochastic
+    * Peforms an update for each training example
+
+```
+for i in range(nb_epochs):
+  np.random.shuffle(data)
+  for example in data:
+    params_grad = evaluate_gradient(loss_function, example, params)
+    params = params - learning_rate * params_grad
+```
+
+* Mini batch
+    * Performs an update for each mini batch of n training examples
+
+```
+for i in range(nb_epochs):
+  np.random.shuffle(data)
+  for batch in get_batches(data, batch_size=50):
+    params_grad = evaluate_gradient(loss_function, batch, params)
+    params = params - learning_rate * params_grad
+```
+
+### Factors the lead to the wide adoption of neural networks
 
 * mag of data, algortirhms, checper gpus
 
