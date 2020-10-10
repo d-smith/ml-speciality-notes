@@ -78,6 +78,33 @@ Referenced on the sample quiz...
 
 ### SageMaker API
 
+Training using SageMaker
+
+* Create a training job. Training jobs include:
+    * URL of the s3 bucket where the training data is stored
+    * The compute resources you want Sagemaker to usefor model training
+    * The url of the s3 bucket where you want to store the output of the job
+    * The elastic container registry path where the training code is stored.
+* Training options
+    * Algorithm supplied by SageMaker
+    * SageMaker debugger
+    * Apache spark with sage maker
+    * Custom python code that uses TensorFLow, PyTorch, or MXNet
+    * Custom algoritms via containers
+    * Algorithm via the AWS marketplace
+* API
+    * CreateTrainingJob
+
+Model Deployment
+
+* CreateModel API
+* CreateEndpointConfig API
+* CreateEndpoint
+
+### Apache Spark with SageMaker
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/apache-spark.html
+
 ### Kinesis Streaming Analytics ML Integration
 
 ### SageMaker Deployment and Lifecycle
