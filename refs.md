@@ -58,7 +58,7 @@ Mini-Batch
 
 
 
-### SMOTE
+### SMOTE - Synthetic Minority Over-sampling Techique
 
 * Imbalanced datasets - a dataset is imbalanced if the classication categories are not approximately equally represented.
 * Typically...
@@ -99,19 +99,51 @@ Model Deployment
 
 * CreateModel API
 * CreateEndpointConfig API
+    * Specify a ProductionVariant for each model you want to deply
+        * Use VariantWeight to specify how much traffic to allocate to each model
+    * Use 2 or more initial instances to ensure HA - SageMaker will deploy to different AZs
 * CreateEndpoint
+
+Auto Scaling
+
+* Use the application auto scaling API RegisterScalableTarget
+    * ServiceNamespace is sagemaker
+    * ResourceID is the resource identifier for the production variant. Resource type is endpoint, unique identifier is the name of the variant, e.g. endpoint/MyEndpoint/variant/MyVariant
+    * ScalableDimiesion - sagemaker:variant:DesiredInstanceCount
 
 ### Apache Spark with SageMaker
 
-https://docs.aws.amazon.com/sagemaker/latest/dg/apache-spark.html
+Docs [here](https://docs.aws.amazon.com/sagemaker/latest/dg/apache-spark.html)
+
+* In this scenario, Apache Spark is used for preprocessing data and Amazon SageMaker is used for model training and hosting.
+* SageMaker provides an Apache Spark library (in Python and Scala) that you can use to train models in SageMaker using Spark DataFrame data frames
+* After Model training host the model using SageMaker hosting services.
 
 ### Kinesis Streaming Analytics ML Integration
 
-### SageMaker Deployment and Lifecycle
+Can use machine learning queries to perform complex analysis on data, relying on the history of data in the stream to find unusual patterns.
 
-* Inlcude canary weight ratios
+* RANDOM_CUT_FOREST function can assign anomaly scores to each record based on the values in numeric columns. 
+* RANDOM_CUT_FOREST_WITH_EXPLANATION assigns an anomaly score to each record based on values in the numeric columns. The function also provides an explanation of the anomaly. 
+* Amazon Kinesis Data Analytics provides the HOTSPOTS function, which can locate and return information about relatively dense regions in your data.
 
 ### AWS Batch - Overview
+
+From the [docs](https://docs.aws.amazon.com/batch/latest/userguide/what-is-batch.html)
+
+> AWS Batch enables you to run batch computing workloads on the AWS Cloud. Batch computing is a common way for developers, scientists, and engineers to access large amounts of compute resources, and AWS Batch removes the undifferentiated heavy lifting of configuring and managing the required infrastructure, similar to traditional batch computing software. This service can efficiently provision resources in response to jobs submitted in order to eliminate capacity constraints, reduce compute costs, and deliver results quickly.
+>
+> As a fully managed service, AWS Batch enables you to run batch computing workloads of any scale. AWS Batch automatically provisions compute resources and optimizes the workload distribution based on the quantity and scale of the workloads. With AWS Batch, there is no need to install or manage batch computing software, which allows you to focus on analyzing results and solving problems.
+
+Components of Batch
+
+> AWS Batch is a regional service that simplifies running batch jobs across multiple Availability Zones within a region. You can create AWS Batch compute environments within a new or existing VPC. After a compute environment is up and associated with a job queue, you can define job definitions that specify which Docker container images to run your jobs. Container images are stored in and pulled from container registries, which may exist within or outside of your AWS infrastructure.
+
+* Jobs - units of work
+* Job Definitions - defies how jobs are to be run
+* Job Queues - Jobs are submitted to queues
+* Compute Environment - set of managed or unmanaged resource that are used to run jobs.
+
 
 ### T-SNE
 
@@ -187,9 +219,11 @@ Also...
 
 ### Factors the lead to the wide adoption of neural networks
 
-* mag of data, algortirhms, checper gpus
+* Data availability
+* Computational scale, especially cheap GPUs
+* Availability of algorithms and NN architectures that take advantage of large amounts of data. Better performance with very large neural networks and hige amounts of data
 
-Correlation strength
+### Correlation strength
 
 * positive is stronger, direction important not just magnitude
 
