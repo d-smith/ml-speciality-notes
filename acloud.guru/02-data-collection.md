@@ -219,8 +219,9 @@ Athena
 
 Resources:
 
-* https://d1.awsstatic.com/whitepapers/Size-Cloud-Data-Warehouse-on-AWS.pdf
-* https://d1.awsstatic.com/whitepapers/Big_Data_Analytics_Options_on_AWS.pdf
+* [Sizing Cloud Data Warehouses](https://d1.awsstatic.com/whitepapers/Size-Cloud-Data-Warehouse-on-AWS.pdf)
+* [Big Data Analytics Options
+on AWS](https://d1.awsstatic.com/whitepapers/Big_Data_Analytics_Options_on_AWS.pdf)
 * https://d1.awsstatic.com/whitepapers/enterprise-data-warehousing-on-aws.pdf
 * https://d1.awsstatic.com/whitepapers/Migrating_to_Apache_Hbase_on_Amazon_S3_on_Amazon_EMR.pdf
 * https://d1.awsstatic.com/whitepapers/RDS/AWS_Database_Migration_Service_Best_Practices.pdf
