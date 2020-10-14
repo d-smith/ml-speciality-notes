@@ -211,6 +211,9 @@ Optimization Algorithms
 * Adadelta - extension of adagrad that reduces the aggresively monotonically decreasing learning rate by restricting past squared gradients to a window. WIth adadelta there is no need to set a learning rate.
 * Adam - adaptive moment escalation -  computes adaptive leanning rates for each parameter, acts like momentum with a heavy ball with friction running down a slope
 * AdaMax - tweaks update rule scale of Adam
+* RMSProp
+* Nadam
+* AMSGrad
 
 Also...
 
@@ -227,3 +230,4 @@ Also...
 
 * positive is stronger, direction important not just magnitude
 
+### SageMaker SDK
