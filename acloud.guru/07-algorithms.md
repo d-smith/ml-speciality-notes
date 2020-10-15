@@ -547,7 +547,9 @@ Use cases:
 
 Object2Vec
 
-* The Amazon SageMaker Object2Vec algorithm is a general-purpose neural embedding algorithm that is highly customizable. It can learn low-dimensional dense embeddings of high-dimensional objects. The embeddings are learned in a way that preserves the semantics of the relationship between pairs of objects in the original space in the embedding space. You can use the learned embeddings to efficiently compute nearest neighbors of objects and to visualize natural clusters of related objects in low-dimensional space, for example. You can also use the embeddings as features of the corresponding objects in downstream supervised tasks, such as classification or regression.
+* The Amazon SageMaker Object2Vec algorithm is a general-purpose neural embedding algorithm that is highly customizable. It can learn low-dimensional dense embeddings of high-dimensional objects. The embeddings are learned in a way that preserves the semantics of the relationship between pairs of objects in the original space in the embedding space. 
+* You can use the learned embeddings to efficiently compute nearest neighbors of objects and to visualize natural clusters of related objects in low-dimensional space, for example. 
+* You can also use the embeddings as features of the corresponding objects in downstream supervised tasks, such as classification or regression.
 * A way to map out things in a d-dimensional space to figure out how similar they might be to one another.
 
 1. Expects things in pairs. Looking for pairs of item and whether they are positive or negative from a relationship standpoint. Accepts categorical label or rating/score-based labels.
@@ -560,6 +562,16 @@ Use cases:
     * Example: predict the rating a person is likely to give a movie based on similarity to other's movie ratings.
 * Document classification
     * Example: determine which genre a book is based on its similarity to known genres (history, thriller, biography)
+* And more generally...
+    * Collaborative recommendation system
+    * Multi-label document classification
+    * Sentence embeddings
+
+SageMaker docs - see [this](https://docs.aws.amazon.com/sagemaker/latest/dg/object2vec.html) and [this](https://aws.amazon.com/blogs/machine-learning/introduction-to-amazon-sagemaker-object2vec/)
+
+![object2vec](./sagemaker-object2vec-1.gif)
+
+
 
 ## Reinforcement Learning
 
