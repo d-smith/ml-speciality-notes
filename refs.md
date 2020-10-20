@@ -231,3 +231,7 @@ Also...
 * positive is stronger, direction important not just magnitude
 
 ### SageMaker SDK
+
+### Misc Tidbits
+
+* KMS integration with SageMaker training and hosting: can specify a KMS key id to use when creating notebook instances, training jobs, or endpoints.
