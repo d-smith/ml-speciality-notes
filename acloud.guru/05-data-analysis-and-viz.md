@@ -97,6 +97,7 @@ Choosing a Visualization
 Heatmaps
 
 * Graphs that represent values as color. As the value changes the color representation of the data changes.
+* Heatmaps are a great way to show correlation and compare values to other values
 
 ## Exam Tips
 

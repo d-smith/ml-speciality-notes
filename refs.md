@@ -232,6 +232,25 @@ Also...
 
 ### SageMaker SDK
 
+### Heat Maps
+
+https://docs.aws.amazon.com/quicksight/latest/user/heat-map.html
+
+https://towardsdatascience.com/better-heatmaps-and-correlation-matrix-plots-in-python-41445d0f2bec
+
+### Text Preprocessing
+
+https://towardsdatascience.com/all-you-need-to-know-about-text-preprocessing-for-nlp-and-machine-learning-bc1c5765ff67
+
+### Power Machine Learning at Scale
+
+https://d1.awsstatic.com/whitepapers/aws-power-ml-at-scale.pdf
+
 ### Misc Tidbits
 
 * KMS integration with SageMaker training and hosting: can specify a KMS key id to use when creating notebook instances, training jobs, or endpoints.
+* Can query data in S3 using Presto - good for cheap BI and reporting against S3
+* DataSets too large to fit into memory
+    * In general, a best practice is to pack the data in parallel, distributed across multiple machines.
+    * You should do this in a single run, and split the data into a small number of files with a uniform number of partitions.
+    * When the data is partitioned, it is readily accessible and easily fed in as batches across multiple machines. When the data is split into a small number of files, the preparation job can be parallelized and thus run faster.
