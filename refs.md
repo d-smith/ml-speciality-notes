@@ -111,6 +111,12 @@ Auto Scaling
     * ResourceID is the resource identifier for the production variant. Resource type is endpoint, unique identifier is the name of the variant, e.g. endpoint/MyEndpoint/variant/MyVariant
     * ScalableDimiesion - sagemaker:variant:DesiredInstanceCount
 
+Hyperparameter Tuning
+
+* CreateHyperParameterTuningJob
+    * Specify ranges of the hyperparameters you want to tune
+    * Provide the objective metric for the tuning job
+
 ### Apache Spark with SageMaker
 
 Docs [here](https://docs.aws.amazon.com/sagemaker/latest/dg/apache-spark.html)
@@ -246,6 +252,31 @@ https://towardsdatascience.com/all-you-need-to-know-about-text-preprocessing-for
 
 https://d1.awsstatic.com/whitepapers/aws-power-ml-at-scale.pdf
 
+### Glue Crawlers
+
+https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html
+
+### Validate a Machine Learning Model
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-model-validation.html
+
+### Preprocess with SagMager inference pipelines and scikit-learn
+
+https://aws.amazon.com/blogs/machine-learning/preprocess-input-data-before-making-predictions-using-amazon-sagemaker-inference-pipelines-and-scikit-learn/
+
+### More on Sampling
+
+https://en.wikipedia.org/wiki/Oversampling_and_undersampling_in_data_analysis
+https://medium.com/@hazy_ai/imbalanced-data-and-credit-card-fraud-ad1c1ed011ea
+
+### Sentiment Analysis using Comprehend, Glue, and Athena
+
+https://aws.amazon.com/blogs/machine-learning/how-to-scale-sentiment-analysis-using-amazon-comprehend-aws-glue-and-amazon-athena/
+
+### Tuning XGBoost Jobs
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html
+
 ### Misc Tidbits
 
 * KMS integration with SageMaker training and hosting: can specify a KMS key id to use when creating notebook instances, training jobs, or endpoints.
@@ -254,3 +285,4 @@ https://d1.awsstatic.com/whitepapers/aws-power-ml-at-scale.pdf
     * In general, a best practice is to pack the data in parallel, distributed across multiple machines.
     * You should do this in a single run, and split the data into a small number of files with a uniform number of partitions.
     * When the data is partitioned, it is readily accessible and easily fed in as batches across multiple machines. When the data is split into a small number of files, the preparation job can be parallelized and thus run faster.
+* Kinesis Data Analytics for SQL Apps can write outputs to Kinesis and/or Kinesis Firehose delivery stream
