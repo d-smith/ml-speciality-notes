@@ -277,6 +277,10 @@ https://aws.amazon.com/blogs/machine-learning/how-to-scale-sentiment-analysis-us
 
 https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html
 
+### Regularization
+
+https://towardsdatascience.com/regularization-in-machine-learning-76441ddcf99a
+
 ### Misc Tidbits
 
 * KMS integration with SageMaker training and hosting: can specify a KMS key id to use when creating notebook instances, training jobs, or endpoints.
