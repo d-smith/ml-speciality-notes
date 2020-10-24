@@ -244,6 +244,21 @@ https://docs.aws.amazon.com/quicksight/latest/user/heat-map.html
 
 https://towardsdatascience.com/better-heatmaps-and-correlation-matrix-plots-in-python-41445d0f2bec
 
+### Data Visualization
+
+https://towardsdatascience.com/5-quick-and-easy-data-visualizations-in-python-with-code-a2284bae952f
+
+![Visualization Types](./vistypes.jpeg)
+
+* Scatter Plots - show relationships between two variables
+* Bubble Chart - scatter plot with point size/color used to encode a third variable
+* Line plots - good to to if one variable varies greatly with another (high covariance)
+* Histograms - useful for viewing the distribution of data points
+* Barplots - good for visualizing categorical data (with catagories less than 10)
+* Boxplots - more info than histograms: outliers, range of data (whiskers), first and third quartiles (bottom and top of box), median (2nd quartile, band in the box)
+
+
+
 ### Text Preprocessing
 
 https://towardsdatascience.com/all-you-need-to-know-about-text-preprocessing-for-nlp-and-machine-learning-bc1c5765ff67
@@ -291,7 +306,7 @@ Regularization
 * A form of regression that constrains/regularilizes or shrinks the coefficient estimates towards zero.
 * Discourages learning a more complex or flexible model, so as to avoid the risk of overfitting.
 * Types
-    * Ridge - includes a lambda tuning parameter whose value determines how much to penalize the flexibility of the model
+    * Ridge - L2 type regularization, includes a lambda tuning parameter whose value determines how much to penalize the flexibility of the model
     * Lasso - aka L1 norm, penalizes only the high coefficients
 
 Bias
