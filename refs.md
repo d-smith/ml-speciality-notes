@@ -281,6 +281,36 @@ https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html
 
 https://towardsdatascience.com/regularization-in-machine-learning-76441ddcf99a
 
+Ways to avoid overfitting:
+
+* Understand the balance between bias and variance
+* Use cross validation, which helps with estimating the error over the test set, and in deciding what parameters work best for your model
+
+Regularization
+
+* A form of regression that constrains/regularilizes or shrinks the coefficient estimates towards zero.
+* Discourages learning a more complex or flexible model, so as to avoid the risk of overfitting.
+* Types
+    * Ridge - includes a lambda tuning parameter whose value determines how much to penalize the flexibility of the model
+    * Lasso - aka L1 norm, penalizes only the high coefficients
+
+Bias
+
+* refers to the error that is introduced by approximating a real life complicated problem with a much simpler model
+
+Variance
+
+* Refers by which your estimate of f(X) would change if we estimated it using a different training data set
+
+![Bias Variance Illusrated](./bias-variance.png)
+
+Cross validation
+
+* An evaluation technique to estimate how well our learner will perform on an unknown data set
+    * Hold out - hold back some data for model eval in the training phase
+    * K fold cross validation - holding out data can result in underfitting. Therefore perform holdout validation k times with 1/k of the training data.
+    * Stratified k-fold cross validation - tweak to k-fold validation to ensure each fold has the same number of samples of each target class
+
 ### Misc Tidbits
 
 * KMS integration with SageMaker training and hosting: can specify a KMS key id to use when creating notebook instances, training jobs, or endpoints.
