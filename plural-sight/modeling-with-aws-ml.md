@@ -135,3 +135,84 @@ ANN
 * metric: accuracy
 * hyperparameters: num_classes, num_training_samples
 
+## Object Detection
+
+* learning type: supervised, single deep neural network (DNN)
+    * takes image, outputs the objectd and a classification
+* file type: recordio, augmented manifest image
+* instance type: gpufor training, cpu or gpu for inference
+* Trainig modes: full or transfer
+* Metrics: mean average precision
+* hyperparameters: num_classes, num_training_samples
+
+## Semantic Segmentation
+
+* Use cases include computer vision applications like self driving cars and medical imaging diagnostics
+* Progression from coarse grained to fine grained, goes deeper
+* Fine grained pixel level approach, tags each pixel with a predefined classs
+* Identifies objects and shapes of objects
+* Supervised/classification
+* file type: recordio, augmented manidest image
+* gpu for training, gpu or cpu for inference
+* metric: intersection over union aka jaccard index
+* hyper parameters: num_classes, num_training_samples
+
+## Recurrent Neural Networks (RNNs)
+
+![](./rnn.png)
+
+Use cases:
+
+* sequence prediction
+* autocompletion
+* market predictions
+
+Needs historical context to predict
+
+* Changes feed forward architecture to use a hidden state to remember calculations up to that point in time
+
+RNN Configurations
+
+![RNN config](./config1.png)
+![RNN config](./config2.png)
+
+seq to seq - use in stock predictions
+seq to vec - used in reviewing systems - thumbs up/down
+vec to seq - one input, seq of outpus, image captioning
+encoder - decoder: used for language translation.
+
+
+## Blazing Text
+
+Word2Vec - can use for sentiment analysis
+
+Text classification - for tasks like web searches
+
+Blazing Text
+
+* Word to vec, text classification
+* Text classification (supervised)
+    * Works only on words and sentences
+    * input one sentance per line, first word \_\_label\_\_
+* Word2Vec  (unsupervised)
+    * Plain text file, one sentence per line
+    * 3 modes: cbow, skipgram, batch skip gram
+    * mean_rho (word2vec), accuracy (text classification)
+* hyperparameter: mode
+
+## Seq to Seq
+
+* RNN - 3 main layers
+    * Embedding layer - matrix of input tokens mapped to a dense feature layer
+    * Encoder layer - compresses info, produces features vector of fixed length
+    * Decoder - takes input vector that was encoded and decodes them to produce sequence of output tokens
+* Supervised, sequence of tokens to seq of tokens, machine translation, speech to text
+    * Uses RNN and CNN in encoder/decoder architectures
+* File type: recordio, json
+* Trained on gpu only
+* Metrics: accuracy, bleu, perplexity
+* No required hyperparameters
+
+## Object2Vec
+
+
