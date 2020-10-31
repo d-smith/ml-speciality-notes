@@ -92,6 +92,46 @@ Random Cut Forest
 * metrics: F1 score
 * Required hyperparameters: feature_dim, num_trees, num_samples_per_tree
 
+## Deep Learning Foundation and Algorithms
 
+Deep learning drivers
 
+* lack of domain expertise
+* complex business problems
+* lots of computational power 
+* lots of data
+
+![Artificial nueral network](./artificialnn.png)
+
+Activation
+
+* Step
+* Sign
+* Sigmoid (for non-linearity)
+* Rectifier linear unit (RELU, eliminate negative units, faster training, scales well)
+
+Neural Network
+
+* Input layers, one or more hidden layers, output layer
+* Artificial Neural Network - pattern recognition, feedback network
+* Convolution Neural Network - image processing, feed forward
+* Recurrent Neural Network - speech
+* Deep Neural Network - stochastic modeling
+* Deep Belief Network - cancer detection
+
+ANN
+
+* Forward prop: inputs, weights, activations -> outputs
+* Output compared to training, error fed back to adjust weights
+* Iterative process
+
+## Image Classification
+
+* Supervised learning alg, uses CNN
+* Use for binary and multiclass classification
+* file type: recordio, image
+* instance type: gpu for training, cpu for interence
+* modes: full mode, transfer mode
+* metric: accuracy
+* hyperparameters: num_classes, num_training_samples
 
