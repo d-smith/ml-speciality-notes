@@ -215,4 +215,20 @@ Blazing Text
 
 ## Object2Vec
 
+* 3 steps
+    * Process data - shuffle data, convert to json lines format
+    * Train the alg - see figure
+        * Encoders options: bidirection lstm, CNNs, average pooled embeddings
+    * Produce inference
+        * Singleton inputs to fixed length embeddings, or predict relationship label between pair of inputs
 
+* Unsupervised, can operate at different levels, often used to reduce dimensionality
+    * Used in genre prediction, recommendation systems
+* File type: data pairs, discrete tokens, or seq of discrete tokens
+* Cpu or GPU training, gpu inference
+* Metrics: RMSE (regression), accuracy and cross entropy(classification)
+* Hyperparameters: enc0_max_seq_len, enc0_vocab_size
+
+
+
+![](./object2vec.png)
