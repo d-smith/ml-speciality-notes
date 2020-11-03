@@ -245,4 +245,36 @@ SageMaker Features
 
 Lab - predict if a customer will open an email using XGBoost
 
-* Instance types ml.<instance family><version no><size>
+* Instance types ml.\<instance family\>\<version no\>\<size\>
+* Download data, store in a data frame
+
+Data Splitting Strategies
+
+* Time series splitting
+* K fold splitting - use to avoid overfitting
+* Random splitting
+
+## Evaluation ML Models
+
+### Classification Problems
+
+Confusion Matrix
+
+* Binary classification - row predictions, columns the actuals
+* Multiclass - same structure
+
+Performance metrics
+
+![](./metrics1.png)
+
+Recall - aka specificity
+Precision - aka positive predictive power
+
+![](./metrics2.png)
+
+Threshold A has more area under the curve than B
+
+![](./rocauc.png)
+
+### Metrics for Regression
+
