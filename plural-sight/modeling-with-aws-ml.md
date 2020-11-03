@@ -125,7 +125,7 @@ ANN
 * Output compared to training, error fed back to adjust weights
 * Iterative process
 
-## Image Classification
+### Image Classification
 
 * Supervised learning alg, uses CNN
 * Use for binary and multiclass classification
@@ -135,7 +135,7 @@ ANN
 * metric: accuracy
 * hyperparameters: num_classes, num_training_samples
 
-## Object Detection
+### Object Detection
 
 * learning type: supervised, single deep neural network (DNN)
     * takes image, outputs the objectd and a classification
@@ -145,7 +145,7 @@ ANN
 * Metrics: mean average precision
 * hyperparameters: num_classes, num_training_samples
 
-## Semantic Segmentation
+### Semantic Segmentation
 
 * Use cases include computer vision applications like self driving cars and medical imaging diagnostics
 * Progression from coarse grained to fine grained, goes deeper
@@ -157,7 +157,7 @@ ANN
 * metric: intersection over union aka jaccard index
 * hyper parameters: num_classes, num_training_samples
 
-## Recurrent Neural Networks (RNNs)
+### Recurrent Neural Networks (RNNs)
 
 ![](./rnn.png)
 
@@ -182,7 +182,7 @@ vec to seq - one input, seq of outpus, image captioning
 encoder - decoder: used for language translation.
 
 
-## Blazing Text
+### Blazing Text
 
 Word2Vec - can use for sentiment analysis
 
@@ -200,7 +200,7 @@ Blazing Text
     * mean_rho (word2vec), accuracy (text classification)
 * hyperparameter: mode
 
-## Seq to Seq
+### Seq to Seq
 
 * RNN - 3 main layers
     * Embedding layer - matrix of input tokens mapped to a dense feature layer
@@ -213,7 +213,7 @@ Blazing Text
 * Metrics: accuracy, bleu, perplexity
 * No required hyperparameters
 
-## Object2Vec
+### Object2Vec
 
 * 3 steps
     * Process data - shuffle data, convert to json lines format
@@ -232,3 +232,17 @@ Blazing Text
 
 
 ![](./object2vec.png)
+
+## Train ML Models
+
+SageMaker Features
+
+* Integrated with AWS SSO
+* No explicit set up
+* Flexible - scale up/down
+* Automated software updates
+* Integration with external repositories
+
+Lab - predict if a customer will open an email using XGBoost
+
+* Instance types ml.<instance family><version no><size>
