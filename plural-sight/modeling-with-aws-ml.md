@@ -278,3 +278,39 @@ Threshold A has more area under the curve than B
 
 ### Metrics for Regression
 
+Mean absolute error (L1 error)
+
+* compare actual value to predicted value.
+* average of the sum of the diffs between the actual and predicted value (the residuals)
+* use the absolute values of the residuals when summing them
+
+Mean square error
+
+* square the residuals instead of using the absolute value
+* penalizes larger errors, detects outliers
+
+RMSE
+
+* Represents a standard deviation of the residuals
+* Easy to interpret as they match the units of the input
+* Take the square root of the RMSE
+
+MSE and RMSE can range from 0 to infinity
+
+* MAPE expresses percentage of the error
+
+Bias and Variance
+
+* Diff between actual and predicted is called the bias
+    * Low biads - high accuracy
+* Variance - a measure of how much the predictions for a fixed point vary between different sample sets
+* Low bias, high variabce - overfitting
+* Low variabce, high bias - underfitting
+
+Bulls eye - bias abd variance tradeoff
+
+[](./bv.png)
+
+* We want low bias, low variance
+
+
