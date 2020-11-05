@@ -314,3 +314,22 @@ Bulls eye - bias abd variance tradeoff
 * We want low bias, low variance
 
 
+Overcoming Underfitting
+
+* Add more features
+* Add complexity to the model
+
+Overcoming Overfitting
+
+* Use fewer feature to decrease variance
+* Increase training samples
+
+Regularization
+
+* Technique used to avoid overfitting
+* Overfitting captures al the noise - high variance
+* Reg converts high var to low var
+
+
+## Tune ML Models
+
