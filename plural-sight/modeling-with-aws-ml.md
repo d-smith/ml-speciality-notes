@@ -333,3 +333,51 @@ Regularization
 
 ## Tune ML Models
 
+Grid Search
+
+* Hyperparameter combos set up in grid, all combos in the grid evaluated, best performing combo selected
+* Resource intensive
+* Not suitable for large numbers of hyperparameters
+
+Random Search
+
+* Grid set up still used, but combinations are selected at random
+* Use a time or resource budget
+* Relatively faster, works good with fewer parameters
+* Assumes all parameters not of equal importance 
+
+Bayesian Search
+
+* Overcomes the drawback of grid and random, which are unaware of the results of past evaluations
+* Keeps track of past results, treats tuning as a regression problem
+* Improves performance by leveraging previous best job
+
+Tuning Job Resource Limits
+
+* Parallel jobs  - 100
+* Max training jobs per tuning job - 500
+* Concurrent training jobs per tuning job - 10
+* Hyperparameters that can be searched - 20
+* Metrics per tuning job - 20
+* Max runtime per job - 30 days
+
+Best Practices
+
+* Use smaller number of hyperparamters
+* Use smaller range for HP
+* Use logarithmic scaling
+* Limit the number of concurrent training jobs
+* Enable distribute training
+
+Early Stopping
+
+* Terminating taining job when the objective metric computed by the training job is significantly lower than the best training job
+* Conserve resources
+* Avoid overfitting
+
+Warm Start
+
+* Reuse previously concluded training jobs
+* Conserves resources, time, effort
+* Longer start time
+
