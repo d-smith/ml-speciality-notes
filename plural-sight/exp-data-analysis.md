@@ -148,3 +148,33 @@ Metrics for Data Distribution
     * A measurement of how pointy the distribution is
     ![](./kurtosis.png)
 
+## Data Visualization
+
+* Make it easier to comprehend data 
+* Make it easier to understand how well our ML alg is performing
+* Make it easier to discover relationships in data
+
+Box and Whisker Plot
+
+![](./boxandwhisker.png)
+
+* Useful to summarize descriptive statistics
+* Good for spotting outliers
+
+Types
+
+* Comparison
+    * Bar Charts - different catagories on X, use bars to compare, help understand ranges
+    * Line chart - compare progression over time, trend lines, helps to relate direction with time events
+* Relationship
+    * Scatterplot - see relationship between two variables, shows correlation
+    * Heatmap - correlation matrics between two values, color denotes the strength of the relationship between two variables, helps identify useful features, more readable
+* Composition
+    * Pie chart - see the relative composition, percentage distribution
+* Distribution
+    * Histogram - distribution over a range of different values
+
+Bar Chart vs Histogram
+
+* Bar chart shows values of different categories, histogram shows frequency of data.
+* Bars do not have to be ordered in a bar chart, should be ordered in a histogram.
