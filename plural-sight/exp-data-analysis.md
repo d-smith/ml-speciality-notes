@@ -178,3 +178,4 @@ Bar Chart vs Histogram
 
 * Bar chart shows values of different categories, histogram shows frequency of data.
 * Bars do not have to be ordered in a bar chart, should be ordered in a histogram.
+
