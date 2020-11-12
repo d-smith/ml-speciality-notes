@@ -192,3 +192,165 @@ Business oriented data visualization tools
 Demo
 
 * Manage data - upload the csv
+
+## Data Preparation Using AWS
+
+Common Data Challenges
+
+![](./common-data-challenges.png)
+
+Sources of data errors:
+
+* User and system errors, no data validation.
+* Heterogenous data sources with different business rules
+    * Different units
+* Hards facts
+    * Not enough data, data with too many dimensions
+
+Problem: Imbalanced Data 
+
+* Fraud detection - train on data with 98% legit transaction 2% fraudulant, model in prod misses fraud
+* The training data is imbalanced - model could not learn enough about fraud
+
+Solutions for Unbalanced Data
+
+* Undersampling majority classes
+* Over sampling minority classes
+* Generating synthentic data based on the characteristics of the data
+
+Problem: Scale of Features
+
+* Some features might have multiple scales
+    * Current in dollars vs pounds sterling
+* Many ML algortithms are sensitive to magnitude
+    * K-Means clustering uses Eudlidean Distance
+    * cm vs inches
+
+Solutions for Feature with Multiple Scales
+
+* Scale to same units
+
+Solutions for Feature Magnitudes
+
+![](./magnitudes.png)
+
+Problem: Inconsistent Formats
+
+* Might be due to not following organized formats due to lack of upstream data validation
+    * e.g. location column with values 'Madrid, Spain', 'Sweden', and 'California'
+
+Solutions for Inconsistent Formats
+
+* Prevent upfront via validation
+* Fix manually
+* Deduce patterns in the data
+* Use fuzzy matching - E.G. Levenshtein distance
+    * Python lib named Fuzzy Wuzzy
+
+Problem: Different Presentation of Data
+
+* Machine learning algorithms operate on numbers
+    * What if we have video or audio data?
+    * What if we have categorical data?
+
+Categorical Data
+
+* Label Encoding
+    * Assigns a unique number for every category
+        * e.g. Japan, China, USA becomes 1,2,3
+        * Not recommended for dataset features with many categories
+    * One-Hot Encoding
+        * Convert each category to a column, assigns 1 to the category, zero to others
+
+Problem: Missing Data
+
+* Missing data can degrade model quality
+* Common problem in ML
+    * Optional fields
+    * Newly introduced columns
+    * Failure of input systems
+
+Missing Data Solutions
+
+* Drop observations with missing values
+    * simple but can lose critical data
+* Ignore missing values
+    * Some algortims work with missing values
+    * Implementation specific
+* Impute Missing Values
+    * Mean, Median, Mode, Predict missing values
+
+Problem: Outliers
+
+* Real world data is not ideal
+    * Entry mistakes
+    * Data processing errors
+    * Extremely rate non-representative conditions (aka novelties)
+* They mess-up statistical characteristics of the data
+* Sometimes a necessary evil
+
+Solution for Outliers
+
+* Finding Outliers
+    * Classify data points that has a Z-Score bigger than absolute of specific data
+    * Classify data points outside the IQR
+    * Box and scatterplots help detect outliers
+* Handling
+    * Removal
+    * Correction
+
+Problem: High Dimensionality
+
+* WHen we have too many dimensions
+* Why bad?
+    * Hard to visualize
+    * Increases risk of overfitting
+    * Training becomes more difficult
+
+Solution for High Dimensionality
+
+* Feature engineering
+    * Creating meaninful features from existing features, e.g. life span = death year - birth year
+* Feature selection
+    * Selecting subset of existing features
+* Dimensionality reduction
+    * Reducing dimensions of data to brand new dimensions
+
+PCA: Principal Component Analysis
+
+* Objective: reduce from n-dimension dataset to a k-dimension dataset, by finding k vectors onto which to project the data so to minimize the projection error.
+* Can be difficult to explain new features to others
+
+Problem: Highly Correlated Features
+
+* aka multicollinearity
+* Occurs when independent variables (predictors) are correlated
+* Big problem for regression problems
+    * Multicollinearity violates definition of regression
+* Regression coefficient refers to the changes in a dependent variable when a dependent variable is changed while the others are held constant.
+
+Solutions
+
+* Feature removal based on correlation matrix
+    * Simple, but the view will be limited to one feature, no holistic view
+* Feature removal based on variance inflation factor (VIF)
+    * VIF is a value that tells us how much collinearity each independent variable has wrt all other independent variables
+    * VIF = 1 - not correlated, Between 1 and 5 - moderately correlated, Greater than 5 = highly correlated
+
+Problem: Malformed Data Distribution
+
+* Many machine learning algorithms assume the data set is Guassian (normally distributed)
+* In practice, most datasets are not
+* Normally evaluated visually or via normality technques
+
+Solutions
+
+* Thesholding with long tails
+* Removing outliers and extreme values
+* Applying power and log transformations
+
+
+
+
+
+
