@@ -150,6 +150,8 @@ Metrics for Data Distribution
 
 ## Data Visualization
 
+A picture is worth a thousand words
+
 * Make it easier to comprehend data 
 * Make it easier to understand how well our ML alg is performing
 * Make it easier to discover relationships in data
@@ -172,10 +174,21 @@ Types
 * Composition
     * Pie chart - see the relative composition, percentage distribution
 * Distribution
-    * Histogram - distribution over a range of different values
+    * Histogram - distribution over a range of values
 
 Bar Chart vs Histogram
 
 * Bar chart shows values of different categories, histogram shows frequency of data.
 * Bars do not have to be ordered in a bar chart, should be ordered in a histogram.
 
+### QuickSight
+
+Business oriented data visualization tools
+
+* Low price
+* Scalable
+* SPICE engine
+
+Demo
+
+* Manage data - upload the csv
