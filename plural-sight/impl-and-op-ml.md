@@ -145,3 +145,117 @@ Deployment Approaches in SageMaker
 
 * Hosting Services - Deploy an interence endpoint to integrate inference into your workflow or application
 * Batch Transform - perform an inference job on an entire dataset stored in Amazon S3
+
+Hosting Services Use Cases
+
+* Deploy inference to a secure API endpoint
+* Integrate inference into an application or workflow
+* Don't have all the data you'll need in the future
+
+Batch Transform Use Cases
+
+* Do not need an exposed endpoint for inference
+* Already have the entire dataset on which you want to perform inference
+* Need to process an incoming dataset to remove records prior to inference
+
+### SageMaker Batch Transform
+
+Utilizing Batch Transform
+
+* Post training validation of model fit
+* Chain multiple models
+* Predictions that will be served outisde of SageMaker
+
+Batch Transform Process
+
+* Training and store model
+* Load dataset for inference into Amazon S3
+* Specify configuration for batch transform job
+* Execute job on dataset
+* Results are stored in specified s3 bucket
+
+Batch Transform Config
+
+* Input dataset -\> inference infrastructure -\> output data
+* Infrastructure can be configured with the number of instances and containers
+* Strategy dictates how data is pulled from the input source (batched or record at a time)
+* Transform data source input defines the source s3 bucket
+* The AssembleWith parameter dictates how the data will be output
+* The transform output data location specifies the output s3 bucket 
+
+Infrastructure Approaches
+
+* SageMaker Container
+* Customer container 
+
+### Sage Maker Hosting Services
+
+Provide a scalable real-time inference REST endpoint for your machine learning models that can be integrated into your applications and workflows
+
+Example:
+
+* Client app -\> API gateway -\> Lambda -\> Endpoint -\> Load balancer -\> Instances -\> model in s3
+
+Deploying to SageMaker
+
+* Create a model - name, s3 location
+* Endpoint configuration - model, instance size, no initial instances
+* Create an endpoint from the model configuration
+
+Inference Endpoints
+
+* Secured with HTTPS
+* Can autoscale based on defined minimum and maximums
+* Can be updated without downtime
+* Support A/B testing through multiple production variants
+
+Multiple Production Variants
+
+* Variants defined are defined in the endpoint configuration
+* Every endpoint configuration has at least on production variant
+* Multiple production variants allow you to A/B test multiple versions of a model
+* The InitialVariantWeight parameter determines the traffic to the variant
+* Weights per variant can be updated by updating the endpoint configuration.
+
+Deploying a Model using SageMaker Hosting Services
+
+* Provided notebook, python 3 (data science) notbok type
+* Train the model
+    * XGBoost container
+    * Create estimator, set hyperparameters, train it
+* Create the model
+    * Ref the model data from training
+* Create an endpoint configuration
+    * Dictates how inference will work on that endpoint
+* Create an endpoint
+    * Using the endpoint configuration
+
+Validate Model and Deployment
+
+* Loop over some data and invoke the endpoint, examine the output
+
+Update with Multiple Production Variants
+
+* Retrain a model, maybe adjust the hyperparameters
+* Save the model
+* Create a new endpoint configuration with multiple variants
+* Update endpoint with new endpoint configuration
+* Test it out, look at InvokedProductionVariant in the response
+
+Additional Deployment Topics
+
+* Amazon Elastic Inference
+    * Access to a factional GPU at a cost that is greatly reduced over a full GPU allocation for frameworks where Elastic Ingerence capability is supported
+* Multi-model Endpoints
+    * Different from multple variants of the same
+    * Endpoints can serve multiple distinct models
+    * Supports multiple production variants on multiple models
+    * Does not support serial inference pipelines
+    * Does not support GPU instance type or elastic inference
+    * Share instances among multiple models
+* Inference Pipelines
+    * An inference pipeline is an Amazon SageMaker model that is composed of a linear sequence of 2 to 5 containers that process requests for inferences on data
+    * HTTP between the container
+    * Containers located on the same EC2 instances
+    * Enables a complete workflow without having to do external data preprocessing or postprocessing
+
