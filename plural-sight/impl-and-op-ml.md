@@ -259,3 +259,58 @@ Additional Deployment Topics
     * Containers located on the same EC2 instances
     * Enables a complete workflow without having to do external data preprocessing or postprocessing
 
+## Securing SageMaker
+
+Shared Responsibility Model
+
+* AWS - security of the cloud
+* Customer - security in the cloud
+
+Customer Concerns in ML
+
+* Data Protection
+* AuthN abd AuthZ
+* Compliance
+* Monitoring
+* Securing Infrastructure
+
+### Securing Data
+
+Aspects of data encryption
+
+* Data at rest
+* Date in transit
+
+S3 Data
+
+* Enable encriptions on s3
+    * Bucket policy to enfore
+    * Use customer managed key
+* SageMaker verifies that its data outputs are encrypted
+
+SageMaker Data Volumes
+
+* Notebook Instances
+* Processing Jobs
+* Training Jobs
+* Batch transform jobs
+* Hosting services endpoints
+* Hyperparameter tuning jobs
+
+
+Data in Transit
+
+* Most inter-network traffic data is encrypted using TLS 1.2
+* Some areas are not encrypted
+    * Commumication between control and training job instances
+    * Node communication in distributed processing jobs
+    * Node communication in distributed training jobs
+
+Amazon Macie
+
+* Fully managed service focused on data security
+* Utilizes machine learning to discover and report on data stored in S3
+* Alerts organizations on several conditions:
+    * Unusual data access patterns
+    * Configuration errors for sensitive data
+* Enables automated compliance checking for data stored in s3
