@@ -314,3 +314,35 @@ Amazon Macie
     * Unusual data access patterns
     * Configuration errors for sensitive data
 * Enables automated compliance checking for data stored in s3
+
+### VPC config for SageMaker
+
+When you use SageMaker in VPC, you can take advantage of VPC endpoints to avoid sending traffic over the public internet.
+
+Two Types of VPC Endpoints
+
+* Redundant and highly-available
+* Can control access using IAM policies
+* Gateway endpoints - S3 and DynamoDB
+* Interface endpoints
+    * Leverage PrivateLink
+
+### IAM for SageMaker
+
+Using IAM with SageMaker
+
+* Define least privilege access for each user using IAM policies
+* Users should leverage MFA
+* Supports identiry-based policies not resource based policies
+* Start with the sample policies
+
+### Securing Notebooks
+
+* Notebook instances intended for a single users
+* SageMaker notebooks are internet-enabled by default
+    * Can be eliminated by launching notebook in a custoer managed vpc
+* Can manage internet access when deployed to VPC using the usual controls
+
+### Compliance
+
+* Extract compliance report using AWS Artifact
