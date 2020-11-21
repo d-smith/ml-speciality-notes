@@ -397,5 +397,21 @@ Continuous Deployment
 
 * Developmet process where a solution is built, tested, and deployed automatically based on a commit to a source repository without any human intervention.
 
+### Monitoring SageMaker
 
+* CloudWatch - metrics, logs
+    * Metrics stored for 15 months, 2 weeks available in console
+* CloudTrail - audit
 
+### Fault Tolerant Endpoint Configuration
+
+* Spread your damn instances across availability zones
+
+### Loosely Coupling
+
+By building a modular architecture, components can integrate with other components without having to know about specific definition or configuration of those components. Elements like load balancers, queues, and managed workflow engines support loose coupling.
+
+* Step flow function
+* SQS
+* SNS
+* Eventbridge
