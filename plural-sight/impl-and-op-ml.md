@@ -346,3 +346,56 @@ Using IAM with SageMaker
 ### Compliance
 
 * Extract compliance report using AWS Artifact
+
+## Implementing an HA Machine Learning Solution
+
+Reliability on AWS
+
+* Fault tolerance - being able to support the failure of components in your architecture
+* High availability - keeping your entire solution running in the expected manner despite issues that may occur
+
+Scaling SageMaker Endpoints
+
+* Elasticity - aquire resources as you need them, release when not needed
+* Vertical scaling - select larger instance types with additional resources
+* Horizontal scaling - scale out and add additional resources as you need them
+
+Instance Types
+
+* Standard instance
+* Memory optimized
+* Compute optimized
+* Accelerated computing
+* Elastic inference
+
+SageMaker Autoscaling
+
+* Horizontal scaling approach
+* Configure in the console, cli, or via api
+* Uses cloud watch metrics to define the scaling poloicy
+* Initial metric to utilize for scaling - SageMakerVariantInvocationsPerInstance, average times per minute the instance is invoked for a variant
+* Can utilize other metrics, e.g. CPUUtilization
+
+Configuring Autoscaling
+
+* Select endpoint
+* Select a production variant, configure autoscaling
+    * Set max, min instances
+    * Edit scaling policy - select metric, target value, cool down interval for scale out, scale in
+
+### Deployment Methodologies
+
+Continuous Integration
+
+* Dev practive that requires developers to integrate code into a shared repo several times a day. Each checking is verified by an automated build, allowing teams to detect problems early.
+
+Continuous Delivery
+
+* Dev process where a solution is built and tested automatically based on a commit to a source repository without any human intervention. The final deployment process, though automated, is still triggered manually. 
+
+Continuous Deployment
+
+* Developmet process where a solution is built, tested, and deployed automatically based on a commit to a source repository without any human intervention.
+
+
+
