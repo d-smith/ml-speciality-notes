@@ -77,4 +77,19 @@ S3 Storage Classes
     * Transition actions - change storage class
     * Expiration actions - once expired AWS will delete the object
 
-    
+S3 Security
+
+* Encryption - client-side, server-side
+    * Server Side
+        * SSE-S3: encrypts s3 objects using keys handled and managed by AWS
+        * SSE-C: you manage encryption keys and provide them on upload and download, amazon uses the key to encrypt and decrypt
+        * SSE-KMS: customer manages the data key using KMS, higher security, audit train
+
+Security
+
+* User based or resource based
+    * User: IAM user policies
+    * Resource
+        * Bucket policies
+        * Object ACLs
+        * Bucket ACLs
