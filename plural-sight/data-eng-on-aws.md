@@ -37,3 +37,44 @@ For the Exam
 * Batch and stream processing characteristics help you decide the services to use for ingestion
 * Application characteristics help you decide the storage services to use
 
+## Typical Dataflow for ML on AWS
+
+Modern data analytics pipelines
+
+![](./data-analytics-pipeline.png)
+
+Data movement - extract from the source and ingest into a destination
+
+Modern data workflow architecture
+
+![](./data-workflow-arch.png)
+
+## Data Storage Options on AWS
+
+Amazon S3
+
+* Amazon S3 Data Lakes
+* Query in place services for big data analytics
+* Primary data repository for machine learning tools
+* S3 access points simplifies data sharing
+* S3 batch process s3 objects in a simple straight forward manner
+* S3 event notifications
+
+Partitioning Data in Amazon S3
+
+* Objects in buckets
+* Object key is full path to object
+* Partitioning is done on the path
+    * By date is column
+    * Tailor to your data access patterns
+* Up to 5 TB object size, up to 10 tags
+
+S3 Storage Classes
+
+~[](./storage-classes.png)
+
+* Object lifecycle management
+    * Transition actions - change storage class
+    * Expiration actions - once expired AWS will delete the object
+
+    
