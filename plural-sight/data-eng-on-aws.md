@@ -93,3 +93,36 @@ Security
         * Bucket policies
         * Object ACLs
         * Bucket ACLs
+
+VPC Endpoints for S3
+
+* Keep traffic from the VPC off the public internet, plus no need for gateway, etc.
+* Access points only via virtual host style endpoints
+
+EFS for Machine Learning
+
+* Personalized environments: notebook files, training data, model artifact
+* SageMaker integrates for training jobs
+
+Amazon FSx for Lustre
+
+* S3 integration: file system linked to an S3 bucket
+* Amazon sagemaker - traiing jobs
+* AWS Batch integration
+* AWS parallel cluster integration
+
+Elastic Block Store
+
+* Multi-attach capablity, use for distributed training on up to 16 instances, 128 GPUs
+
+Cost Effectiveness
+
+* produce, class or tier, how much data, what region
+* use the calculator to compare
+
+Exam Tips
+
+* S3 - stores objects, globally unique bucket names, max 5 TB, object keys = path, partitioning on the path, life cycle rules, vpc endpoints
+* EFS - speeds training jobs
+* EBS - higher availability
+
