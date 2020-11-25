@@ -126,3 +126,152 @@ Exam Tips
 * EFS - speeds training jobs
 * EBS - higher availability
 
+## Database Options for Machine Learning on AWS
+
+### Amazon RDS
+
+Fully managed scalable relational database service
+
+* 6 engines
+* Can connect to RDS databases from Jupyter Note using pymysql, etc.
+
+### Amazon Aurora
+
+Relational database built for the cloud
+
+* Natively integrated with SageMaker and Amazon Comprehend
+* Use SQL to apply machine learning to data in Aurora
+    * Amazon Aurora Machine Learning
+
+### DynamoDB
+
+Serverless non-relatoinal, keu value store with single-digit millisecond response data
+
+Analyze data in DDB using SageMaker for realtime predictions
+
+![](./ddb-realtime-predictions.png)
+
+
+### Amazon Redshift
+
+Multi-parallel processing data warehouse
+
+Can do JDBC connections to redshift from Jupyter notebooks
+
+* Use psycopg2, e.g. !conda install --y -c anaconda psycopg2
+
+### Amazon Document DB
+
+Fast, scalable non-relational schema-free data for mongodb workloads
+
+* Unique distributed data storage on s3
+
+Amazon Translate and Transcibe output JSON
+
+* Makes document DB a natural database to integrate with
+
+### Exam Tips
+
+Know
+
+* The different database offerings from Amazon at a high level
+* Different integration scenarios for machine learning use cases
+
+## Using a Data Warehouse or Data Lake for ML on AWS
+
+Data warehouse vs Data Lake
+
+![](./dwdl.png)
+
+Data Lake Architecture
+
+![](./dlarch.png)
+
+### Immutable Logs and Materialized
+
+Immutable logs and materialized views are the foundation for s3 data lakes
+
+Realtime analytics architecture
+
+![](./realtime.png)
+
+Batch and interactive analytics AI'd
+
+![](./batch.png)
+
+
+Batch, Interactive, Stream, and Real-time Analytics on an S3 Data Lake
+
+![](./unified.png)
+
+### Amazon Lake Formation
+
+Ingest and cleaning
+
+* What data sources
+* S3 locations
+* Map data to s3 locations
+* ETL to load and clean the data
+
+Security
+
+* Configure access policies
+* Metadata access policies
+* Access from analytical services
+
+Analtics
+
+* set up the analytics capabilities, etc.
+
+AWS Lake Formation Solution Stack
+
+* Instantiate a common architecture
+* Ingest and clean
+    * Blueprints simplify ingest
+    * ML transforms for data cleaning
+* Security
+    * Real time monitoring and integrated auditing
+    * Centralized permissions
+* Analytics  & ML
+    * Comprehensive portfolio of integrated tools
+    * Right tool for the right job
+
+Lake formation built on top of glue
+
+![](./lakeglue.png)
+
+### Redshift
+
+Some features...
+
+* AQUA - accelerated query optimizer cache for redshift
+* Spectrum
+* Federated Query (against postgres and aurora in addition to redshift)
+
+### Data Warehouse vs Data Lake
+
+Data warehouse
+
+* Relational data
+* Schema on write
+* Curated data
+* Batch reporting, BI, visualizations
+
+Data Lake
+
+* Non-relational
+* Schema on read
+* Raw data
+* ML, predictive analytics, data discovery/profiling
+
+### Exam Tips
+
+* DL and DW are the primary way to get data into machine learning services
+* Differences between DW and DL
+* Data lake advantages
+
+
+From AWS
+
+> A data lake is a centralized repository that allows you to store all your structured and unstructured data at any scale. You can store your data as-is, without having to first structure the data, and run different types of analytics—from dashboards and visualizations to big data processing, real-time analytics, and machine learning to guide better decisions
+
