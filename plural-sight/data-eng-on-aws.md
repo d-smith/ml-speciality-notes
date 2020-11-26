@@ -275,3 +275,39 @@ From AWS
 
 > A data lake is a centralized repository that allows you to store all your structured and unstructured data at any scale. You can store your data as-is, without having to first structure the data, and run different types of analytics—from dashboards and visualizations to big data processing, real-time analytics, and machine learning to guide better decisions
 
+## Streaming Data Ingestion
+
+Stream processing
+
+* Continuous transfer of data rolling in over time in a steady, high-speed rate
+* Instantaneous insights
+* Data-driven decisions in real-time
+* Queries on the most recent data
+* Performance has latencies in seconds or milliseconds
+* Analyses are simple response functions, aggregates, and rolling metrics
+
+Kinesis Family
+
+* Collect, process, and analyze video and data streams in real time.
+* Managed Kafka alternative
+
+Firehose
+
+* Load redshift, s3, elastic search, splunk
+* Data conversion and transforms
+
+Data Analytics
+
+* Process data from kinesis firehose or data streams
+* Build in SQL functions
+* 2 building ML algorithms
+    * Random_cut_forest
+    * Hotspots
+
+![](./kanalytics.png)
+
+
+Video Streams
+
+![](./videostreams.png)
+
