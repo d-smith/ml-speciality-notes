@@ -311,3 +311,159 @@ Video Streams
 
 ![](./videostreams.png)
 
+## Batch Ingest on AWS for Machine Learning
+
+Batch Processing
+
+* Data scope is limited to query processing over all or most of the data
+* Queries done on large batches of data
+* Performance has latencies in minutes to hours
+* Analyses are complex
+* RUns asynchronously and automatically across multiple compute instances
+
+Data Migration Service
+
+* Migrate external databases to AWS
+* Source database remains available
+* Allows homogeneous migration, as well as heterogeneous
+* Continuous data replication
+* Change data capture
+
+AWS Batch
+
+* Docker containers
+* Dynamically provisioned compute (ec2 and spot)
+* Fully managed, serverless
+* Cost-optimized resource provisioning
+* Schedule with cloud watch
+* Orchestrate workflows with step functions
+
+AWS Glue
+
+* Fully managed ETL service
+* Glue job - business logic for ETL
+* AWS glue data catalog - metadata
+* Glue crawlers
+* Automatic schema discovery
+* Built in transformations
+* Glue jobs can be time based or event based
+
+Glue vs DMS
+
+![](./gvsdms.png)
+
+Glue vs Batch
+
+![](./gvsb.png)
+
+Exam Tips
+
+* High level knowledge of what is batch processing
+* What DMS is used for, 1 step vs 2 step (hetero is 2 step with a schema convesrsion in the mix)
+
+## Data Transformation For ML
+
+Ingest raw data, then prepare for consumption
+
+Preparing data for downstream consumption:
+
+* Data normalization
+    * ORC and Apache Parquet
+* Data partitioning
+    * Less data scanned, faster queries
+* Data compression
+    * Reduces storage and costs
+* Storage Optimization
+    * Reduces costs
+
+Raw Data
+
+* Store in Apache Hive Style Partition
+
+
+Target Data
+
+* Pick an open source columnlar store
+
+Data Partitioning
+
+* Date partitioning is popular, but look at how the queries are structured
+
+Data compression
+
+* Reduces storage, disk I/O - optimizes performance and cost
+
+Storage Optimization
+
+* Leverage s3 storage classes
+
+ETL vs ELT
+
+![](./etlvselt.png)
+
+Exam Tips
+
+![](./dataxformtips.png)
+
+## Data-Driver Workflow
+
+The AWS Data Pipeline
+
+![](./awsdatapipeline.png)
+
+Glue vs Pipeline
+
+![](./gluevspipeline.png)
+
+Using Pipeline in ML Scenarios
+
+* Run pipeline on demand or schedule: take EC2 log files and move to s3, move s3 logs to EMR for analysis
+* Data in RDS or DDB, want to move it to S3 
+    * Use the pipeline to spin up ec2 instance, connects to db to move to s3, now available for sage maker
+
+Exam Tips
+
+* Know pipeline at a high level
+* ETL via EC2
+
+## Data Transformation Using Apache Spark
+
+Amazon EMR
+
+* Fully managed hadoop framework on ec2 instances for running massively parallel compute
+* Decouples compute from storage, petebyte scale analysis of data from s3
+* Orchestration via zepplin and EMR notebooks (managed analytics environment based on jupyter notebooks)
+* Reliable, elastic, secure
+* Multiple data storage options - s3, hdfs, ebs, dynamofb, redshift, rds, glacier
+* ML, ETL, ClickStream, Genomics
+
+Apache Spark
+
+* Fast unified analytics engine, process TBs for data
+* Massive parallelism (1000s of nodes)
+* DataFrames, DAGs, RDD, Vector and LabeledPoint
+* SparkML: linear algebra, statistics, run in parallel
+* Regression, classification, clustering, pattern mining
+
+Spark Framework - the can run in parallel on massive clusters
+
+* Spark core - R, Python, Scala, Java API
+* MLlib
+* Streaming
+* SQL
+* GraphX
+
+Spark and SageMaker Integration
+
+* data ingestion and transformation via spark, model training, testing and validation, and deployment using sage maker
+* data ingestion, data transformation, model training, testing and validation on spark, deployment using sage maker
+
+Exam Tips
+
+![](./spark.png)
+ 
+ Don't use spot instances for core or master nodes or you can lose data
+
+ ## Data Transformation Using Glue, and Amazon Athen
+
+ 
