@@ -466,4 +466,126 @@ Exam Tips
 
  ## Data Transformation Using Glue, and Amazon Athen
 
- 
+ Glue
+
+ * AWS Glue Data Catalog
+ * Crawlers
+ * Eliminates dark data
+ * AWS Glue ETL Operations - generate code using metadata
+    * Scala
+    * PySpark
+* Streaming ETL in AWS Glue - clean and transform streaming data
+* AWS Glue Jobs System
+* Monitor and receive alarms
+
+![](./glue.png)
+
+![](./how.png)
+
+Glue and Lake Formation
+
+* Glue is the foundation, lake extends the overall solution
+
+Glue Catalog - Can be used by these services
+
+* Athena
+* Redshift Spectrum
+* Amazon EMR
+* AWS Glue Data Catalog for Apache Hive Metastore
+
+Crawlers
+
+* Inventory the data in data stores
+* Use built in classifiers and customer classifiers
+* Connect to the data store, crawl to infer the schema, write metadata to catalog
+
+Glue Jobs
+
+![](./gluejobs.png)
+
+Built-in Data Transforms to Use in PySpark ETL Operations
+
+* Data passes from transform to transform using DynamicFrames
+* For the exampe know the following
+    * DropFields
+    * DropNullFields
+    * Filter 
+    * Join
+    * Map
+* Also
+    * Relationalize - converts DynamicFrame to a relational form (rows and columns)
+
+Glue ETL
+
+* Supports transformation between different formats
+* Supports CSV, JSON, Avro, Parquet, ORC, XML, Amazon Ion (input), grokLog (LogStash), glueparquet
+
+Streaming ETL
+
+* Supports CSV, JSON, PArquet, ORC
+
+ML transforms also supported
+
+Demo
+
+* S3 data (raw zone) -> Lambda -> Crawler -> Populate data catalog
+* After catalog update, create glue job
+    * Job -> run ETL -> Populate target data
+
+Amazon Athena
+
+* Interactive query service based on Presto
+    * Standard SQL
+* Unstructured, semi-structured, and structured data
+* Serverless, autoscales
+* Queries in parallel
+* Read and write encrypted data
+* Integrated with glue catalog
+
+Good for:
+
+* Ah hoc queries
+* Complex analyses: large joins, window, functions, arrays
+* Supports partitioning, compression
+* Federated query
+* Native integration with Amazon QuickSight
+
+Athena supported data formats - read:
+
+* TSV, CSV, Custom
+* JSON
+* Parquet, ORC
+* Logstash
+* CloudTrail logs
+* Apache web server logs
+
+Writing data:
+
+* Parquet, ORC, Avro, JSON, text
+
+Glue and Athena Together - Typical Flow
+
+![](./glueathena.png)
+
+ML + Athena (Preview)
+
+* Invoke ML algorithms across text analysis, statistical tools, and any algorithm deployed on SageMaker
+* Invole ML models in SQL queries from Athena console, Athena APIs, and through Athena's JDBC and ODBC drivers in tools like Amazon QuickSight
+* Logictic regression to find anonolies, what if analysis and Monte-Carlo simulations, forecasting to predict values, k-means clustering to differentiate customer segments, etc
+
+Exam Tips
+
+* AWS Glue Data CAtalog
+    * Central metadata repository for all your data
+    * Versioning
+* AWS Glue Crawlers
+    * Infers schema
+    * Populate the AWS Data Catalog
+    * Can run on demand or triggered by a time or by event
+* AWS Glue Jobs
+    * ETL transformation
+* Amazon Athena
+    * Serverless, interactive query service to query structured, semi-structured, and unstructured data without the need to first perform ETL, directly on S3 using SQL
+
+    
+
