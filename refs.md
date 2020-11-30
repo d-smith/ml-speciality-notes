@@ -35,6 +35,7 @@ Stochastic Gradient Descent
 
 * Stochastic - means random. 
 * Reduces computation by selecting one point at random in each step to use to compute the derivatices.
+* See [here](https://towardsdatascience.com/stochastic-gradient-descent-clearly-explained-53d239905d31)
 
 Mini-Batch
 
@@ -212,7 +213,7 @@ Challenges
 Optimization Algorithms
 
 * Momentum - handle oscillations across the slopes of a ravine to avoid locap optima by adding a fraction of the update vector of the past time step to the current update vector.
-* Nesterov accelerated gradient - smarter version of momentum where you have some way of knowing where you are going so you can slow down before the hill slops up again.
+* Nesterov accelerated gradient - smarter version of momentum where you have some way of knowing where you are going so you can slow down before the hill slopes up again.
 * Adagrad - good for sparse data. Adapts the learning rate of individual features, using lower rates (smaller updates) for parameters associated with frequent features, and larger updates for infrequent features.
 * Adadelta - extension of adagrad that reduces the aggresively monotonically decreasing learning rate by restricting past squared gradients to a window. WIth adadelta there is no need to set a learning rate.
 * Adam - adaptive moment escalation -  computes adaptive leanning rates for each parameter, acts like momentum with a heavy ball with friction running down a slope
