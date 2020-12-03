@@ -67,3 +67,31 @@ See [here](https://docs.aws.amazon.com/sagemaker/latest/dg/tf.html)
 When you’re re-purposing a pre-trained model for your own needs, you start by removing the original classifier or last layer, then you add a new classifier that fits your purposes, and finally you can train the entire model on a new large dataset. 
 
 
+From "Exam Readiness: AWS Certified Machine Learning - Specialty"
+
+> A financial planning company is using the Amazon SageMaker endpoint with an Auto Scaling policy to serve its forecasting model to the company’s customers to help them plan for retirement. The team wants to update the endpoint with its latest forecasting model, which has been trained using Amazon SageMaker training jobs. The team wants to do this without any downtime and with minimal change to the code. What steps should the team take to update this endpoint?
+
+Deregister the endpoint as a scalable target. Update the endpoint config using a new endpoint configuration with the latest model amazon s3 path. Finally, register the endpoint as a scalable target again.
+
+> A real estate startup wants to use ML to predict the value of homes in various cities. To do so, the startup’s data science team is joining real estate price data with other variables such as weather, demographic, and standard of living data.
+>
+> However, the team is having problems with slow model convergence. Additionally, the model includes large weights for some features, which is causing degradation in model performance.
+> 
+> What kind of data preprocessing technique should the team use to more effectively prepare this data?
+
+Standard scaler
+
+> A Data Scientist wants to use the Amazon SageMaker hyperparameter tuning job to automatically tune a random forest model.
+>
+> What API does the Amazon SageMaker SDK use to create and interact with the Amazon SageMaker hyperparameter tuning jobs?
+
+HyperparameterTuner()
+
+"Whiz labs"
+
+Review this - https://machinelearningmastery.com/how-to-use-correlation-to-understand-the-relationship-between-variables/
+
+Support vector machines
+
+https://scikit-learn.org/stable/modules/svm.html
+
