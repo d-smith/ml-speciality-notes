@@ -95,3 +95,5 @@ Support vector machines
 
 https://scikit-learn.org/stable/modules/svm.html
 
+Transcribe - streaming transcription - https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html
+
