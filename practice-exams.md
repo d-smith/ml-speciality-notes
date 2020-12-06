@@ -97,3 +97,69 @@ https://scikit-learn.org/stable/modules/svm.html
 
 Transcribe - streaming transcription - https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html
 
+SageMaker Processing - see https://docs.aws.amazon.com/sagemaker/latest/dg/processing-job.html
+
+Bring your own sage maker kernel - https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html
+
+Drop out - https://machinelearningmastery.com/dropout-for-regularizing-deep-neural-networks/
+
+Under and over fitting - https://docs.aws.amazon.com/machine-learning/latest/dg/model-fit-underfitting-vs-overfitting.html
+
+## ML Blog - Select Articles
+
+https://aws.amazon.com/blogs/machine-learning/page/30/
+
+https://aws.amazon.com/blogs/machine-learning/maximizing-nlp-model-performance-with-automatic-model-tuning-in-amazon-sagemaker/
+
+https://aws.amazon.com/blogs/machine-learning/simplify-machine-learning-inference-on-kubernetes-with-amazon-sagemaker-operators/
+
+https://aws.amazon.com/blogs/machine-learning/flagging-suspicious-healthcare-claims-with-amazon-sagemaker/
+
+https://aws.amazon.com/blogs/machine-learning/making-accurate-energy-consumption-predictions-with-amazon-forecast/
+
+https://aws.amazon.com/blogs/machine-learning/reduce-ml-inference-costs-on-amazon-sagemaker-for-pytorch-models-using-amazon-elastic-inference/
+
+https://aws.amazon.com/blogs/machine-learning/pruning-machine-learning-models-with-amazon-sagemaker-debugger-and-amazon-sagemaker-experiments/
+
+https://aws.amazon.com/blogs/machine-learning/increasing-performance-and-reducing-the-cost-of-mxnet-inference-using-amazon-sagemaker-neo-and-amazon-elastic-inference/
+
+https://aws.amazon.com/blogs/machine-learning/deploying-pytorch-models-for-inference-at-scale-using-torchserve/
+
+https://aws.amazon.com/blogs/machine-learning/using-amazon-textract-with-amazon-augmented-ai-for-processing-critical-documents/
+
+https://aws.amazon.com/blogs/machine-learning/catching-fraud-faster-by-building-a-proof-of-concept-in-amazon-fraud-detector/
+
+https://aws.amazon.com/blogs/machine-learning/ml-explainability-with-amazon-sagemaker-debugger/
+
+
+https://aws.amazon.com/blogs/machine-learning/creating-a-complete-tensorflow-2-workflow-in-amazon-sagemaker/
+
+https://aws.amazon.com/blogs/machine-learning/omnichannel-personalization-with-amazon-personalize/
+
+
+https://aws.amazon.com/blogs/machine-learning/managing-missing-values-in-your-target-and-related-datasets-with-automated-imputation-support-in-amazon-forecast/
+
+https://aws.amazon.com/blogs/machine-learning/a-b-testing-ml-models-in-production-using-amazon-sagemaker/
+
+https://aws.amazon.com/blogs/machine-learning/scheduling-jupyter-notebooks-on-sagemaker-ephemeral-instances/
+
+https://aws.amazon.com/blogs/machine-learning/optimizing-i-o-for-gpu-performance-tuning-of-deep-learning-training-in-amazon-sagemaker/
+
+https://aws.amazon.com/blogs/machine-learning/deploying-your-own-data-processing-code-in-an-amazon-sagemaker-autopilot-inference-pipeline/
+
+
+https://aws.amazon.com/blogs/machine-learning/the-importance-of-hyperparameter-tuning-for-scaling-deep-learning-training-to-multiple-gpus/
+
+https://aws.amazon.com/blogs/machine-learning/horovod-mxnet-distributed-training/
+
+https://aws.amazon.com/blogs/machine-learning/building-a-customized-recommender-system-in-amazon-sagemaker/
+
+
+https://aws.amazon.com/blogs/machine-learning/automated-monitoring-of-your-machine-learning-models-with-amazon-sagemaker-model-monitor-and-sending-predictions-to-human-review-workflows-using-amazon-a2i/
+
+https://aws.amazon.com/blogs/machine-learning/streamline-modeling-with-amazon-sagemaker-studio-and-amazon-experiments-sdk/
+
+Start...
+
+https://aws.amazon.com/blogs/machine-learning/page/10/
+
