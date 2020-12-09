@@ -163,3 +163,17 @@ Start...
 
 https://aws.amazon.com/blogs/machine-learning/page/10/
 
+
+
+### Other Notes
+
+On Sampling
+
+* https://en.wikipedia.org/wiki/Oversampling_and_undersampling_in_data_analysis
+* https://medium.com/@hazy_ai/imbalanced-data-and-credit-card-fraud-ad1c1ed011ea
+
+Study Next
+
+* SageMaker
+* Glue ETL
+* Glue & Spark Integration
