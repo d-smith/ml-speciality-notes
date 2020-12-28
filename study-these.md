@@ -38,5 +38,33 @@ https://en.wikipedia.org/wiki/Tf%E2%80%93idf
 
 https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipelines.html
 
+8. Personalize for Recommendations
+
+music recommendations
+
+https://aws.amazon.com/personalize/
+
+9. Batch Processing Node Communications/Architecture
+
+10. Cyclical Feature Engineering
+
+http://blog.davidkaleko.com/feature-engineering-cyclical-features.html
 
 
+11. IP Insights
+
+12. Automatic Model Tuning
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html
+
+13. Early Stopping
+
+> If the value of the objective metric for the current training job is worse (higher when minimizing or lower when maximizing the objective metric) than the median value of running averages of the objective metric for previous training jobs up to the same epoch, Amazon SageMaker stops the current training job.
+
+14. Kinesis Video Streams
+
+15. Network Isolation - Unsupported managed SageMaker containers
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/mkt-algo-model-internet-free.html
+
+> Network isolation is not supported by the following managed Amazon SageMaker containers as they require access to Amazon S3
