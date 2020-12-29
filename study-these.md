@@ -68,3 +68,26 @@ https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-wo
 https://docs.aws.amazon.com/sagemaker/latest/dg/mkt-algo-model-internet-free.html
 
 > Network isolation is not supported by the following managed Amazon SageMaker containers as they require access to Amazon S3
+
+And these...
+
+1. Linear learner hyper parameters, modes, inference outputs, use cases (iclude image classificatio)
+
+2. General random forest algs
+
+https://medium.com/datadriveninvestor/decision-tree-and-random-forest-e174686dd9eb and https://towardsdatascience.com/decision-trees-and-random-forests-df0c3123f991
+
+3. Data pipeline
+
+https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/what-is-datapipeline.html
+
+4. Preprocessing in inference pipelines
+
+https://aws.amazon.com/blogs/machine-learning/preprocess-input-data-before-making-predictions-using-amazon-sagemaker-inference-pipelines-and-scikit-learn/
+
+https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html
+
+5. Hyperparameters
+
+k-means
+
