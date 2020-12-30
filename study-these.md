@@ -91,3 +91,7 @@ https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEn
 
 k-means
 
+6. Sage Maker Validation
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-model-validation.html
+
