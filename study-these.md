@@ -95,3 +95,26 @@ k-means
 
 https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-model-validation.html
 
+7. Ground Truth Labeling
+
+https://aws.amazon.com/blogs/machine-learning/use-the-wisdom-of-crowds-with-amazon-sagemaker-ground-truth-to-annotate-data-more-accurately/
+
+8. AWS IoT Analytics
+
+https://aws.amazon.com/iot-analytics/
+
+https://aws.amazon.com/blogs/big-data/build-a-visualization-and-monitoring-dashboard-for-iot-data-with-amazon-kinesis-analytics-and-amazon-quicksight/
+
+9. Specifying Hyperparameter Tuning Job Settings
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-ex-tuning-job.html
+
+10. Metrics Monitoring
+
+https://aws.amazon.com/blogs/machine-learning/easily-monitor-and-visualize-metrics-while-training-models-on-amazon-sagemaker/
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/k-means-tuning.html
+
+11. Using Tensorflow with SageMaker
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/tf.html
