@@ -118,3 +118,32 @@ https://docs.aws.amazon.com/sagemaker/latest/dg/k-means-tuning.html
 11. Using Tensorflow with SageMaker
 
 https://docs.aws.amazon.com/sagemaker/latest/dg/tf.html
+
+12. XGBoost
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost.html
+
+13. Model tracking
+
+https://aws.amazon.com/about-aws/whats-new/2019/08/new-model-tracking-capabilities-for-amazon-sagemaker-now-generally-available/
+
+14. Lifecycle
+
+https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html
+
+https://sagemaker.readthedocs.io/en/stable/api/inference/transformer.html
+
+15. Batch Transform Pre and Post Processing
+
+https://aws.amazon.com/about-aws/whats-new/2019/07/sagemaker-batch-transform-enable-associating-prediction-results-with-input-attributes/
+
+16. ML transforms in AWS glue
+
+https://docs.aws.amazon.com/glue/latest/dg/machine-learning.html
+
+https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-pyspark-extensions-dynamic-frame.html
+
+17. Ref architecture - build and automate serverless data lake
+
+https://aws.amazon.com/blogs/big-data/build-and-automate-a-serverless-data-lake-using-an-aws-glue-trigger-for-the-data-catalog-and-etl-jobs/
+
