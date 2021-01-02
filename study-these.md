@@ -147,3 +147,21 @@ https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-pyspark-extensio
 
 https://aws.amazon.com/blogs/big-data/build-and-automate-a-serverless-data-lake-using-an-aws-glue-trigger-for-the-data-catalog-and-etl-jobs/
 
+18. Recommendation systems
+
+https://aws.amazon.com/blogs/machine-learning/build-a-movie-recommender-with-factorization-machines-on-amazon-sagemaker/
+
+19. Use your own algorithm
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/docker-containers.html
+
+20. Batch transforms
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-batch.html
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-batch.html
+
+21. Glue Spark ML Transformation
+
+https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-mleap-scikit-learn-containers.html
+
